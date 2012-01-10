@@ -1,0 +1,16 @@
+Source: php-horde-core
+Section: php
+Priority: extra
+Maintainer: Horde Maintainers <pkg-horde-hackers@lists.alioth.debian.org>
+Uploaders: Mathieu Parent <sathieu@debian.org>
+Build-Depends: debhelper (>= 8.0.0), pkg-php-tools, pear-horde-channel
+Standards-Version: 3.9.2
+Homepage: http://${phppear:channel}/
+
+Package: php-horde-core
+Architecture: all
+Depends: ${misc:Depends}, ${phppear:Debian-Depends}
+Recommends: ${phppear:Debian-Recommends}
+Breaks: ${phppear:Debian-Breaks}
+Description: ${phppear:summary}
+ ${phppear:description}

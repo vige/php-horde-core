@@ -1,0 +1,5 @@
+php-horde-core (1.8.3-1) unstable; urgency=low
+
+  * Horde_Core package.
+
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 10 Jan 2012 20:35:07 +0100

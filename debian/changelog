@@ -1,3 +1,9 @@
+php-horde-core (1.8.3-2) UNRELEASED; urgency=low
+
+  * Build-depends on php-horde-role
+
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 12 Feb 2012 19:07:34 +0100
+
 php-horde-core (1.8.3-1) unstable; urgency=low
 
   * Horde_Core package.

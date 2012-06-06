@@ -1,9 +1,9 @@
 php-horde-core (1.8.3-2) UNRELEASED; urgency=low
 
-  * Build-depends on php-horde-role
+  * Build-depends on php-horde-role (Closes: #662606)
   * Fixed watchfile
 
- -- Mathieu Parent <sathieu@debian.org>  Sun, 12 Feb 2012 19:07:34 +0100
+ -- Mathieu Parent <math.parent@gmail.com>  Wed, 06 Jun 2012 18:03:31 +0200
 
 php-horde-core (1.8.3-1) unstable; urgency=low
 

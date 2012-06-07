@@ -5,7 +5,7 @@ Maintainer: Horde Maintainers <pkg-horde-hackers@lists.alioth.debian.org>
 Uploaders: Mathieu Parent <sathieu@debian.org>
 Build-Depends: debhelper (>= 8.0.0), pkg-php-tools, pear-horde-channel, php-horde-role
 Standards-Version: 3.9.3
-Homepage: http://${phppear:channel}/
+Homepage: http://horde.org/
 
 Package: php-horde-core
 Architecture: all

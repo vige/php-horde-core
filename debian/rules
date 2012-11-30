@@ -1,3 +1,18 @@
 #!/usr/bin/make -f
+
+DESTDIR=$(CURDIR)/debian/php-horde-core
+
 %:
 	dh $@ --buildsystem=phppear --with phppear
+
+override_dh_link:
+	# Embedded JS libs
+	# ... from package libjs-jquery-mobile
+	rm -r $(DESTDIR)/usr/share/horde/js/jquery.mobile
+	dh_link usr/share/javascript/jquery-mobile usr/share/horde/js/jquery.mobile
+	# ... from package libjs-prototype
+	rm $(DESTDIR)/usr/share/horde/js/prototype.js
+	dh_link usr/share/javascript/prototype/prototype.js usr/share/horde/js/prototype.js
+	# ... from package libjs-scriptaculous
+	rm -r $(DESTDIR)/usr/share/horde/js/scriptaculous
+	dh_link usr/share/javascript/scriptaculous usr/share/horde/js/scriptaculous

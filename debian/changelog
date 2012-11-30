@@ -1,5 +1,6 @@
-php-horde-core (2.0.4-1) UNRELEASED; urgency=low
+php-horde-core (2.0.4-1) unstable; urgency=low
 
+  * New upstream version 2.0.4
   * Build-depends on php-horde-role (Closes: #662606)
   * Fixed watchfile
   * Updated Standards-Version to 3.9.3: no change
@@ -8,10 +9,8 @@ php-horde-core (2.0.4-1) UNRELEASED; urgency=low
     instead of /usr/share/horde4
   * Updated Homepage
   * Added Vcs-* fields
-  * New upstream version 1.9.1
-  * New upstream version 2.0.4
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 30 Nov 2012 18:56:43 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 30 Nov 2012 21:14:59 +0100
 
 php-horde-core (1.8.3-1) unstable; urgency=low
 

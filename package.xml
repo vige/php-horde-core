@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2012-12-07</date>
- <time>18:21:21</time>
+ <date>2012-12-12</date>
+ <time>17:36:49</time>
  <version>
-  <release>2.1.0</release>
+  <release>2.1.1</release>
   <api>2.1.0</api>
  </version>
  <stability>
@@ -40,14 +40,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix various issues with charset encoding when sending ActiveSync email.
-* [jan] Link back to application from preference screen.
-* [mjr] Fix GAL searching via ActiveSync (Bug #11808, horde@albasoft.com).
-* [mjr] Fix saving sent mail when using ActiveSync (Bug #11805, horde@albasoft.com).
-* [jan] Reset NLS information when changing languages.
-* [jan] Fix downloading files with special characters in Gollem (Bug #11770).
-* [mms] Added Horde_Core_Factory_SpellChecker.
-* [mms] Don&apos;t log backtrace for E_STRICT errors.
+* [mjr] Improve logging in ActiveSync drivers to better track down issues.
+* [jan] Fix returning complete groups with auto-completer.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -253,15 +247,15 @@
    <file baseinstalldir="/" md5sum="1b2dc47cd4d89912e016e26d98a926ed" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="c7e89a0addd70dc734bead2085b3be78" name="js/sorter.js" role="horde" />
    <file baseinstalldir="/" md5sum="e54b51bc20c3076ecc8f5b2072a2b5fa" name="js/sourceselect.js" role="horde" />
-   <file baseinstalldir="/" md5sum="dcc99b0188130611b06b9bb9769bd3d8" name="js/spellchecker.js" role="horde" />
+   <file baseinstalldir="/" md5sum="4ebd1453a63a0e36abfce891f1b22c02" name="js/spellchecker.js" role="horde" />
    <file baseinstalldir="/" md5sum="20d521e12ffef87beec1ed53fa6e6f0f" name="js/tables.js" role="horde" />
    <file baseinstalldir="/" md5sum="ef5d0546769f68f3c42b72da056a88b4" name="js/toggle_quotes.js" role="horde" />
    <file baseinstalldir="/" md5sum="c1723801e8d25980008f7b18fc1fd9e5" name="js/tooltips.js" role="horde" />
    <file baseinstalldir="/" md5sum="4965273887e89236e80f8181b2058fbf" name="lib/Horde/Config/Form.php" role="php" />
-   <file baseinstalldir="/" md5sum="0aff2e3c354d0c37d04ddfe0e903b8bd" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
+   <file baseinstalldir="/" md5sum="2ae77d8b9f46951059e07e859f4d901a" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="839873b5aa7b9a905508cef15b63734d" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="4d8d3daf7c0350a0883f78db3f40b2d2" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="4ef2fe375f8d86a5ac7ced14ce51b760" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="752a857cb69bc220b1807b906a3c473b" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="768fe4fd6f71f25dd1091819a7dab95d" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="4c8c95f4b37f4e2ca83ed06bbe6b7ae2" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
    <file baseinstalldir="/" md5sum="15f04f293ccdaeea08dd174b34bd0eff" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
@@ -275,7 +269,7 @@
    <file baseinstalldir="/" md5sum="0eb52260771ed03180fbdaea63df0b8f" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Pretty.php" role="php" />
    <file baseinstalldir="/" md5sum="2e2a2cf8f8d226b1b73a5d41cd6417e6" name="lib/Horde/Core/Ajax/Imple/Geocoder/Geonames.php" role="php" />
    <file baseinstalldir="/" md5sum="43e9b7277c4565776cc013fdb3b0aedd" name="lib/Horde/Core/Ajax/Imple/AutoCompleter.php" role="php" />
-   <file baseinstalldir="/" md5sum="bb4b3b679bb84bb540dd343e5f047858" name="lib/Horde/Core/Ajax/Imple/ContactAutoCompleter.php" role="php" />
+   <file baseinstalldir="/" md5sum="472b444ad7568e3ba5a409704362f1d2" name="lib/Horde/Core/Ajax/Imple/ContactAutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="acc4dee32b526ce40816e26ea9404288" name="lib/Horde/Core/Ajax/Imple/InPlaceEditor.php" role="php" />
    <file baseinstalldir="/" md5sum="aa6c9368e82dfed8cc1bfcc831d99b09" name="lib/Horde/Core/Ajax/Imple/SpellChecker.php" role="php" />
    <file baseinstalldir="/" md5sum="6220a9ea6e79b0eeb66ba4b0a6911c48" name="lib/Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" role="php" />
@@ -410,13 +404,13 @@
    <file baseinstalldir="/" md5sum="b114cc001703eed4f2b26d46370b390c" name="lib/Horde/Core/Script/Package/Popup.php" role="php" />
    <file baseinstalldir="/" md5sum="9f2ef58130880653862304aa280a1f10" name="lib/Horde/Core/Share/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="3fee7ae80126e537729b6df796161239" name="lib/Horde/Core/Share/FactoryCallback.php" role="php" />
-   <file baseinstalldir="/" md5sum="726c6cf95012bd2002aefd8b3a08ef94" name="lib/Horde/Core/Smartmobile/View/Helper.php" role="php" />
+   <file baseinstalldir="/" md5sum="88d01d337a3ddfe94a1b9ff9e1b7b756" name="lib/Horde/Core/Smartmobile/View/Helper.php" role="php" />
    <file baseinstalldir="/" md5sum="8af484a16d81ca75f3569b36962acdd1" name="lib/Horde/Core/Smartmobile/Url.php" role="php" />
    <file baseinstalldir="/" md5sum="992e91729be2bfeacb27726f895c231a" name="lib/Horde/Core/Text/Filter/Bbcode.php" role="php" />
    <file baseinstalldir="/" md5sum="d08253d4f7d2cdacf08c73d84595b78e" name="lib/Horde/Core/Text/Filter/Emails.php" role="php" />
    <file baseinstalldir="/" md5sum="cb98655433e621ea92ff9a32c5a264c4" name="lib/Horde/Core/Text/Filter/Emoticons.php" role="php" />
    <file baseinstalldir="/" md5sum="9aa497bbd8b18dcccf1aee684c9cef80" name="lib/Horde/Core/Text/Filter/Highlightquotes.php" role="php" />
-   <file baseinstalldir="/" md5sum="2da6650aff2f5db41411658f5bcb19f7" name="lib/Horde/Core/Tree/Renderer/Html.php" role="php" />
+   <file baseinstalldir="/" md5sum="c206f2e0d7b257a38212e8960be87807" name="lib/Horde/Core/Tree/Renderer/Html.php" role="php" />
    <file baseinstalldir="/" md5sum="3396a3325228e637b256fafb27047218" name="lib/Horde/Core/Tree/Renderer/Javascript.php" role="php" />
    <file baseinstalldir="/" md5sum="fc634e15695cb709d7960224f7324980" name="lib/Horde/Core/Tree/Renderer/Simplehtml.php" role="php" />
    <file baseinstalldir="/" md5sum="49a77518327ecc864ecabb67c9e95dda" name="lib/Horde/Core/Ui/VarRenderer/Html.php" role="php" />
@@ -442,7 +436,7 @@
    <file baseinstalldir="/" md5sum="05989832bca180d20925e2323c5a6f9a" name="lib/Horde/Core/LoginTasks.php" role="php" />
    <file baseinstalldir="/" md5sum="ce887a360f804cc686cbd36de826a4e1" name="lib/Horde/Core/Perms.php" role="php" />
    <file baseinstalldir="/" md5sum="a0b73effe171bec3e3a0d93fc623ce46" name="lib/Horde/Core/TagBrowser.php" role="php" />
-   <file baseinstalldir="/" md5sum="2eb612a4b9cf0af724d49e8fc894df24" name="lib/Horde/Core/Tagger.php" role="php" />
+   <file baseinstalldir="/" md5sum="b25f5eb79a5df5b95430033a73cb5c81" name="lib/Horde/Core/Tagger.php" role="php" />
    <file baseinstalldir="/" md5sum="280ebb1eeea00247d64b2ef62bb04fbf" name="lib/Horde/Core/Topbar.php" role="php" />
    <file baseinstalldir="/" md5sum="3e261db556b0f87609f471c5b073491b" name="lib/Horde/Core/Secret.php" role="php" />
    <file baseinstalldir="/" md5sum="6f2ee0d998f5d09b27467c171e1e2f42" name="lib/Horde/Core/Translation.php" role="php">
@@ -471,7 +465,7 @@
    <file baseinstalldir="/" md5sum="c8ae131ee0920209e852f7b6fbfcca45" name="lib/Horde/ErrorHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="f88e490870bab7802bba7a3d00a25e4b" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="b29887df26156a320812c5cf8ffb0361" name="lib/Horde/Menu.php" role="php" />
-   <file baseinstalldir="/" md5sum="7da343b59bd6919aa64562181393542a" name="lib/Horde/PageOutput.php" role="php" />
+   <file baseinstalldir="/" md5sum="ad4a5b091dd1cda73a6b77cf7bd66087" name="lib/Horde/PageOutput.php" role="php" />
    <file baseinstalldir="/" md5sum="c86e16ed88f94c0e861226b0d3b5544d" name="lib/Horde/Registry.php" role="php" />
    <file baseinstalldir="/" md5sum="c1a12200d04f0a4b1d7ecda9366112ce" name="lib/Horde/Session.php" role="php" />
    <file baseinstalldir="/" md5sum="c0643b2d48022c55a24d493325ce922d" name="lib/Horde/Themes.php" role="php" />
@@ -2352,6 +2346,22 @@
 * [jan] Fix downloading files with special characters in Gollem (Bug #11770).
 * [mms] Added Horde_Core_Factory_SpellChecker.
 * [mms] Don&apos;t log backtrace for E_STRICT errors.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.1.1</release>
+    <api>2.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-12-12</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Improve logging in ActiveSync drivers to better track down issues.
+* [jan] Fix returning complete groups with auto-completer.
    </notes>
   </release>
  </changelog>

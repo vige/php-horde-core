@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2012-12-27</date>
- <time>13:55:08</time>
+ <date>2013-01-04</date>
+ <time>16:56:39</time>
  <version>
-  <release>2.1.3</release>
+  <release>2.1.4</release>
   <api>2.1.0</api>
  </version>
  <stability>
@@ -40,8 +40,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Improvements to ActiveSync authentication failure handling.
-* [mjr] Fix issue with Null session driver that could cause authentication to be lost.
+* [mms] Fix multiple AJAX submits to same hidden IFRAME on the same page (Bug #11928).
+* [mjr] Fix some MIME related issues when sending email via ActiveSync (Bug #11931).
+* [mjr] Fix detecting non-default ActiveSync policies.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -230,7 +231,7 @@
    <file baseinstalldir="/" md5sum="35573bb932ed8ed47046b24a981af340" name="js/growler.js" role="horde" />
    <file baseinstalldir="/" md5sum="9c0a7e6b512643b3cfe40609b5ffab06" name="js/horde-jquery.js" role="horde" />
    <file baseinstalldir="/" md5sum="a1e8b04e902f7ab21c4b8534d0a02db9" name="js/horde.js" role="horde" />
-   <file baseinstalldir="/" md5sum="5ed2b6738760cac2ea119f945a409195" name="js/hordecore.js" role="horde" />
+   <file baseinstalldir="/" md5sum="ea8c3c8491552698792b560ef667d532" name="js/hordecore.js" role="horde" />
    <file baseinstalldir="/" md5sum="7f21cd6e06689a2e20c3554c45d8e698" name="js/hordetree.js" role="horde" />
    <file baseinstalldir="/" md5sum="73506b7dcdfac63648506134851a2f82" name="js/identityselect.js" role="horde" />
    <file baseinstalldir="/" md5sum="c04ce73d57bc28aba5838396d8b83c8e" name="js/image.js" role="horde" />
@@ -255,7 +256,7 @@
    <file baseinstalldir="/" md5sum="2ae77d8b9f46951059e07e859f4d901a" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="839873b5aa7b9a905508cef15b63734d" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="4d8d3daf7c0350a0883f78db3f40b2d2" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="a29ba5cc415907c284dd9f1e713a46fa" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="748e09de4574c0e7c0a7784452044858" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="768fe4fd6f71f25dd1091819a7dab95d" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="4c8c95f4b37f4e2ca83ed06bbe6b7ae2" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
    <file baseinstalldir="/" md5sum="15f04f293ccdaeea08dd174b34bd0eff" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
@@ -398,7 +399,7 @@
    <file baseinstalldir="/" md5sum="1e881ce36289a4ce6f6ac9db3550d153" name="lib/Horde/Core/Prefs/Ui/Widgets.php" role="php" />
    <file baseinstalldir="/" md5sum="8c9c506e1e3c7c5204a6359227a31d65" name="lib/Horde/Core/Prefs/Identity.php" role="php" />
    <file baseinstalldir="/" md5sum="c5e60fc582108c8ad10831ad74019409" name="lib/Horde/Core/Prefs/Ui.php" role="php" />
-   <file baseinstalldir="/" md5sum="903c1f8a8f350ade308bf0546af2bfbf" name="lib/Horde/Core/Script/Package/Datejs.php" role="php" />
+   <file baseinstalldir="/" md5sum="788776efc0bf119d1a7571c453459894" name="lib/Horde/Core/Script/Package/Datejs.php" role="php" />
    <file baseinstalldir="/" md5sum="72c82850d887c4a06338e6347d2423ec" name="lib/Horde/Core/Script/Package/Dialog.php" role="php" />
    <file baseinstalldir="/" md5sum="90a6c6bcc73891aa26c69bfc4e19a6e1" name="lib/Horde/Core/Script/Package/Keynavlist.php" role="php" />
    <file baseinstalldir="/" md5sum="b114cc001703eed4f2b26d46370b390c" name="lib/Horde/Core/Script/Package/Popup.php" role="php" />
@@ -2397,6 +2398,23 @@
    <notes>
 * [mjr] Improvements to ActiveSync authentication failure handling.
 * [mjr] Fix issue with Null session driver that could cause authentication to be lost.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.1.4</release>
+    <api>2.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-01-04</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Fix multiple AJAX submits to same hidden IFRAME on the same page (Bug #11928).
+* [mjr] Fix some MIME related issues when sending email via ActiveSync (Bug #11931).
+* [mjr] Fix detecting non-default ActiveSync policies.
    </notes>
   </release>
  </changelog>

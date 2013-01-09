@@ -4,6 +4,7 @@ php-horde-core (2.1.4-2) UNRELEASED; urgency=low
   * Updated Standards-Version to 3.9.4, no changes
   * Replace horde4 by PEAR in git reporitory path
   * Fix Horde Homepage
+  * Remove debian/pearrc, not needed with latest php-horde-role
 
  -- Mathieu Parent <sathieu@debian.org>  Sun, 06 Jan 2013 21:43:12 +0100
 

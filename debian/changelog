@@ -1,3 +1,9 @@
+php-horde-core (2.1.5-1) UNRELEASED; urgency=low
+
+  * New upstream version 2.1.5
+
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 10 Jan 2013 19:17:08 +0100
+
 php-horde-core (2.1.4-2) unstable; urgency=low
 
   * Add a description of Horde in long description

@@ -1,3 +1,9 @@
+php-horde-core (2.4.3-2) UNRELEASED; urgency=low
+
+  * Use pristine-tar
+
+ -- Mathieu Parent <sathieu@debian.org>  Mon, 27 May 2013 08:45:10 +0200
+
 php-horde-core (2.4.3-1) unstable; urgency=low
 
   * New upstream version 2.4.3

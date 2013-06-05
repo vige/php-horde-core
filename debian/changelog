@@ -2,6 +2,10 @@ php-horde-core (2.5.0-1) UNRELEASED; urgency=low
 
   * Use pristine-tar
   * New upstream version 2.5.0
+  * Upstream js/jquery.mobile actually ships both jquery and jquery-mobile
+    along with its own plugins, thus add libjs-jquery as Depends and fix
+    links accordingly (Closes: #711182). Thanks to Arnaud Fontaine for the
+    report and patch.
 
  -- Mathieu Parent <sathieu@debian.org>  Wed, 05 Jun 2013 11:54:03 +0200
 

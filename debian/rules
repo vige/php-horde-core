@@ -8,8 +8,19 @@ DESTDIR=$(CURDIR)/debian/php-horde-core
 override_dh_link:
 	# Embedded JS libs
 	# ... from package libjs-jquery-mobile
-	rm -r $(DESTDIR)/usr/share/horde/js/jquery.mobile
-	dh_link usr/share/javascript/jquery-mobile usr/share/horde/js/jquery.mobile
+	rm -r $(DESTDIR)/usr/share/horde/js/jquery.mobile/images/
+	dh_link usr/share/javascript/jquery-mobile/images/ usr/share/horde/js/jquery.mobile/images
+	rm $(DESTDIR)/usr/share/horde/js/jquery.mobile/jquery.mobile.js
+	dh_link usr/share/javascript/jquery-mobile/jquery.mobile.js usr/share/horde/js/jquery.mobile/jquery.mobile.js
+	rm $(DESTDIR)/usr/share/horde/js/jquery.mobile/jquery.mobile.min.js
+	dh_link usr/share/javascript/jquery-mobile/jquery.mobile.min.js usr/share/horde/js/jquery.mobile/jquery.mobile.min.js
+	rm $(DESTDIR)/usr/share/horde/js/jquery.mobile/jquery.mobile.min.css
+	dh_link usr/share/javascript/jquery-mobile/jquery.mobile.min.css usr/share/horde/js/jquery.mobile/jquery.mobile.min.css
+	# ... from libjs-jquery
+	rm $(DESTDIR)/usr/share/horde/js/jquery.mobile/jquery.js
+	dh_link usr/share/javascript/jquery/jquery.js usr/share/horde/js/jquery.mobile/jquery.js
+	rm $(DESTDIR)/usr/share/horde/js/jquery.mobile/jquery.min.js
+	dh_link usr/share/javascript/jquery/jquery.min.js usr/share/horde/js/jquery.mobile/jquery.min.js
 	# ... from package libjs-prototype
 	rm $(DESTDIR)/usr/share/horde/js/prototype.js
 	dh_link usr/share/javascript/prototype/prototype.js usr/share/horde/js/prototype.js

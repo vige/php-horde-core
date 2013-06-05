@@ -11,7 +11,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-horde/PEAR/php-horde-core.g
 
 Package: php-horde-core
 Architecture: all
-Depends: ${misc:Depends}, ${phppear:Debian-Depends}, libjs-jquery-mobile, libjs-prototype, libjs-scriptaculous
+Depends: ${misc:Depends}, ${phppear:Debian-Depends}, libjs-jquery-mobile, libjs-jquery, libjs-prototype, libjs-scriptaculous
 Recommends: ${phppear:Debian-Recommends}
 Breaks: ${phppear:Debian-Breaks}
 Description: ${phppear:summary}

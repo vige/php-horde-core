@@ -1,3 +1,9 @@
+php-horde-core (2.6.0-1) UNRELEASED; urgency=low
+
+  * New upstream version 2.6.0
+
+ -- Mathieu Parent <sathieu@debian.org>  Mon, 24 Jun 2013 10:27:42 +0200
+
 php-horde-core (2.5.0-1) unstable; urgency=low
 
   * Use pristine-tar

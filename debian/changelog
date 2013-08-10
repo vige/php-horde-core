@@ -1,9 +1,8 @@
-php-horde-core (2.6.6-1) UNRELEASED; urgency=low
+php-horde-core (2.6.6-1) unstable; urgency=low
 
-  * New upstream version 2.6.1
   * New upstream version 2.6.6
 
- -- Mathieu Parent <sathieu@debian.org>  Sat, 10 Aug 2013 19:17:43 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 10 Aug 2013 23:55:53 +0200
 
 php-horde-core (2.6.0-1) unstable; urgency=low
 

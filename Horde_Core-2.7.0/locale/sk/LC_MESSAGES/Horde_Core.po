@@ -1,83 +1,86 @@
-# German translations for Horde_Core module.
+# Slovak translations for Horde_Core module.
 # Copyright 2010-2013 Horde LLC (http://www.horde.org/)
 # This file is distributed under the same license as the Horde_Core module.
-# Jan Schneider <jan@horde.org>, 2010-2013.
+# Martin Matuška <martin@matuska.org>, 2011
+# Jozef Sudolský <jozef.sudolsky@elbia.sk>, 2013
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Horde_Core\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2013-07-16 21:24+0200\n"
-"PO-Revision-Date: 2013-07-16 21:41+0200\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2013-08-26 12:17+0200\n"
+"PO-Revision-Date: 2013-08-26 12:41+0100\n"
+"Last-Translator: Jozef Sudolsky <azurit@pobox.sk>\n"
 "Language-Team: i18n@lists.horde.org\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: lib/Horde.php:1073
+#: lib/Horde.php:1077
 #, php-format
 msgid " (Accesskey %s)"
-msgstr " (Zugriffstaste %s)"
+msgstr " (Klávesová skratka %s)"
 
-#: lib/Horde/Registry.php:1298 lib/Horde/Registry.php:1971
+#: lib/Horde/Registry.php:1304 lib/Horde/Registry.php:1977
 #, php-format
 msgid "\"%s\" is not configured in the Horde Registry."
-msgstr "\"%s\" ist in der Horde Registry nicht konfiguriert."
+msgstr "\"%s\" nie je nastavené v registri Horde."
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:122
 #, php-format
 msgid "%d contact was successfully added to your address book."
 msgid_plural "%d contacts were successfully added to your address book."
-msgstr[0] "%d Kontakt wurde erfolgreich Ihrem Adressbuch hinzugefügt."
-msgstr[1] "%d Kontakte wurden erfolgreich Ihrem Adressbuch hinzugefügt."
+msgstr[0] "%d kontakt bol úspešne vložený do Vášho adresára."
+msgstr[1] "%d kontakty boli úspešne vložené do Vášho adresára."
+msgstr[2] "%d kontaktov bolo úspešne vložených do Vášho adresára."
 
 #: lib/Horde/Core/Auth/Application.php:650
 #, php-format
 msgid "%d day until your password expires."
 msgid_plural "%d days until your password expires."
-msgstr[0] "In %d Tag wird Ihr Passwort ungültig."
-msgstr[1] "In %d Tagen wird Ihr Passwort ungültig."
+msgstr[0] "%d deň do vypršania platnosti hesla."
+msgstr[1] "%d dni do vypršania platnosti hesla."
+msgstr[2] "%d dní do vypršania platnosti hesla."
 
 #: lib/Horde/Core/Perms/Ui.php:352 lib/Horde/Core/Perms/Ui.php:412
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:827
 msgid "-- select --"
-msgstr "-- Auswählen --"
+msgstr "-- vyberte si --"
 
 #: lib/Horde/Core/Notification/Event/Status.php:73
 #: lib/Horde/PageOutput.php:753
 msgid "1 day"
-msgstr "1 Tag"
+msgstr "1 deň"
 
 #: lib/Horde/Core/Notification/Event/Status.php:71
 #: lib/Horde/PageOutput.php:751
 msgid "1 hour"
-msgstr "1 Stunde"
+msgstr "1 hodina"
 
 #: lib/Horde/Core/Notification/Event/Status.php:70
 #: lib/Horde/PageOutput.php:750
 msgid "15 minutes"
-msgstr "15 Minuten"
+msgstr "15 minút"
 
 #: lib/Horde/Core/Notification/Event/Status.php:69
 #: lib/Horde/PageOutput.php:749
 msgid "5 minutes"
-msgstr "5 Minuten"
+msgstr "5 minút"
 
 #: lib/Horde/Core/Notification/Event/Status.php:72
 #: lib/Horde/PageOutput.php:752
 msgid "6 hours"
-msgstr "6 Stunden"
+msgstr "6 hodín"
 
 #: lib/Horde/Core/Ui/Pager.php:75
 msgid "<Previous"
-msgstr "<Zurück"
+msgstr "<Naspäť"
 
-#: lib/Horde/ErrorHandler.php:83
+#: lib/Horde/ErrorHandler.php:91
 msgid "A fatal error has occurred"
-msgstr "Ein schwerer Fehler ist aufgetreten:"
+msgstr "Vyskytla sa závažná chyba"
 
 #: lib/Horde/Core/Prefs/Identity.php:63
 #, php-format
@@ -86,82 +89,82 @@ msgid ""
 "address. The new email address is activated as soon as you confirm this "
 "message."
 msgstr ""
-"Eine Nachricht wurde an \"%s\" verschickt, um zu überprüfen, ob es sich "
-"dabei wirklich um Ihre Adresse handelt. Die neue E-Mail-Adresse wird "
-"aktiviert, sobald Sie diese Nachricht bestätigen."
+"Na adresu \"%s\" bola odoslaná správa na kontrolu, či je to naozaj Vača "
+"adresa. Nová e-mailová adresa bude aktivovaná ihneď ako potvrdíte túto "
+"správu."
 
 #: lib/Horde/Core/Auth/Signup/Base.php:83
 #, php-format
 msgid ""
 "A new account for the user \"%s\" has been requested through the signup form."
 msgstr ""
-"Für den Benutzer \"%s\" wurde über das Registrierungsformular ein neues "
-"Konto beantragt."
+"Pre používateľa \"%s\" bol pomocou prihlasovacieho formulára vyžiadaný nový "
+"účet."
 
 #: lib/Horde/Core/Script/Package/Popup.php:25
 msgid ""
 "A popup window could not be opened. Your browser may be blocking popups."
 msgstr ""
-"Ein Popup-Fenster konnte nicht geöffnet werden. Vielleicht haben Sie Ihren "
-"Browser so eingestellt, dass er Popup-Fenster blockiert?"
+"Vyskakovacie okno nemohlo byť otvorené. Váš prehliadač možno blokuje "
+"vyskakovacie okná."
 
 #: lib/Horde/Core/Auth/Signup/Base.php:91
 #, php-format
 msgid "Account signup request for \"%s\""
-msgstr "Registrierungsanfrage von \"%s\""
+msgstr "Žiadosť o používateľský účet \"%s\""
 
 #: lib/Horde/Core/Perms/Ui.php:201 lib/Horde/Core/Ui/VarRenderer/Html.php:627
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr "Pridať"
 
 #: lib/Horde/Core/Perms/Ui.php:134
 msgid "Add Child Permission"
-msgstr "Neue Unterrechte hinzufügen"
+msgstr "Pridať podprávo"
 
 #: lib/Horde/Core/Perms/Ui.php:101
 msgid "Add New Permission"
-msgstr "Neue Rechte hinzufügen"
+msgstr "Pridať nové právo"
 
 #: lib/Horde/Core/Perms/Ui.php:78
 msgid "Add Permission"
-msgstr "Recht hinzufügen"
+msgstr "Pridať nové právo"
 
 #: lib/Horde/Core/Perms/Ui.php:200
 #, php-format
 msgid "Add a child permission to \"%s\""
-msgstr "Unterrechte zu \"%s\" hinzufügen"
+msgstr "Pridať pod-právo do \"%s\""
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:96
 msgid "Add source"
-msgstr "Quelle hinzufügen"
+msgstr "Pridať zdroj"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:407
 msgid "Add to address book:"
-msgstr "Zum Adressbuch hinzufügen:"
+msgstr "Pridať do adresára:"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:423
 msgid "Add to my address book"
-msgstr "Zu meinem Adressbuch hinzufügen"
+msgstr "Pridať do môjho adresára"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:228
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:292
 msgid "Address"
-msgstr "Adresse"
+msgstr "Adresa"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:409
 msgid "Address Book"
-msgstr "Adressbuch"
+msgstr "Adresár"
 
-#: lib/Horde/Registry.php:302
+#: lib/Horde/Registry.php:308
 msgid ""
 "Admin authentication requested, but no admin users defined in configuration."
 msgstr ""
-"Die Authentifizierung als Administrator wurde versucht, aber es sind keine "
-"Benutzer als Administratoren in der Konfiguration eingetragen."
+"Vyžiadali ste administrátorský prístup avšak žiadne administrátorské kontá "
+"nie su nakonfigurované."
 
 #: lib/Horde/Core/Topbar.php:104
 msgid "Administration"
-msgstr "Administration"
+msgstr "Administrácia"
 
 #: lib/Horde/Core/Notification/Event/Status.php:89
 msgid "Alarm"
@@ -169,33 +172,33 @@ msgstr "Alarm"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:152
 msgid "Alias"
-msgstr "Spitzname"
+msgstr "Alias"
 
 #: lib/Horde/Core/Perms/Ui.php:267
 msgid "All Authenticated Users"
-msgstr "Angemeldete Benutzer"
+msgstr "Všetci overení používatelia"
 
 #: lib/Horde/Core/Perms.php:121 lib/Horde/Core/Perms/Ui.php:106
 msgid "All Permissions"
-msgstr "Alle Rechte"
+msgstr "Všetky práva"
 
 #: lib/Horde/Core/Prefs/Ui.php:310 lib/Horde/Core/Prefs/Ui.php:323
 msgid "An illegal value was specified."
-msgstr "Es wurde ein ungültiger Wert angegeben."
+msgstr "Bola zadaná neplatná hodnota"
 
 #: lib/Horde/Core/Smartmobile/View/Helper.php:54
 msgid "Applications"
-msgstr "Anwendungen"
+msgstr "Aplikácie"
 
 #: lib/Horde/Core/Auth/Signup/Base.php:85
 msgid "Approve the account:"
-msgstr "Das Konto bestätigen:"
+msgstr "Potvrdiť používateľský účet:"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:131
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:438
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:488
 msgid "April"
-msgstr "April"
+msgstr "Apríl"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:135
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:442
@@ -205,193 +208,192 @@ msgstr "August"
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:202
 msgid "Available address books:"
-msgstr "Verfügbare Adressbücher:"
+msgstr "Dostupné adresáre:"
 
 #: lib/Horde/Core/Smartmobile/View/Helper.php:46 lib/Horde/PageOutput.php:684
 msgid "Back"
-msgstr "Zurück"
+msgstr "Naspäť"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:159
 msgid "Birthday"
-msgstr "Geburtstag"
+msgstr "Narodeniny"
 
 #: lib/Horde/Core/Block/Collection.php:392
 #, php-format
 msgid "Block \"%s\" of application \"%s\" not found."
-msgstr "Block \"%s\" der Anwendung \"%s\" nicht gefunden."
+msgstr "Blok \"%s\" z aplikácie \"%s\" nebol nájdený."
 
 #: lib/Horde/Core/ActiveSync/Driver.php:140
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:531
 msgid "Calendar"
-msgstr "Kalender"
+msgstr "Kalendár"
 
 #: lib/Horde/Core/Ajax/Imple/InPlaceEditor.php:56
 #: lib/Horde/Core/Script/Package/Dialog.php:25
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Zrušiť"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:318
 msgid "Cell Phone"
-msgstr "Mobiltelefon"
+msgstr "Mobilný telefón"
 
 #: lib/Horde/Core/Auth/Signup/Form.php:45
 #: lib/Horde/Core/Auth/Signup/Form.php:59
 msgid "Choose a password"
-msgstr "Wählen Sie ein Passwort"
+msgstr "Zvoľte si heslo"
 
 #: lib/Horde/Core/Auth/Signup/Form.php:42
 #: lib/Horde/Core/Auth/Signup/Form.php:58
 msgid "Choose a username"
-msgstr "Wählen Sie einen Benutzernamen"
+msgstr "Zvoľte si používateľské meno"
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:196
 msgid "Choose the order of address books to search when expanding addresses."
 msgstr ""
-"Legen Sie die Reihenfolge der Adressbücher fest, in denen nach passenden "
-"Adressen gesucht werden soll."
+"Vyberte poradie adresárov použitých na hľadanie pri rozbaľovaní adries."
 
 #: lib/Horde/Core/Ajax/Imple/InPlaceEditor.php:57
 msgid "Click to add caption..."
-msgstr "Klicken um Fotounterschrift hinzuzufügen..."
+msgstr "Kliknite pre pridanie popisku..."
 
 #: lib/Horde/PageOutput.php:685
 msgid "Close"
-msgstr "Schließen"
+msgstr "Zavrieť"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:577
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:579
 msgid "Color Picker"
-msgstr "Farbauswahl"
+msgstr "Výber farby"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:369
 msgid "Company"
-msgstr "Firma"
+msgstr "Spoločnosť"
 
 #: lib/Horde/Core/Prefs/Identity.php:54
 msgid "Confirm new email address"
-msgstr "Bestätigung der neuen E-Mail-Adresse"
+msgstr "Potvrdiť novú e-mailovú adresu"
 
 #: lib/Horde/Core/ActiveSync/Driver.php:141
 msgid "Contacts"
-msgstr "Kontakte"
+msgstr "Kontakty"
 
 #: lib/Horde/Config.php:296
 #, php-format
 msgid "Could not save the backup configuration file %s."
-msgstr "Backup der Konfiguration %s konnte nicht gespeichert werden."
+msgstr "Nepodarilo sa uložiť záložný súbor s konfiguráciou %s."
 
 #: lib/Horde/Core/Perms/Ui.php:298
 msgid "Creator Permissions"
-msgstr "Erstellerrechte"
+msgstr "Práva tvorcu"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:499
 msgid "DD"
-msgstr "TT"
+msgstr "DD"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:139
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:446
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:496
 msgid "December"
-msgstr "Dezember"
+msgstr "December"
 
 #: lib/Horde/Core/Perms/Ui.php:498 lib/Horde/Core/Perms/Ui.php:516
 msgid "Delete"
-msgstr "Löschen"
+msgstr "Vymazať"
 
 #: lib/Horde/Core/Perms/Ui.php:82 lib/Horde/Core/Perms/Ui.php:142
 msgid "Delete Permission"
-msgstr "Rechte löschen"
+msgstr "Vymazať právo"
 
 #: lib/Horde/Core/Perms/Ui.php:497
 #, php-format
 msgid "Delete permissions for \"%s\""
-msgstr "Rechte für \"%s\" löschen"
+msgstr "Vymazať práva pre \"%s\""
 
 #: lib/Horde/Core/Perms/Ui.php:500
 #, php-format
 msgid "Delete permissions for \"%s\" and any sub-permissions?"
-msgstr "Rechte für \"%s\" und alle Unterrechte löschen?"
+msgstr "Naozaj chcete vymazať práva a všetky podpráva pre \"%s\"?"
 
 #: lib/Horde/Core/Auth/Signup/Base.php:87
 msgid "Deny the account:"
-msgstr "Das Konto ablehnen:"
+msgstr "Odmietnuť používateľský účet:"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:371
 msgid "Department"
-msgstr "Abteilung"
+msgstr "Oddelenie"
 
-#: lib/Horde/ErrorHandler.php:99
+#: lib/Horde/ErrorHandler.php:107
 msgid "Details"
-msgstr "Details"
+msgstr "Podrobnosti"
 
-#: lib/Horde/ErrorHandler.php:106
+#: lib/Horde/ErrorHandler.php:114
 msgid "Details have been logged for the administrator."
-msgstr "Details wurden für den Administrator mitgeloggt."
+msgstr "Detaily boli zaznamenané pre administrátora."
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1168
 #, php-format
 msgid "Dial %s"
-msgstr "%s wählen"
+msgstr "Vytočiť %s"
 
 #: lib/Horde/Core/Notification/Event/Status.php:68
 msgid "Dismiss"
-msgstr "Ausschalten"
+msgstr "Odvolať"
 
 #: lib/Horde/Core/Perms/Ui.php:498
 msgid "Do not delete"
-msgstr "Nicht löschen"
+msgstr "Nevymazať"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:207
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:271
 msgid "Domestic Address"
-msgstr "Inlandsadresse"
+msgstr "Domáca adresa"
 
 #: lib/Horde/Core/Block/Layout.php:107 lib/Horde/Core/Block/Layout.php:108
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Updaviť"
 
 #: lib/Horde/Core/Perms/Ui.php:81 lib/Horde/Core/Perms/Ui.php:140
 msgid "Edit Permission"
-msgstr "Rechte bearbeiten"
+msgstr "Upraviť právo"
 
 #: lib/Horde/Core/Perms/Ui.php:431
 #, php-format
 msgid "Edit permissions for \"%s\""
-msgstr "Rechte für \"%s\" bearbeiten"
+msgstr "Upraviť práva pre \"%s\""
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:354
 msgid "Email"
-msgstr "E-Mail-Adresse"
+msgstr "Email"
 
 #: lib/Horde/Core/Prefs/Identity.php:87
 msgid "Email addresses to confirm not found."
-msgstr "Zu bestätigende E-Mail-Adressen nicht gefunden."
+msgstr "E-mailová adresa na potvrdenie nebola nájdená."
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:316
 msgid "Emoticons"
-msgstr "Smileys"
+msgstr "Emotikony"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:1557
+#: lib/Horde/Core/ActiveSync/Driver.php:1558
 msgid "End forwarded message"
-msgstr "Ende der weitergeleiteten Nachricht"
+msgstr "Koniec preposlanej správy"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:963
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:974
 msgid "Enter the letters below:"
-msgstr "Geben Sie die folgenden Buchstaben ein:"
+msgstr "Zadajte písmená nižšie:"
 
 #: lib/Horde/Core/Block/Layout/View.php:124
 #: lib/Horde/Core/Notification/Event/Status.php:94
 msgid "Error"
-msgstr "Fehler"
+msgstr "Chyba"
 
 #: lib/Horde/PageOutput.php:743
 msgid "Error when communicating with the server."
-msgstr "Fehler während der Kommunikation mit dem Server."
+msgstr "Chyba pri komunikácii so serverom."
 
 #: lib/Horde/Core/Block/Layout/Manager.php:531
 msgid "Expand"
-msgstr "Vergrößern"
+msgstr "Rozšíriť"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:309
 msgid "Fax"
@@ -401,36 +403,36 @@ msgstr "Fax"
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:436
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:486
 msgid "February"
-msgstr "Februar"
+msgstr "Február"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:256
 msgid "Fix ratio"
-msgstr "Verhältnis zurücksetzen"
+msgstr "Pevný pomer"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:231
 msgid "Flip"
-msgstr "Umdrehen"
+msgstr "Otočiť"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:1555
+#: lib/Horde/Core/ActiveSync/Driver.php:1556
 msgid "Forwarded message"
-msgstr "Weitergeleitete Nachricht"
+msgstr "Preposlaná správa"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:1555
+#: lib/Horde/Core/ActiveSync/Driver.php:1556
 #, php-format
 msgid "Forwarded message from %s"
-msgstr "Weitergeleitete Nachricht von %s"
+msgstr "Preposlaná správa od %s"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:97
 msgid "Fr"
-msgstr "Fr"
+msgstr "Pia"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:115
 msgid "Friday"
-msgstr "Freitag"
+msgstr "Piatok"
 
 #: lib/Horde/Core/Prefs/Ui.php:667 lib/Horde/Core/Topbar.php:135
 msgid "Global Preferences"
-msgstr "Allgemeine Einstellungen"
+msgstr "Všeobecné nastavenia"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1311
 msgid "Google Maps"
@@ -438,80 +440,80 @@ msgstr "Google Maps"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:237
 msgid "Grayscale"
-msgstr "Graustufen"
+msgstr "Odtiene šedej"
 
 #: lib/Horde/Core/Perms/Ui.php:372
 msgid "Groups"
-msgstr "Gruppen"
+msgstr "Skupiny"
 
 #: lib/Horde/Core/Perms/Ui.php:285
 msgid "Guest Permissions"
-msgstr "Gastrechte"
+msgstr "Práva anonymných používateľov"
 
 #: lib/Horde/Core/Topbar.php:181 lib/Horde/Help.php:253 lib/Horde/Help.php:254
 msgid "Help"
-msgstr "Hilfe"
+msgstr "Pomocník"
 
 #: lib/Horde/Help.php:58
 msgid "Help file not found."
-msgstr "Hilfedatei nicht gefunden."
+msgstr "Súbor s pomocou nebol nájdený."
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:199
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:263
 msgid "Home Address"
-msgstr "Adresse privat"
+msgstr "Domáca adresa"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:312
 msgid "Home Phone"
-msgstr "Telefon privat"
+msgstr "Telefón domov"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:2471
+#: lib/Horde/Core/ActiveSync/Driver.php:2468
 msgid "Inbox"
-msgstr "Posteingang"
+msgstr "Prijaté správy"
 
 #: lib/Horde/Core/Perms/Ui.php:311
 msgid "Individual Users"
-msgstr "Einzelne Benutzer"
+msgstr "Jednotliví používatelia"
 
 #: lib/Horde/Core/Alarm/Handler/Notify.php:54
 msgid "Inline"
-msgstr "Im Text"
+msgstr "V prehliadači"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:211
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:275
 msgid "International Address"
-msgstr "Internationale Adresse"
+msgstr "Medzinárodná adresa"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:752
 #: lib/Horde/Core/Ui/VarRenderer/TablesetHtml.php:26
 msgid "Invert selection"
-msgstr "Auswahl umkehren"
+msgstr "Invertovať výber"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:128
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:435
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:485
 msgid "January"
-msgstr "Januar"
+msgstr "Január"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:134
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:441
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:491
 msgid "July"
-msgstr "Juli"
+msgstr "Júl"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:133
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:440
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:490
 msgid "June"
-msgstr "Juni"
+msgstr "Jún"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:264
 msgid "Keep original?"
-msgstr "Original beibehalten?"
+msgstr "Ponechať originál?"
 
 #: lib/Horde/Core/Smartmobile/View/Helper.php:67
 msgid "Log out"
-msgstr "Abmelden"
+msgstr "Odhlásiť sa"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:434
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:484
@@ -521,112 +523,111 @@ msgstr "MM"
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1237
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1286
 msgid "MapQuest map"
-msgstr "MapQuest-Karte"
+msgstr "Mapa MapQuest"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:130
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:437
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:487
 msgid "March"
-msgstr "März"
+msgstr "Marec"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:132
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:439
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:489
 msgid "May"
-msgstr "Mai"
+msgstr "Máj"
 
 #: lib/Horde/Core/Notification/Event/Status.php:99
 msgid "Message"
-msgstr "Nachricht"
+msgstr "Správa"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:234
 msgid "Mirror"
-msgstr "Spiegeln"
+msgstr "Zrkadlovo obrátiť"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:93
 msgid "Mo"
-msgstr "Mo"
+msgstr "Pon"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:111
 msgid "Monday"
-msgstr "Montag"
+msgstr "Pondelok"
 
 #: lib/Horde/Core/Block/Layout/Manager.php:565
 msgid "Move Down"
-msgstr "Nach unten"
+msgstr "Presunúť dolu"
 
 #: lib/Horde/Core/Block/Layout/Manager.php:569
 msgid "Move Left"
-msgstr "Nach links"
+msgstr "Presunúť vľavo"
 
 #: lib/Horde/Core/Block/Layout/Manager.php:573
 msgid "Move Right"
-msgstr "Nach rechts"
+msgstr "Presunúť vpravo"
 
 #: lib/Horde/Core/Block/Layout/Manager.php:561
 msgid "Move Up"
-msgstr "Nach oben"
+msgstr "Presunúť hore"
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:101
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:605
 msgid "Move down"
-msgstr "Nach unten"
+msgstr "Presunúť dolu"
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:100
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:604
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:605
 msgid "Move up"
-msgstr "Nach oben"
+msgstr "Presunúť hore"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1206
 msgid "Multimap UK map"
-msgstr "Multimap-UK-Karte"
+msgstr "Multimap UK map"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:148
 msgid "Name"
-msgstr "Name"
+msgstr "Meno"
 
 #: lib/Horde/Core/Ui/Pager.php:118
 msgid "Next>"
-msgstr "Weiter>"
+msgstr "Ďalej>"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1056
 msgid "No"
-msgstr "Nein"
+msgstr "Nie"
 
 #: lib/Horde/PageOutput.php:759
 msgid "No Alerts"
-msgstr "Keine Meldungen"
+msgstr "Žiadne upozornenia"
 
 #: lib/Horde/Core/Factory/Twitter.php:17
 msgid "No OAuth Key or Secret found for the Twitter API"
-msgstr "OAuth-Schlüssel oder -Passwort für die Twitter-API nicht gefunden"
+msgstr "Nebol nájdený kľúč OAuth alebo secret  pre API Twitter"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:548
 msgid "No Sound"
-msgstr "Kein Ton"
+msgstr "Bez zvuku"
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:234
 msgid "No address book selected."
-msgstr "Kein Adressbuch ausgewählt."
+msgstr "Žiaden adresár nebol vybraný."
 
 #: lib/Horde/Core/Perms/Ui.php:209
 msgid "No children can be added to this permission."
-msgstr ""
-"Unterhalb dieser Ebene können keine weiteren Unterrechte hinzugefügt werden."
+msgstr "K tomuto právu nemožno pridať žiadne podriadené práva."
 
-#: lib/Horde.php:489
+#: lib/Horde.php:497
 #, php-format
 msgid "No configuration information specified for %s."
-msgstr "Für %s wurden keine Konfigurationsinformationen angegeben."
+msgstr "Pre %s nebola určená konfigurácia."
 
-#: lib/Horde/Core/ActiveSync/Driver.php:1585
+#: lib/Horde/Core/ActiveSync/Driver.php:1586
 msgid "No message body text"
-msgstr "Kein Nachrichtentext"
+msgstr "Žiaden text v tele správy"
 
 #: lib/Horde/Core/Ajax/Application/Handler/Email.php:40
 msgid "No valid email address found"
-msgstr "Keine gültige E-Mail-Adresse gefunden"
+msgstr "Nebola nájdená žiadna platná e-mailová adresa"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1064
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1074
@@ -634,16 +635,16 @@ msgstr "Keine gültige E-Mail-Adresse gefunden"
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1102
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1119
 msgid "No values"
-msgstr "Keine Werte"
+msgstr "Žiadne hodnoty"
 
-#: lib/Horde/Registry.php:260
+#: lib/Horde/Registry.php:267
 msgid "Not an admin"
-msgstr "Kein Administrator"
+msgstr "Nie je admin"
 
 #: lib/Horde/Core/ActiveSync/Driver.php:143
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:377
 msgid "Notes"
-msgstr "Notizen"
+msgstr "Poznámky"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:138
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:445
@@ -663,7 +664,7 @@ msgstr "Objekt"
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:444
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:494
 msgid "October"
-msgstr "Oktober"
+msgstr "Október"
 
 #: lib/Horde/Core/Ajax/Imple/InPlaceEditor.php:58
 msgid "Ok"
@@ -671,163 +672,163 @@ msgstr "Ok"
 
 #: lib/Horde/Core/ActiveSync/Connector.php:670
 msgid "Out Of Office"
-msgstr "Abwesenheit"
+msgstr "Mimo pracovisko"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:219
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:283
 msgid "Parcel Address"
-msgstr "Paketadresse"
+msgstr "Adresa pre balíky"
 
 #: lib/Horde/Core/Perms/Ui.php:209
 msgid "Permission"
-msgstr "Rechte"
+msgstr "Právo"
 
-#: lib/Horde/Registry.php:313
+#: lib/Horde/Registry.php:319
 msgid "Permission denied."
-msgstr "Zugriff verweigert."
+msgstr "Oprávnenie odopreté."
 
 #: lib/Horde/Core/Perms/Ui.php:214 lib/Horde/Core/Perms/Ui.php:224
 msgid "Permissions"
-msgstr "Rechte"
+msgstr "Práva"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:321
 msgid "Phone"
-msgstr "Telefon"
+msgstr "Telefón"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:167
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:175
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:179
 msgid "Photo"
-msgstr "Foto"
+msgstr "Fotografia"
 
 #: lib/Horde/Core/Alarm/Handler/Notify.php:74
 msgid "Play a sound?"
-msgstr "Einen Klang abspielen?"
+msgstr "Prehrať zvuk?"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:215
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:279
 msgid "Postal Address"
-msgstr "Postadresse"
+msgstr "Poštová adresa"
 
 #: lib/Horde/Core/Topbar.php:123
 msgid "Preferences"
-msgstr "Benutzereinstellungen"
+msgstr "Nastavenia"
 
 #: lib/Horde/Core/Prefs/Ui.php:670
 #, php-format
 msgid "Preferences for %s"
-msgstr "Benutzereinstellungen für %s"
+msgstr "Nastavenia pre %s"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:223
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:287
 msgid "Preferred Address"
-msgstr "Bevorzugte Adresse"
+msgstr "Preferovaná adresa"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1535
 msgid "Preview"
-msgstr "Vorschau"
+msgstr "Ukážka"
 
 #: lib/Horde/Core/Topbar.php:169
 msgid "Problem"
-msgstr "Probleme"
+msgstr "Problém"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:1578
+#: lib/Horde/Core/ActiveSync/Driver.php:1579
 msgid "Quoted"
-msgstr "Zitat"
+msgstr "Citovaný"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:1578
+#: lib/Horde/Core/ActiveSync/Driver.php:1579
 #, php-format
 msgid "Quoting %s"
-msgstr "Zitat von %s"
+msgstr "Citát %s"
 
 #: lib/Horde/Core/Block/Layout.php:117
 msgid "Really delete this block?"
-msgstr "Diesen Block wirklich löschen?"
+msgstr "Naozaj zmazať tento blok?"
 
 #: lib/Horde/Core/Block/Layout.php:114 lib/Horde/Core/Block/Layout.php:118
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:201
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:630
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Odstrániť"
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:97
 msgid "Remove source"
-msgstr "Quelle entfernen"
+msgstr "Odstrániť zdroj"
 
-#: lib/Horde.php:498
+#: lib/Horde.php:506
 #, php-format
 msgid "Required \"%s\" not specified in %s configuration."
-msgstr "\"%s\" wurde in der Konfiguration für %s nicht angegeben."
+msgstr "V konfigurácii %s nie je zadaná požadovaná položka \"%s\"."
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:219
 msgid "Reset"
-msgstr "Zurücksetzen"
+msgstr "Vymazať formulár"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:364
 msgid "Role"
-msgstr "Rolle"
+msgstr "Rola"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:225
 msgid "Rotate 180"
-msgstr "Um 180° drehen"
+msgstr "Otočiť o 180"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:222
 msgid "Rotate Left"
-msgstr "Nach links drehen"
+msgstr "Otočiť vľavo"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:228
 msgid "Rotate Right"
-msgstr "Nach rechts drehen"
+msgstr "Otočiť vpravo"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:98
 msgid "Sa"
-msgstr "Sa"
+msgstr "So"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:116
 msgid "Saturday"
-msgstr "Samstag"
+msgstr "Sobota"
 
-#: lib/Horde/Registry.php:212
+#: lib/Horde/Registry.php:219
 msgid "Script must be run from the command line"
-msgstr "Das Skript muss von der Kommandozeile ausgeführt werden"
+msgstr "Skript musí byť spustený cez príkazový riadok"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:531
 msgid "Select a date"
-msgstr "Datum auswählen"
+msgstr "Vyberte dátum"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:750
 #: lib/Horde/Core/Ui/VarRenderer/TablesetHtml.php:24
 msgid "Select all"
-msgstr "Alle auswählen"
+msgstr "Vyberte všetko"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:945
 msgid "Select an object"
-msgstr "Objekt auswählen"
+msgstr "Vyberte objekt"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:751
 #: lib/Horde/Core/Ui/VarRenderer/TablesetHtml.php:25
 msgid "Select none"
-msgstr "Keinen auswählen"
+msgstr "Nevybrať nič"
 
 #: lib/Horde/Core/Prefs/Ui.php:840
 msgid "Select the identity you want to change:"
-msgstr "Wählen Sie die Identität, die Sie ändern möchten:"
+msgstr "Vyberte identitu, ktorú chcete zmeniť:"
 
 #: lib/Horde/PageOutput.php:748
 msgid "Select..."
-msgstr "Auswählen..."
+msgstr "vybrať..."
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:197
 msgid "Selected address books:"
-msgstr "Ausgewählte Adressbücher:"
+msgstr "Vybrané adresáre:"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1184
 msgid "Send SMS"
-msgstr "SMS verschicken"
+msgstr "Poslať SMS"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:2466
+#: lib/Horde/Core/ActiveSync/Driver.php:2463
 msgid "Sent"
-msgstr "Gesendet"
+msgstr "Odoslané"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:136
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:443
@@ -837,57 +838,57 @@ msgstr "September"
 
 #: lib/Horde/Core/Block/Layout/Manager.php:536
 msgid "Shrink"
-msgstr "Verkleinern"
+msgstr "Zmenšiť"
 
 #: lib/Horde/Core/Auth/Signup/Form.php:31
 msgid "Sign up"
-msgstr "Registrieren"
+msgstr "Zaregistrovať sa"
 
 #: lib/Horde/Core/Auth/Signup/Form.php:29
 msgid "Sign up for an account"
-msgstr "Neues Konto registrieren"
+msgstr "Získať prístupový účet"
 
 #: lib/Horde/Core/Notification/Event/Status.php:76
 msgid "Snooze..."
-msgstr "Erinnern in..."
+msgstr "Odložiť..."
 
 #: lib/Horde/Core/Ui/JsCalendar.php:92
 msgid "Su"
-msgstr "So"
+msgstr "Ne"
 
 #: lib/Horde/Core/Notification/Event/Status.php:104
 msgid "Success"
-msgstr "Erfolg"
+msgstr "Úspech"
 
 #: lib/Horde/Config.php:294
 #, php-format
 msgid "Successfully saved the backup configuration file %s."
-msgstr "Backup der Konfiguration %s erfolgreich gespeichert."
+msgstr "Záložný súbor s konfiguráciou %s bol úspešne uložený."
 
 #: lib/Horde/Config.php:304
 #, php-format
 msgid "Successfully wrote %s"
-msgstr "%s wurde erfolgreich gespeichert"
+msgstr "Úspešne uložené: %s"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:110
 msgid "Sunday"
-msgstr "Sonntag"
+msgstr "Nedeľa"
 
 #: lib/Horde/Core/ActiveSync/Driver.php:142
 msgid "Tasks"
-msgstr "Aufgaben"
+msgstr "Úlohy"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:96
 msgid "Th"
-msgstr "Do"
+msgstr "Št"
 
 #: lib/Horde/Core/Factory/History.php:12
 msgid "The History system is disabled."
-msgstr "Die Chronik steht nicht zur Verfügung."
+msgstr "Systém histórie je vypnutý."
 
 #: lib/Horde/PageOutput.php:744
 msgid "The connection to the server has been restored."
-msgstr "Die Verbindung zum Server wurde wiederhergestellt."
+msgstr "Spojenie so serverom bolo opätovne nadviazané."
 
 #: lib/Horde/Core/Prefs/Identity.php:112
 #, php-format
@@ -895,50 +896,45 @@ msgid ""
 "The email address %s has been added to your identities. You can close this "
 "window now."
 msgstr ""
-"Die E-Mail-Adresse %s wurde zu Ihren Identitäten hinzugefügt. Sie können "
-"dieses Fenster jetzt schließen."
+"E-mailová adresa %s bola pridaná do Vaších identít. Toto okno môžete zavrieť."
 
-#: lib/Horde.php:272
+#: lib/Horde.php:280
 msgid "The encryption features require a secure web connection."
-msgstr ""
-"Die Verschlüsselungsfunktionen benötigen eine sichere Serververbindung."
+msgstr "Šifrovanie vyžaduje bezpečné pripojenie (https)."
 
-#: lib/Horde.php:499
+#: lib/Horde.php:507
 #, php-format
 msgid "The file %s should contain a %s setting."
-msgstr "Die Datei %s sollte einen %s Eintrag enthalten."
+msgstr "Súbor %s by mal obsahovať nastavenie %s."
 
-#: lib/Horde.php:490
+#: lib/Horde.php:498
 #, php-format
 msgid "The file %s should contain some %s settings."
-msgstr "Die Datei %s sollte einige %s Einträge enthalten."
+msgstr "Súbor %s by mal obsahovať niektoré nastavenia %s."
 
 #: lib/Horde/Registry.php:2616
 #, php-format
 msgid "The following applications encountered errors removing user data: %s"
 msgstr ""
-"Bei den folgenden Anwendungen sind Fehler aufgetreten, während die "
-"Benutzerdaten entfernt wurden: %s"
+"Tieto aplikácie ohlásili chyby pri odstraňovaní používateľských dát: %s"
 
-#: lib/Horde/ErrorHandler.php:100
+#: lib/Horde/ErrorHandler.php:108
 msgid ""
 "The full error message is logged in Horde's log file, and is shown below "
 "only to administrators. Non-administrative users will not see error details."
 msgstr ""
-"Die vollständige Fehlermeldung wurde in Hordes Logdatei geschrieben und für "
-"Administratoren weiter unten ausgegeben. Benutzer, die keine Administratoren "
-"sind, bekommen diese Details nicht zu sehen."
+"Úplná správa o chybe bola zaznamenaná do logového súboru Horde a je nižšie "
+"zobrazená iba administrátorom. Ostatným užívateľom podrobnosti chyby "
+"zobrazené nie sú."
 
 #: lib/Horde/Core/Prefs/Ui.php:927
 #, php-format
 msgid "The identity \"%s\" has been deleted."
-msgstr "Die Identität \"%s\" wurde gelöscht."
+msgstr "Identita \"%s\" bola vymazaná."
 
 #: lib/Horde/Core/Prefs/Ui.php:975
 msgid "The new from address can't be verified, try again later: "
-msgstr ""
-"Die neue E-Mail-Adresse kann zur Zeit nicht bestätigt werden, probieren Sie "
-"es später noch einmal: "
+msgstr "Nová adresa odosielateľa nemohla byť overená, skúste neskôr: "
 
 #: lib/Horde/Core/Factory/Prefs.php:227
 #, php-format
@@ -946,25 +942,24 @@ msgid ""
 "The preference \"%s\" could not be saved because its data exceeds the "
 "maximum allowable size"
 msgstr ""
-"Die Benutzereinstellung \"%s\" konnte nicht gespeichert werden, weil ihre "
-"Daten die maximal erlaubte Größe überschreiten"
+"Nastavenie \"%s\" nemohlo byť uložené, lebo jeho dáta presahujú maximálnu "
+"povolenú veľkosť"
 
 #: lib/Horde/Core/Factory/Prefs.php:199
 msgid ""
 "The preferences backend is currently unavailable and your preferences have "
 "not been loaded. You may continue to use the system with default preferences."
 msgstr ""
-"Das System für die Benutzereinstellungen ist zur Zeit nicht verfügbar, Ihre "
-"Einstellungen wurden nicht geladen. Sie können aber fortfahren mit den "
-"Standardeinstellungen des Systems."
+"Backend nastavení je momentálne nedostupný a Vaše nastavenia s anenahrali. "
+"Môžete pokračovať s použitím štandardných systémových nastavení."
 
 #: lib/Horde/Core/Prefs/Identity.php:78 lib/Horde/Core/Prefs/Identity.php:84
 msgid "There are no email addresses to confirm."
-msgstr "Keine zu bestätigende E-Mail-Adressen gefunden."
+msgstr "Žiadne e-mailové adresy na potvrdenie."
 
 #: lib/Horde/Core/Prefs/Ui.php:458
 msgid "There are no preferences available for this application."
-msgstr "Für diese Anwendung gibt es keine Benutzereinstellungen."
+msgstr "Pre túto aplikáciu nie sú k dispozícii žiadne nastavenia."
 
 #: lib/Horde/PageOutput.php:745
 msgid ""
@@ -972,154 +967,154 @@ msgid ""
 "may be temporarily unavailable or network problems may be interrupting your "
 "session. You will not see any updates until the connection is restored."
 msgstr ""
-"Es konnte seit mehreren Minuten kein Kontakt zum Server hergestellt werden. "
-"Vielleicht ist der Server vorübergehend nicht erreichbar, oder es sind "
-"Netzwerkstörungen aufgetreten. Es werden keine Aktualisierungen "
-"durchgeführt, solange die Verbindung nicht wiederhergestellt werden konnte."
+"So serverom sa už niekoľko minút nepodarilo nadviazať kontakt. Server môže "
+"byť dočasne nedostupný alebo nastali problémy so sieťou. Pokiaľ nedôjde k "
+"opätovnému nadviazaniu spojenie, nebudú vykonané žiadne aktualizácie."
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:117
 msgid "There was an error importing the contact data:"
-msgstr "Beim Importieren der Kontaktdaten ist ein Fehler aufgetreten:"
+msgstr "Nastala chyba pri importe údajov kontaktu:"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:103
 msgid "There was an error reading the contact data."
-msgstr "Beim Lesen der Kontaktdaten ist ein Fehler aufgetreten."
+msgstr "Nastala chyba pri čítaní údajov o kontakte."
 
 #: lib/Horde/Core/Prefs/Ui.php:372
 msgid "There were errors encountered while updating your preferences."
-msgstr "Beim Speichern Ihrer Einstellungen sind Fehler aufgetreten."
+msgstr "Pri aktualizovaní Vaších nastavení sa vyskytli chyby."
 
 #: lib/Horde/PageOutput.php:758
 msgid "This is the notification log."
-msgstr "Hier werden alte Meldungen angezeigt."
+msgstr "Toto je záznam upozornení."
 
-#: lib/Horde/Registry.php:499
+#: lib/Horde/Registry.php:505
 msgid "This system is currently deactivated."
-msgstr "Dieses System ist zur Zeit deaktiviert."
+msgstr "Systém je momentálne deaktivovaný."
 
 #: lib/Horde/Core/Prefs/Ui.php:335
 msgid "This value must be a number."
-msgstr "Dieser Wert muss eine Zahl sein."
+msgstr "Táto hodnota musí byť číselná."
 
 #: lib/Horde/Core/Prefs/Ui.php:337
 msgid "This value must be non-zero."
-msgstr "Dieser Wert darf nicht 0 sein."
+msgstr "Hodnota musí byť vyššia ako nula."
 
 #: lib/Horde/Core/Ui/JsCalendar.php:114
 msgid "Thursday"
-msgstr "Donnerstag"
+msgstr "Štvrtok"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:359
 msgid "Title"
-msgstr "Titel"
+msgstr "Titulok"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:723
 msgid ""
 "To select multiple items, hold down the Control (PC) or Command (Mac) key "
 "while clicking."
 msgstr ""
-"Halten Sie beim Klicken Strg bzw. (PC) Command (Mac) gedrückt, um mehrere "
-"Einträge auszuwählen."
+"Pre výber viacerých položiek držte počas klikania klávesu Control (PC) alebo "
+"Command (Mac)."
 
 #: lib/Horde/Core/Topbar.php:158
 msgid "Toggle Alerts Log"
-msgstr "Alte Meldungen ein-/ausblenden"
+msgstr "Zapnúť / Vypnúť log upozornení"
 
-#: lib/Horde/Core/ActiveSync/Driver.php:2461
+#: lib/Horde/Core/ActiveSync/Driver.php:2458
 msgid "Trash"
-msgstr "Papierkorb"
+msgstr "Kôš"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:94
 msgid "Tu"
-msgstr "Di"
+msgstr "Ut"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:112
 msgid "Tuesday"
-msgstr "Dienstag"
+msgstr "Utorok"
 
 #: lib/Horde/Core/Auth/Signup/Form.php:45
 #: lib/Horde/Core/Auth/Signup/Form.php:59
 msgid "Type your password twice to confirm"
-msgstr "Geben Sie das Passwort zweimal zur Bestätigung ein"
+msgstr "Pre potvrdenie zadajte heslo dvakrát"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:383
 msgid "URL"
-msgstr "Homepage"
+msgstr "URL"
 
 #: lib/Horde/Core/Perms/Ui.php:257
 msgid "Update"
-msgstr "Aktualisierung"
+msgstr "Aktualizácia"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:193
 msgid "Upload"
-msgstr "Hochladen"
+msgstr "Nahrať"
 
 #: lib/Horde/Core/Auth/Signup/Sql.php:95
 #, php-format
 msgid "User \"%s\" does not exist."
-msgstr "Das Benutzer \"%s\" existiert nicht."
+msgstr "Používateľ \"%s\" neexistuje"
 
 #: lib/Horde/Core/Prefs/Ui.php:642
 msgid "User Preferences"
-msgstr "Benutzereinstellungen"
+msgstr "Používateľské nastavenia"
 
 #: lib/Horde/Core/Auth/Signup/Base.php:116
 #, php-format
 msgid "Username \"%s\" already exists."
-msgstr "Der Benutzername \"%s\" existiert bereits."
+msgstr "Používateľské meno \"%s\" už existuje."
 
 #: lib/Horde/Core/Notification/Event/Status.php:109
 msgid "Warning"
-msgstr "Warnung"
+msgstr "Varovanie"
 
 #: lib/Horde/Core/Ui/JsCalendar.php:95
 msgid "We"
-msgstr "Mi"
+msgstr "St"
 
 #: lib/Horde/Core/Factory/Weather.php:16
 msgid "Weather support not configured."
-msgstr "Wetter-Schnittstelle ist nicht konfiguriert."
+msgstr "Podpora pre zobrazovanie počasia nie je nakonfigurovaná."
 
 #: lib/Horde/Core/Ui/JsCalendar.php:113
 msgid "Wednesday"
-msgstr "Mittwoch"
+msgstr "Streda"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1213
 msgid "Whereis Australia map"
-msgstr "Whereis-Australia-Karte"
+msgstr "Whereis mapa Austrálie"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:203
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:267
 msgid "Work Address"
-msgstr "Adresse geschäftlich"
+msgstr "Adresa do práce"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:315
 msgid "Work Phone"
-msgstr "Telefon geschäftlich"
+msgstr "Telefón do práce"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:447
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:503
 msgid "YYYY"
-msgstr "JJJJ"
+msgstr "YYYY"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1257
 msgid "Yahoo! map"
-msgstr "Yahoo! Karte"
+msgstr "Yahoo! map"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:1056
 msgid "Yes"
-msgstr "Ja"
+msgstr "Ano"
 
 #: lib/Horde/Core/Block/Layout/Manager.php:220
 #, php-format
 msgid "You are not allowed to create more than %d block."
 msgid_plural "You are not allowed to create more than %d blocks."
-msgstr[0] "Sie dürfen nicht mehr als %d Block erstellen."
-msgstr[1] "Sie dürfen nicht mehr als %d Blöcke erstellen."
+msgstr[0] "Nemáte právo vytvoriť viac ako %d blok."
+msgstr[1] "Nemáte právo vytvoriť viac ako %d bloky."
+msgstr[2] "Nemáte právo vytvoriť viac ako %d blokov."
 
 #: lib/Horde/Registry.php:2583
 msgid "You are not allowed to remove user data."
-msgstr "Sie dürfen keine Benutzerdaten löschen."
+msgstr "Nemáte oprávnenie na vymazanie používateľských údajov."
 
 #: lib/Horde/Core/Auth/Application.php:728
 msgid ""
@@ -1127,16 +1122,15 @@ msgid ""
 "least Internet Explorer 8. If you already run IE8 or higher, disable the "
 "Compatibility View. Minimal view will be used until you upgrade your browser."
 msgstr ""
-"Sie benutzen eine alte, nicht mehr unsterstützte Version des Internet "
-"Explorers. Sie benötigen mindestens Internet Explorer 8. Wenn Sie bereits "
-"den Internet Explorer 8 oder höher verwenden, deaktivieren Sie bitte die "
-"Kompatibilitätsansicht. Solange Sie den Browser nicht aktualisieren, wird "
-"die Minimalansicht angzeigt."
+"Používate starú, nepodporovanú verziu prehliadača Internet Explorer. "
+"Potrebujete aspoň Internet Explorer 8. Ak už používate IE8, vypnite "
+"Compatibility View. Pokiaľ prehliadač neaktualizujete, bude dostupný len "
+"minimalistický režim."
 
 #: lib/Horde/PageOutput.php:746
 #, php-format
 msgid "You can snooze it for %s or %s dismiss %s it entirely"
-msgstr "Sie können ihn für %s auschalten oder dauerhaft %s abschalten %s"
+msgstr "Možete odložiť o %s alebo viac %s nepripomínať %s"
 
 #: lib/Horde/Core/Prefs/Identity.php:44
 #, php-format
@@ -1149,77 +1143,75 @@ msgid ""
 "\n"
 "If you don't know what this message means, you can delete it."
 msgstr ""
-"Sie möchten die E-Mail-Adresse \"%s\" zu der Liste Ihrer persönlichen "
-"Adressen hinzufügen.\n"
+"Požiadali ste o pridanie e-mailovej adresy \"%s\" do zoznamu Vaších osobných "
+"e-mailových adries.\n"
 "\n"
-"Gehen Sie zu dem folgenden Link, um zu bestätigen, dass dies wirklich Ihre "
-"Adresse ist:\n"
+"Kliknite na nasledujúci odkaz pre potvrdenie, že je to naozaj Vaša adresa:\n"
 "%s\n"
 "\n"
-"Wenn Sie mit diese Nachricht nichts anfangen können, bitte löschen."
+"Ak neviete, čo táto správa znamená, môžete ju vymazať."
 
 #: lib/Horde/Core/Factory/Vfs.php:72
 msgid "You must configure a VFS backend."
-msgstr "Sie müssen ein VFS-Backend konfigurieren."
+msgstr "Musíte nastaviť backend pre VFS."
 
 #: lib/Horde/Core/Prefs/Ui/Widgets.php:400
 #, php-format
 msgid "You must provide a setting for \"%s\"."
-msgstr "Sie müssen eine Einstellung für \"%s\" angeben."
+msgstr "Musíte zadať nastavenie pre \"%s\"."
 
 #: lib/Horde/Core/Auth/Application.php:695
 msgid "Your browser does not support javascript. Using minimal view instead."
 msgstr ""
-"Ihr Browser unterstützt kein JavaScript. Es wird stattdessen die "
-"Minimalansicht angezeigt."
+"Váš prehliadač nepodporuje javascript. Použije sa minimalistický režim."
 
 #: lib/Horde/Core/Auth/Application.php:703
 msgid ""
 "Your browser does not support the dynamic view. Using basic view instead."
 msgstr ""
-"Ihr Browser unterstützt die dynamische Ansicht nicht. Es wird stattdessen "
-"die einfache Ansicht angezeigt."
+"Váš prehliadač je na zobrazenie dynamického režimu príliš starý. Použije sa "
+"základný režim."
 
 #: lib/Horde/Core/Auth/Application.php:706
 #: lib/Horde/Core/Auth/Application.php:714
 msgid ""
 "Your browser does not support the dynamic view. Using minimal view instead."
 msgstr ""
-"Ihr Browser unterstützt die dynamische Ansicht nicht. Es wird stattdessen "
-"die Minimalansicht angezeigt."
+"Váš prehliadač je na zobrazenie dynamického režimu príliš starý. Použije sa "
+"minimalistický režim."
 
 #: lib/Horde/Core/Prefs/Ui.php:943
 msgid "Your default identity has been changed."
-msgstr "Ihre Standardidentität wurde geändert."
+msgstr "Vaša prednastavená identita bola zmenená."
 
 #: lib/Horde/Core/Prefs/Ui.php:839
 msgid "Your default identity:"
-msgstr "Ihre Standardidentität:"
+msgstr "Prednastavená identita:"
 
 #: lib/Horde/Core/Prefs/Ui.php:382
 msgid "Your preferences have been updated for the duration of this session."
-msgstr "Ihre Einstellungen wurden für die Dauer dieser Sitzung gespeichert."
+msgstr "Vaše nastavenia boli aktualizované pre túto reláciu."
 
 #: lib/Horde/Core/Prefs/Ui.php:384
 msgid "Your preferences have been updated."
-msgstr "Ihre Einstellungen wurden gespeichert."
+msgstr "Vaše nastavenia boli aktualizované."
 
 #: lib/Horde/Core/Text/Filter/Highlightquotes.php:52
 msgid "[Hide Quoted Text]"
-msgstr "[Zitattext verstecken]"
+msgstr "[Skryť citovaný text]"
 
 #: lib/Horde/Core/Mime/Viewer/Vcard.php:142
 msgid "[No Label]"
-msgstr "[Kein Name]"
+msgstr "[bez nadpisu]"
 
 #: lib/Horde/Core/Text/Filter/Highlightquotes.php:51
 #, php-format
 msgid "[Show Quoted Text - %d lines]"
-msgstr "[Zitattext anzeigen - %d Zeilen]"
+msgstr "[Zobraziť citovaný text - %d riadkov]"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:249
 msgid "h:"
-msgstr "h:"
+msgstr "v:"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:391
 msgid "hh"
@@ -1227,7 +1219,7 @@ msgstr "hh"
 
 #: lib/Horde/PageOutput.php:686
 msgid "loading"
-msgstr "lade"
+msgstr "nahráva sa"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:402
 msgid "mm"
@@ -1243,4 +1235,4 @@ msgstr "vCard"
 
 #: lib/Horde/Core/Ui/VarRenderer/Html.php:241
 msgid "w:"
-msgstr "b:"
+msgstr "š:"

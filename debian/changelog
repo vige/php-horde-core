@@ -1,6 +1,7 @@
-php-horde-core (2.8.0-1) unstable; urgency=low
+php-horde-core (2.8.0-1) UNRELEASED; urgency=low
 
   * New upstream version 2.8.0
+    - depends on Horde_Smtp (Closes: #721603)
 
  -- Mathieu Parent <sathieu@debian.org>  Tue, 17 Sep 2013 22:42:41 +0200
 

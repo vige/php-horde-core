@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2013-10-21</date>
- <time>10:47:06</time>
+ <date>2013-10-28</date>
+ <time>12:02:27</time>
  <version>
-  <release>2.10.1</release>
+  <release>2.10.2</release>
   <api>2.10.0</api>
  </version>
  <stability>
@@ -40,9 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Ensure Bcc is removed from headers when sent via ActiveSync (Bug #12771).
-* [mjr] Fix calculating calendars to use for SOFTDELETE commands in certain configurations (Bug #12765).
-* [mms] Upgrade jQuery Mobile to v1.3.2/jQuery Core to v1.9.1.
+* [mms] Fix prototype.js issue in IE 9 regarding array iteration in a parent window.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -247,7 +245,7 @@
    <file baseinstalldir="/" md5sum="1e648e80c00009971401dbc08f99f0ff" name="js/popup.js" role="horde" />
    <file baseinstalldir="/" md5sum="2a4d2207182f8adc3bfb91ec46daf682" name="js/prefs.js" role="horde" />
    <file baseinstalldir="/" md5sum="e2326605473990009a1ae6daf27f2901" name="js/prettyautocomplete.js" role="horde" />
-   <file baseinstalldir="/" md5sum="99875a6c637c6861a815fb47a6290589" name="js/prototype.js" role="horde" />
+   <file baseinstalldir="/" md5sum="e69d209a11d4d1ff7f2e79e46d3aee47" name="js/prototype.js" role="horde" />
    <file baseinstalldir="/" md5sum="e3a02cd85b1bea48cafd970924ec849e" name="js/redbox.js" role="horde" />
    <file baseinstalldir="/" md5sum="1924f8becd05283e288d75776db36d0b" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="f8a48c626b2b53f19d8580cfc9bce41a" name="js/sorter.js" role="horde" />
@@ -260,7 +258,7 @@
    <file baseinstalldir="/" md5sum="c1c1fded6378f177161df9bbc1f9b820" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="cafea45243d58aa25e8c2e49c8f7c443" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="971e512e94aabbefb4d184078523145e" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="1c55d46163d574e8307b39be19701b46" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="1f464d3e8f9c46b1f9233037dedf76a0" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
    <file baseinstalldir="/" md5sum="170e9b9e1befd1e4e03cb32220f1438c" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="a9ca9131cc43c77a6ae6b4a02cb665d3" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="6502d799f9950bb569261af17d4c8a81" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -2974,6 +2972,21 @@
 * [mjr] Ensure Bcc is removed from headers when sent via ActiveSync (Bug #12771).
 * [mjr] Fix calculating calendars to use for SOFTDELETE commands in certain configurations (Bug #12765).
 * [mms] Upgrade jQuery Mobile to v1.3.2/jQuery Core to v1.9.1.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.10.2</release>
+    <api>2.10.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-10-28</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Fix prototype.js issue in IE 9 regarding array iteration in a parent window.
    </notes>
   </release>
  </changelog>

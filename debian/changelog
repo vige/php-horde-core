@@ -1,3 +1,9 @@
+php-horde-core (2.11.1-1) UNRELEASED; urgency=low
+
+  * New upstream version 2.11.1
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 30 Nov 2013 19:15:00 +0100
+
 php-horde-core (2.10.2-1) unstable; urgency=low
 
   * New upstream version 2.10.2

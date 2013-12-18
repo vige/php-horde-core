@@ -1,3 +1,10 @@
+php-horde-core (2.11.1-2) unstable; urgency=medium
+
+  * Move php-horde-test to suggests, using pkg-php-tools-overrides
+    (Closes: #732466)
+
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 18 Dec 2013 11:37:00 +0100
+
 php-horde-core (2.11.1-1) unstable; urgency=low
 
   * New upstream version 2.11.1

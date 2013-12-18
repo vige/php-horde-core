@@ -3,7 +3,7 @@ Section: php
 Priority: extra
 Maintainer: Horde Maintainers <pkg-horde-hackers@lists.alioth.debian.org>
 Uploaders: Mathieu Parent <sathieu@debian.org>
-Build-Depends: debhelper (>= 8.0.0), pkg-php-tools, pear-horde-channel, php-horde-role
+Build-Depends: debhelper (>= 8.0.0), pkg-php-tools (>= 1~), pear-horde-channel, php-horde-role
 Standards-Version: 3.9.4
 Homepage: http://www.horde.org/
 Vcs-Git: git://anonscm.debian.org/pkg-horde/PEAR/php-horde-core.git
@@ -13,6 +13,7 @@ Package: php-horde-core
 Architecture: all
 Depends: ${misc:Depends}, ${phppear:Debian-Depends}, libjs-jquery-mobile, libjs-jquery, libjs-prototype, libjs-scriptaculous
 Recommends: ${phppear:Debian-Recommends}
+Suggests: php-horde-test
 Breaks: ${phppear:Debian-Breaks}
 Description: ${phppear:summary}
  ${phppear:description}

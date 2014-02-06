@@ -1,3 +1,9 @@
+php-horde-core (2.11.1~fake-1) UNRELEASED; urgency=medium
+
+  * 
+
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 06 Feb 2014 20:03:24 +0100
+
 php-horde-core (2.11.1-2) unstable; urgency=medium
 
   * Move php-horde-test to suggests, using pkg-php-tools-overrides

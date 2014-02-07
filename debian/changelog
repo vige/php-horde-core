@@ -4,13 +4,14 @@ php-horde-core (2.11.1+dfsg0-1) unstable; urgency=medium
     - Update gbp.conf
     - Repack without those libs (Closes: #737454)
     - Remove excanvas in deban/rules
-    - Remove references to embedded libs removed by git-import-orig in package.xml
+    - Remove references to embedded libs removed by git-import-orig in
+      package.xml
     - Don't remove js libs already removed in gbp.conf
   * Update d/watch dversionmangle
   * Updated Standards-Version to 3.9.5: no change
   * Move dh_link calls to to proper file
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 07 Feb 2014 19:31:50 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 07 Feb 2014 19:35:06 +0100
 
 php-horde-core (2.11.1-2) unstable; urgency=medium
 

@@ -1,6 +1,9 @@
-php-horde-core (2.11.1~fake-1) UNRELEASED; urgency=medium
+php-horde-core (2.11.1+dfsg0-1) UNRELEASED; urgency=medium
 
-  * 
+  * Remove all embedded JS libs from orig:
+    - Update gbp.conf
+    - Repack without those libs (Closes: #737454)
+    - Remove excanvas in deban/rules
 
  -- Mathieu Parent <sathieu@debian.org>  Thu, 06 Feb 2014 20:03:24 +0100
 

@@ -24,7 +24,6 @@ var HordeCore = {
 
     alarms: [],
     audios: [],
-    base: null,
     handlers: {},
     jsfiles: [],
     loading: {},
@@ -52,14 +51,18 @@ var HordeCore = {
     onException: function(r, e)
     {
         this.debug('onException', e);
-        this.endLoading(r.opts.loading);
+        if (r.opts) {
+            this.endLoading(r.opts.loading);
+        }
         document.fire('HordeCore:ajaxException', [ r, e ]);
     },
 
     onFailure: function(t, o)
     {
         this.debug('onFailure', t);
-        this.endLoading(t.request.opts.loading);
+        if (t.request.opts) {
+            this.endLoading(t.request.opts.loading);
+        }
         this.notify(this.text.ajax_error, 'horde.error');
         document.fire('HordeCore:ajaxFailure', [ t, o ]);
     },
@@ -145,6 +148,13 @@ var HordeCore = {
             });
         }
 
+        /* This adds both token and SID information to the URL also. Allows
+         * recovery from failure server-side if max-POST limit is exceeded.
+         * jsonhtml param indicates we want a text/html return for error
+         * messages - otherwise, IE8 will download the incoming JSON
+         * instead. */
+        form.action = this.addURLParam(form.action, { jsonhtml: 1 });
+
         form.submit();
     },
 
@@ -186,7 +196,7 @@ var HordeCore = {
 
     sessionId: function(sid)
     {
-        var conf = (this.base || window).HordeCore.conf;
+        var conf = this.baseWindow().HordeCore.conf;
 
         if (conf.SID) {
             if (sid) {
@@ -628,6 +638,19 @@ var HordeCore = {
             : url;
     },
 
+    baseWindow: function()
+    {
+        try {
+            if (parent.opener &&
+                parent.opener.location.host == window.location.host &&
+                parent.opener.HordeCore) {
+                return parent.opener.HordeCore.baseWindow();
+            }
+        } catch (e) {}
+
+        return window;
+    },
+
     initHandler: function(type)
     {
         var h, t;
@@ -730,9 +753,7 @@ var HordeCore = {
 
     onDomLoad: function()
     {
-        /* Determine base window. Need a try/catch block here since, if the
-         * page was loaded by an opener out of this current domain, this will
-         * throw an exception. */
+        // @todo: Remove for H6
         try {
             if (parent.opener &&
                 parent.opener.location.host == window.location.host &&

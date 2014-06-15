@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-06-04</date>
- <time>15:42:10</time>
+ <date>2014-06-10</date>
+ <time>17:24:03</time>
  <version>
-  <release>2.12.0beta2</release>
+  <release>2.12.0beta3</release>
   <api>2.12.0</api>
  </version>
  <stability>
@@ -40,8 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix copying forwarded messages to Sent mail folder when using EAS.
-* [mjr] Fix generating From address when sending email via ActiveSync when personal part must be quoted (Bug# 13208).
+* [mms] Allow any HordeCore AJAX response object to return JSON-HTML output, instead of pure JSON.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -234,7 +233,7 @@
    <file baseinstalldir="/" md5sum="c722c21a43308363a2bf9866a6afa325" name="js/horde-jquery.js" role="horde" />
    <file baseinstalldir="/" md5sum="3a128a2b39cda329b48105e967ae3623" name="js/horde.js" role="horde" />
    <file baseinstalldir="/" md5sum="0ee142afd39d462a77d25838c94555a2" name="js/hordeblocks.js" role="horde" />
-   <file baseinstalldir="/" md5sum="8d33fb45043df114893a65db82503e74" name="js/hordecore.js" role="horde" />
+   <file baseinstalldir="/" md5sum="e02036a2606da781cac3bfcf2590c616" name="js/hordecore.js" role="horde" />
    <file baseinstalldir="/" md5sum="e5d4e650fe27484f4562244ac2d196f3" name="js/hordetree.js" role="horde" />
    <file baseinstalldir="/" md5sum="57c120849ff8e90e3453f1dcff7197dc" name="js/identityselect.js" role="horde" />
    <file baseinstalldir="/" md5sum="d6d87aa14f785a1a9af40e3eb7eac639" name="js/image.js" role="horde" />
@@ -280,11 +279,11 @@
    <file baseinstalldir="/" md5sum="cea9278cfde2f04d66ab00768e2f80f9" name="lib/Horde/Core/Ajax/Imple/InPlaceEditor.php" role="php" />
    <file baseinstalldir="/" md5sum="4e71fec7003910cc92bba5210dcdc101" name="lib/Horde/Core/Ajax/Imple/SpellChecker.php" role="php" />
    <file baseinstalldir="/" md5sum="5fe19cd023dc78ec891817a74af98a28" name="lib/Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" role="php" />
-   <file baseinstalldir="/" md5sum="816a1b042a55b246e8551e88d8d2ca18" name="lib/Horde/Core/Ajax/Response/HordeCore/JsonHtml.php" role="php" />
+   <file baseinstalldir="/" md5sum="8b4338fd2857a9b066de5983185fb5ea" name="lib/Horde/Core/Ajax/Response/HordeCore/JsonHtml.php" role="php" />
    <file baseinstalldir="/" md5sum="967e480972dc59aab57e516514fc63ff" name="lib/Horde/Core/Ajax/Response/HordeCore/NoAuth.php" role="php" />
    <file baseinstalldir="/" md5sum="4035c75a2a56c2048c75d02467bc193b" name="lib/Horde/Core/Ajax/Response/HordeCore/Reload.php" role="php" />
    <file baseinstalldir="/" md5sum="f0161969a43a129b9fb2c02d777cb259" name="lib/Horde/Core/Ajax/Response/HordeCore/SessionTimeout.php" role="php" />
-   <file baseinstalldir="/" md5sum="d9ec0e298b1c3cc580b272494b1f463f" name="lib/Horde/Core/Ajax/Response/HordeCore.php" role="php" />
+   <file baseinstalldir="/" md5sum="d42a8627c08057b69698ab14fa3c71cd" name="lib/Horde/Core/Ajax/Response/HordeCore.php" role="php" />
    <file baseinstalldir="/" md5sum="669dc4dbf3dfbf6c4761fbc0a757d088" name="lib/Horde/Core/Ajax/Response/Notifications.php" role="php" />
    <file baseinstalldir="/" md5sum="67173d757370891ecd2c18a4e85e534f" name="lib/Horde/Core/Ajax/Response/Prototypejs.php" role="php" />
    <file baseinstalldir="/" md5sum="199cde2661e0d81966f424a6370303f6" name="lib/Horde/Core/Ajax/Response/Raw.php" role="php" />
@@ -554,8 +553,8 @@
    <file baseinstalldir="/" md5sum="7ad1ef9dd4a0d7717d329a7b305cee08" name="locale/is/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="5c3fbd6dddefa1bedc9c48f8db43c7aa" name="locale/it/LC_MESSAGES/Horde_Core.mo" role="data" />
    <file baseinstalldir="/" md5sum="708f9845607ed6c5813a0efc80a2ada6" name="locale/it/LC_MESSAGES/Horde_Core.po" role="data" />
-   <file baseinstalldir="/" md5sum="a4975bf8d2e5191e6fbb3c65aae16fda" name="locale/ja/LC_MESSAGES/Horde_Core.mo" role="data" />
-   <file baseinstalldir="/" md5sum="2172e2d872e59e80bd2b2a16b09246b3" name="locale/ja/LC_MESSAGES/Horde_Core.po" role="data" />
+   <file baseinstalldir="/" md5sum="a3733bf2acfb9c761881b7ceab5ffd22" name="locale/ja/LC_MESSAGES/Horde_Core.mo" role="data" />
+   <file baseinstalldir="/" md5sum="56ae4be30bd7bb1bf1773313bf6ce887" name="locale/ja/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="04efdc15ca853f46e716900db55e7a6e" name="locale/km/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="9481491115123cd06897f7a7e7db67b0" name="locale/ko/LC_MESSAGES/Horde_Core.mo" role="data" />
    <file baseinstalldir="/" md5sum="cc986839e89d09024c22f273d6bc754b" name="locale/ko/LC_MESSAGES/Horde_Core.po" role="data" />
@@ -3184,6 +3183,21 @@
    <notes>
 * [mjr] Fix copying forwarded messages to Sent mail folder when using EAS.
 * [mjr] Fix generating From address when sending email via ActiveSync when personal part must be quoted (Bug# 13208).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.12.0beta3</release>
+    <api>2.12.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2014-06-10</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Allow any HordeCore AJAX response object to return JSON-HTML output, instead of pure JSON.
    </notes>
   </release>
  </changelog>

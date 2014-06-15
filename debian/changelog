@@ -1,6 +1,10 @@
 php-horde-core (2.12.0~beta3+debian0-1) UNRELEASED; urgency=medium
 
   * New upstream version 2.12.0~beta3+debian0
+  * Downgrade Horde_JavascriptMinify_Jsmin recommends to suggests
+    - d/pkg-php-tools-overrides: Horde_JavascriptMinify_Jsmin overrided to none
+      (Closes: #751490)
+    - d/control: add php-horde-javascriptminify-jsmin in suggests
 
  -- Mathieu Parent <sathieu@debian.org>  Sun, 15 Jun 2014 20:52:08 +0200
 

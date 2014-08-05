@@ -28,11 +28,11 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-07-12</date>
- <time>00:41:56</time>
+ <date>2014-08-04</date>
+ <time>11:41:07</time>
  <version>
-  <release>2.12.6</release>
-  <api>2.12.0</api>
+  <release>2.13.0</release>
+  <api>2.13.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -40,7 +40,12 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix regression in sending email via ActiveSync when no properly configured identity exists (Bug #13346).
+* [mms] Add Horde_Core_Script_Package_Autocomplete.
+* [mms] Fix broken parse_url() behavior for PHP &lt; 5.3.6.
+* [mms] Horde_Data now stores temporary data using Horde_Vfs to ensure data persists and that it doesn&apos;t overload session storage (Request #11335).
+* [mms] Add method to allow any code to register tasks to run on logout.
+* [mjr] Ensure EAS client created collections are requested to be added to the application&apos;s sync preference (Bug #13359).
+* [mjr] Fix fatal error when executing a FOLDERDELETE command on certain collections.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -232,7 +237,7 @@
    <file baseinstalldir="/" md5sum="c7429825ccea63a9440ecb64959ac562" name="js/horde-jquery-init.js" role="horde" />
    <file baseinstalldir="/" md5sum="c722c21a43308363a2bf9866a6afa325" name="js/horde-jquery.js" role="horde" />
    <file baseinstalldir="/" md5sum="3a128a2b39cda329b48105e967ae3623" name="js/horde.js" role="horde" />
-   <file baseinstalldir="/" md5sum="0ee142afd39d462a77d25838c94555a2" name="js/hordeblocks.js" role="horde" />
+   <file baseinstalldir="/" md5sum="85870a397c25e11c6dae9a5cce10bbf5" name="js/hordeblocks.js" role="horde" />
    <file baseinstalldir="/" md5sum="7cfdc7abe47ccae07ab0dad627b523e2" name="js/hordecore.js" role="horde" />
    <file baseinstalldir="/" md5sum="e5d4e650fe27484f4562244ac2d196f3" name="js/hordetree.js" role="horde" />
    <file baseinstalldir="/" md5sum="57c120849ff8e90e3453f1dcff7197dc" name="js/identityselect.js" role="horde" />
@@ -259,9 +264,9 @@
    <file baseinstalldir="/" md5sum="d0ffc5c1c662168194b126a6a4c7dfe5" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="64016cb05e742a9928a5ed4b7e4fc419" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="1fbab524387d48d2e6c2bf8f86a40841" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="088aea9defcdbb75fd2326adbf3df591" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="39ce731bb11b3159860f8ca6e8c2fc77" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="47fd15b20246b7ab7f996c6ea6185672" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="66464d271d7452a0dba58225fa419ba2" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="a14e571e6f784a9af3c2d92d7ca0c905" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="f529bc4b7f5dcd05b3de1ce3649cd267" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="13c3eef6896af7f28418a790af3a2ff2" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="226b10a7e92837c5ae2c97be06ad8a9b" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
    <file baseinstalldir="/" md5sum="a1449211dbc13ac9e760a30b311f60be" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
@@ -274,7 +279,7 @@
    <file baseinstalldir="/" md5sum="ecaaf1acb80eb70e0cf3da9301f589bb" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Local.php" role="php" />
    <file baseinstalldir="/" md5sum="e2f2bbe79ea30bb430e69c0e624ccdab" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Pretty.php" role="php" />
    <file baseinstalldir="/" md5sum="84b3c925fad8560af32be9d9ec9fe191" name="lib/Horde/Core/Ajax/Imple/Geocoder/Geonames.php" role="php" />
-   <file baseinstalldir="/" md5sum="b94d465883e25eb0b4830bc198bac402" name="lib/Horde/Core/Ajax/Imple/AutoCompleter.php" role="php" />
+   <file baseinstalldir="/" md5sum="f79e1d29f1ce70b7311641230baad2a0" name="lib/Horde/Core/Ajax/Imple/AutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="b1b6b578dd5941c87d155ebc771a360d" name="lib/Horde/Core/Ajax/Imple/ContactAutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="cea9278cfde2f04d66ab00768e2f80f9" name="lib/Horde/Core/Ajax/Imple/InPlaceEditor.php" role="php" />
    <file baseinstalldir="/" md5sum="4e71fec7003910cc92bba5210dcdc101" name="lib/Horde/Core/Ajax/Imple/SpellChecker.php" role="php" />
@@ -301,7 +306,7 @@
    <file baseinstalldir="/" md5sum="6451c56641e4260f2ad0b1513de7c958" name="lib/Horde/Core/Auth/Application.php" role="php" />
    <file baseinstalldir="/" md5sum="b3d3ead46dd7ccb3d52fffa4b92b4f10" name="lib/Horde/Core/Auth/Composite.php" role="php" />
    <file baseinstalldir="/" md5sum="d19d0cf77bfb9d8e1b0183b79ce53fc0" name="lib/Horde/Core/Auth/Imsp.php" role="php" />
-   <file baseinstalldir="/" md5sum="eb0dd0ab1e2d58b0e01f63927dc6d724" name="lib/Horde/Core/Auth/Ldap.php" role="php" />
+   <file baseinstalldir="/" md5sum="a620474cd5573c9fbdf218434bffa82a" name="lib/Horde/Core/Auth/Ldap.php" role="php" />
    <file baseinstalldir="/" md5sum="054dbbfed616f3ea57d00b81f6da3849" name="lib/Horde/Core/Auth/Msad.php" role="php" />
    <file baseinstalldir="/" md5sum="d9b183ad2f4349079587a56452c41ce9" name="lib/Horde/Core/Auth/Shibboleth.php" role="php" />
    <file baseinstalldir="/" md5sum="f007c37c149bf1f8ae3634b03aa337fb" name="lib/Horde/Core/Auth/X509.php" role="php" />
@@ -318,12 +323,12 @@
    <file baseinstalldir="/" md5sum="ed1c02f12f64bc98ac22bf33caf5f391" name="lib/Horde/Core/Controller/RequestConfiguration.php" role="php" />
    <file baseinstalldir="/" md5sum="dd4376819d29d287d0b07daa05e6d101" name="lib/Horde/Core/Controller/RequestMapper.php" role="php" />
    <file baseinstalldir="/" md5sum="aca819347bc187ec72b350fcc5dc4e41" name="lib/Horde/Core/Controller/SettingsFinder.php" role="php" />
-   <file baseinstalldir="/" md5sum="3f028577dc4da7a9dae72a93f93dc64e" name="lib/Horde/Core/Data/Storage.php" role="php" />
+   <file baseinstalldir="/" md5sum="b8d8b56342bf0b9161ab61a93199c18c" name="lib/Horde/Core/Data/Storage.php" role="php" />
    <file baseinstalldir="/" md5sum="09cadfe0d15598f623578dec92a00b3b" name="lib/Horde/Core/Db/Migration.php" role="php" />
    <file baseinstalldir="/" md5sum="6ef718e86c3f7412c5cb4da73233208b" name="lib/Horde/Core/Editor/Ckeditor.php" role="php" />
    <file baseinstalldir="/" md5sum="88bba3652ee4ea7fa1b9fb9733b4daab" name="lib/Horde/Core/Factory/ActiveSyncBackend.php" role="php" />
    <file baseinstalldir="/" md5sum="6bfac165a95eeb776efffcf5257053f0" name="lib/Horde/Core/Factory/ActiveSyncServer.php" role="php" />
-   <file baseinstalldir="/" md5sum="fc21ad7b13531aeef7f03edd75643523" name="lib/Horde/Core/Factory/ActiveSyncState.php" role="php" />
+   <file baseinstalldir="/" md5sum="a94b5d689e48fc646ee88e180748c4ba" name="lib/Horde/Core/Factory/ActiveSyncState.php" role="php" />
    <file baseinstalldir="/" md5sum="fa843271fe4885becb5840ddf94edc11" name="lib/Horde/Core/Factory/Ajax.php" role="php" />
    <file baseinstalldir="/" md5sum="1805fd319ecc220deda803902c09906c" name="lib/Horde/Core/Factory/Alarm.php" role="php" />
    <file baseinstalldir="/" md5sum="3c78603f4c8d6217550c83e88e520c12" name="lib/Horde/Core/Factory/Auth.php" role="php" />
@@ -374,7 +379,7 @@
    <file baseinstalldir="/" md5sum="08476c8bda8bd31eccd74d68c7c8acf7" name="lib/Horde/Core/Factory/Notification.php" role="php" />
    <file baseinstalldir="/" md5sum="c4c4b99b27417be1bb467e1e28e873de" name="lib/Horde/Core/Factory/Perms.php" role="php" />
    <file baseinstalldir="/" md5sum="1b97e401c930d33faa1e0d482ba00b42" name="lib/Horde/Core/Factory/PermsCore.php" role="php" />
-   <file baseinstalldir="/" md5sum="41683c88c748951ee8ddb9ef24c21f96" name="lib/Horde/Core/Factory/Prefs.php" role="php" />
+   <file baseinstalldir="/" md5sum="d248a92ee726ce25108be82b13f9fe16" name="lib/Horde/Core/Factory/Prefs.php" role="php" />
    <file baseinstalldir="/" md5sum="0da2d4cede065fe084135bd21e94ede0" name="lib/Horde/Core/Factory/QueueStorage.php" role="php" />
    <file baseinstalldir="/" md5sum="cf94ecaf082ac464fe2a20b2a94b97a2" name="lib/Horde/Core/Factory/Request.php" role="php" />
    <file baseinstalldir="/" md5sum="72883072b538f6f8178614ee28a1c5c4" name="lib/Horde/Core/Factory/Secret.php" role="php" />
@@ -396,6 +401,8 @@
    <file baseinstalldir="/" md5sum="47382b94786b2a7ee9083f45b9b71b1b" name="lib/Horde/Core/Factory/View.php" role="php" />
    <file baseinstalldir="/" md5sum="39db29649afb525522681a1fbcf2131c" name="lib/Horde/Core/Factory/Weather.php" role="php" />
    <file baseinstalldir="/" md5sum="4ec71db1054808015db9321f72292b8d" name="lib/Horde/Core/Group/Ldap.php" role="php" />
+   <file baseinstalldir="/" md5sum="489384bd39fd7950168cefe96ed406f9" name="lib/Horde/Core/HashTable/PersistentSession.php" role="php" />
+   <file baseinstalldir="/" md5sum="394e99cd0aa434b9008f0bf429e6aa7c" name="lib/Horde/Core/HashTable/Vfs.php" role="php" />
    <file baseinstalldir="/" md5sum="f52bc674544cafe74eb6d332a902006a" name="lib/Horde/Core/HashTable/Wrapper.php" role="php" />
    <file baseinstalldir="/" md5sum="a2f18ecf21601c089f94a3b49b59ee97" name="lib/Horde/Core/Imsp/Utils.php" role="php" />
    <file baseinstalldir="/" md5sum="d7219ce071cabe47aae43a5252e55dc3" name="lib/Horde/Core/Log/Logger.php" role="php" />
@@ -422,6 +429,7 @@
    <file baseinstalldir="/" md5sum="89c47defa93fddd2a0f5dc986f840ba9" name="lib/Horde/Core/Prefs/Ui/Widgets.php" role="php" />
    <file baseinstalldir="/" md5sum="e3cef3d574ac98b76f7d8659947960f0" name="lib/Horde/Core/Prefs/Identity.php" role="php" />
    <file baseinstalldir="/" md5sum="570e1ea5eab7f0868017984cdbc69e01" name="lib/Horde/Core/Prefs/Ui.php" role="php" />
+   <file baseinstalldir="/" md5sum="94933aa16e9cfa7c51a40a619f7445c4" name="lib/Horde/Core/Script/Package/Autocomplete.php" role="php" />
    <file baseinstalldir="/" md5sum="c3b9d2c1aad087c41c385d1acf534904" name="lib/Horde/Core/Script/Package/Datejs.php" role="php" />
    <file baseinstalldir="/" md5sum="ca4e793b87e51bb367f17056fa22f4fd" name="lib/Horde/Core/Script/Package/Dialog.php" role="php" />
    <file baseinstalldir="/" md5sum="3ca6c29a0065b327ff4fdc95222ba3a7" name="lib/Horde/Core/Script/Package/Keynavlist.php" role="php" />
@@ -476,11 +484,13 @@
    <file baseinstalldir="/" md5sum="494a6045236ac4bc686e2f43abca6e80" name="lib/Horde/Exception/HookNotSet.php" role="php" />
    <file baseinstalldir="/" md5sum="82d58277fa0b8c4adab2ed9f2b91b17a" name="lib/Horde/Exception/PushApp.php" role="php" />
    <file baseinstalldir="/" md5sum="088cf666a7d87b2cd613b0733c5754e4" name="lib/Horde/Registry/Hordeconfig/Merged.php" role="php" />
+   <file baseinstalldir="/" md5sum="9d8498675a8330e33ca0c8d99f0d6df2" name="lib/Horde/Registry/Logout/Task.php" role="php" />
    <file baseinstalldir="/" md5sum="85d95b7a7cfa62d699ab081d59c55661" name="lib/Horde/Registry/Api.php" role="php" />
    <file baseinstalldir="/" md5sum="042952c7a3395361ce24c522a103ae57" name="lib/Horde/Registry/Application.php" role="php" />
    <file baseinstalldir="/" md5sum="9d61e3f36e0b163ae96fb52f1b677f68" name="lib/Horde/Registry/Caller.php" role="php" />
    <file baseinstalldir="/" md5sum="55bff8c620aabcef6e36a5792d92cbc0" name="lib/Horde/Registry/Hordeconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="664b24c9d15f2e0dd385b48e01e23a70" name="lib/Horde/Registry/Loadconfig.php" role="php" />
+   <file baseinstalldir="/" md5sum="47b1eb4e704c1199eb5ff000772c932e" name="lib/Horde/Registry/Logout.php" role="php" />
    <file baseinstalldir="/" md5sum="651bd56619dd5106104e0ca46d47f719" name="lib/Horde/Registry/Nlsconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="8c57f980c4063d84f43071a1224aff11" name="lib/Horde/Registry/Registryconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="c49a11a78190e498bffbba30391614ab" name="lib/Horde/Script/Cache/File.php" role="php" />
@@ -512,11 +522,11 @@
    <file baseinstalldir="/" md5sum="da68c000958a8d245bb36cde45b5c3a7" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="126c449639f27b7653300db038989e83" name="lib/Horde/Menu.php" role="php" />
    <file baseinstalldir="/" md5sum="52f6ca1cc39ea73bccfd0021d0545b8f" name="lib/Horde/PageOutput.php" role="php" />
-   <file baseinstalldir="/" md5sum="ca08dddeb580e09363fbf20f9a8984d9" name="lib/Horde/Registry.php" role="php" />
+   <file baseinstalldir="/" md5sum="14534fb46ad171e94fb299a924071037" name="lib/Horde/Registry.php" role="php" />
    <file baseinstalldir="/" md5sum="2d5124c3bb34ea7b27388c25e211aa7e" name="lib/Horde/Session.php" role="php" />
    <file baseinstalldir="/" md5sum="18ebba4b7316931262e10011eaeb945c" name="lib/Horde/Shutdown.php" role="php" />
    <file baseinstalldir="/" md5sum="40c8d3249b57618810d3856b3943ab8a" name="lib/Horde/Themes.php" role="php" />
-   <file baseinstalldir="/" md5sum="efd0be1ef61b9c15de50a77e501d2447" name="lib/Horde.php" role="php" />
+   <file baseinstalldir="/" md5sum="917d3e88c42ea6629e3b62d3a56cce61" name="lib/Horde.php" role="php" />
    <file baseinstalldir="/" md5sum="c76a09e495f15fc96d45ccc469d70dec" name="locale/ar/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="9dff2a9eede1f0e302a3039a0e48e074" name="locale/bg/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="454dc27f477b904662bd771179a1ee5a" name="locale/bs/LC_MESSAGES/Horde_Core.po" role="data" />
@@ -547,8 +557,8 @@
    <file baseinstalldir="/" md5sum="791bbae26bc1e26014129d2a20354af6" name="locale/he/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="d5e9ac866cd0ab660c8a78f9c18e3cbb" name="locale/hr/LC_MESSAGES/Horde_Core.mo" role="data" />
    <file baseinstalldir="/" md5sum="c761452160ee1ce5a6c83a027f0e1c3e" name="locale/hr/LC_MESSAGES/Horde_Core.po" role="data" />
-   <file baseinstalldir="/" md5sum="6397332bc0be51c25025c9c3d0f4be70" name="locale/hu/LC_MESSAGES/Horde_Core.mo" role="data" />
-   <file baseinstalldir="/" md5sum="be565c9069030abb3eda4407843de54c" name="locale/hu/LC_MESSAGES/Horde_Core.po" role="data" />
+   <file baseinstalldir="/" md5sum="701c31b36acaec8a82bf2a565a35683a" name="locale/hu/LC_MESSAGES/Horde_Core.mo" role="data" />
+   <file baseinstalldir="/" md5sum="37d6538b7dd42d914462f885488f3095" name="locale/hu/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="17a0f0c5301fd7dd18e91abf36e5a21e" name="locale/id/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="7ad1ef9dd4a0d7717d329a7b305cee08" name="locale/is/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="5c3fbd6dddefa1bedc9c48f8db43c7aa" name="locale/it/LC_MESSAGES/Horde_Core.mo" role="data" />
@@ -573,8 +583,8 @@
    <file baseinstalldir="/" md5sum="b7d7c97ddc10494fc5f898d0b62f4edd" name="locale/pl/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="407043b0ee25fe0e2f719da469d110ff" name="locale/pt/LC_MESSAGES/Horde_Core.mo" role="data" />
    <file baseinstalldir="/" md5sum="f263a705babb886379fd51587157f3b6" name="locale/pt/LC_MESSAGES/Horde_Core.po" role="data" />
-   <file baseinstalldir="/" md5sum="4bc04b17d1c6a59b81c5641fd21f3339" name="locale/pt_BR/LC_MESSAGES/Horde_Core.mo" role="data" />
-   <file baseinstalldir="/" md5sum="351f9f20bc5ae7c41665d1e4cc7af1bd" name="locale/pt_BR/LC_MESSAGES/Horde_Core.po" role="data" />
+   <file baseinstalldir="/" md5sum="35826f58bc4f9454e37b8972b2f4c93f" name="locale/pt_BR/LC_MESSAGES/Horde_Core.mo" role="data" />
+   <file baseinstalldir="/" md5sum="85e107a771ec1d70795e6ce2f25b357e" name="locale/pt_BR/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="4a16639ec6f5f24c37e8686a0d195f95" name="locale/ro/LC_MESSAGES/Horde_Core.mo" role="data" />
    <file baseinstalldir="/" md5sum="083bea8f5e4742efe60371bced61be94" name="locale/ro/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="0c8d6a04fda2b566e91c3237730352d2" name="locale/ru/LC_MESSAGES/Horde_Core.mo" role="data" />
@@ -1082,7 +1092,7 @@
    <package>
     <name>Horde_Vfs</name>
     <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
+    <min>2.2.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -1502,6 +1512,8 @@
    <install as="Horde/Core/Factory/View.php" name="lib/Horde/Core/Factory/View.php" />
    <install as="Horde/Core/Factory/Weather.php" name="lib/Horde/Core/Factory/Weather.php" />
    <install as="Horde/Core/Group/Ldap.php" name="lib/Horde/Core/Group/Ldap.php" />
+   <install as="Horde/Core/HashTable/PersistentSession.php" name="lib/Horde/Core/HashTable/PersistentSession.php" />
+   <install as="Horde/Core/HashTable/Vfs.php" name="lib/Horde/Core/HashTable/Vfs.php" />
    <install as="Horde/Core/HashTable/Wrapper.php" name="lib/Horde/Core/HashTable/Wrapper.php" />
    <install as="Horde/Core/Imsp/Utils.php" name="lib/Horde/Core/Imsp/Utils.php" />
    <install as="Horde/Core/Log/Logger.php" name="lib/Horde/Core/Log/Logger.php" />
@@ -1528,6 +1540,7 @@
    <install as="Horde/Core/Prefs/Storage/Upgrade.php" name="lib/Horde/Core/Prefs/Storage/Upgrade.php" />
    <install as="Horde/Core/Prefs/Ui/Special.php" name="lib/Horde/Core/Prefs/Ui/Special.php" />
    <install as="Horde/Core/Prefs/Ui/Widgets.php" name="lib/Horde/Core/Prefs/Ui/Widgets.php" />
+   <install as="Horde/Core/Script/Package/Autocomplete.php" name="lib/Horde/Core/Script/Package/Autocomplete.php" />
    <install as="Horde/Core/Script/Package/Datejs.php" name="lib/Horde/Core/Script/Package/Datejs.php" />
    <install as="Horde/Core/Script/Package/Dialog.php" name="lib/Horde/Core/Script/Package/Dialog.php" />
    <install as="Horde/Core/Script/Package/Keynavlist.php" name="lib/Horde/Core/Script/Package/Keynavlist.php" />
@@ -1569,9 +1582,11 @@
    <install as="Horde/Registry/Caller.php" name="lib/Horde/Registry/Caller.php" />
    <install as="Horde/Registry/Hordeconfig.php" name="lib/Horde/Registry/Hordeconfig.php" />
    <install as="Horde/Registry/Loadconfig.php" name="lib/Horde/Registry/Loadconfig.php" />
+   <install as="Horde/Registry/Logout.php" name="lib/Horde/Registry/Logout.php" />
    <install as="Horde/Registry/Nlsconfig.php" name="lib/Horde/Registry/Nlsconfig.php" />
    <install as="Horde/Registry/Registryconfig.php" name="lib/Horde/Registry/Registryconfig.php" />
    <install as="Horde/Registry/Hordeconfig/Merged.php" name="lib/Horde/Registry/Hordeconfig/Merged.php" />
+   <install as="Horde/Registry/Logout/Task.php" name="lib/Horde/Registry/Logout/Task.php" />
    <install as="Horde/Script/Cache.php" name="lib/Horde/Script/Cache.php" />
    <install as="Horde/Script/Compress.php" name="lib/Horde/Script/Compress.php" />
    <install as="Horde/Script/File.php" name="lib/Horde/Script/File.php" />
@@ -3351,6 +3366,26 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Fix regression in sending email via ActiveSync when no properly configured identity exists (Bug #13346).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.13.0</release>
+    <api>2.13.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-08-04</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Add Horde_Core_Script_Package_Autocomplete.
+* [mms] Fix broken parse_url() behavior for PHP &lt; 5.3.6.
+* [mms] Horde_Data now stores temporary data using Horde_Vfs to ensure data persists and that it doesn&apos;t overload session storage (Request #11335).
+* [mms] Add method to allow any code to register tasks to run on logout.
+* [mjr] Ensure EAS client created collections are requested to be added to the application&apos;s sync preference (Bug #13359).
+* [mjr] Fix fatal error when executing a FOLDERDELETE command on certain collections.
    </notes>
   </release>
  </changelog>

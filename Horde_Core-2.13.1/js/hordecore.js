@@ -72,8 +72,9 @@ var HordeCore = {
     {
         params = $H(params).clone();
         opts = opts || {};
+        opts.ajaxopts = opts.ajaxopts || {};
 
-        var ajaxopts = Object.extend(this.doActionOpts(), opts.ajaxopts || {}),
+        var ajaxopts = Object.extend(this.doActionOpts(), opts.ajaxopts),
             request;
 
         if (this.regenerate_sid) {
@@ -89,6 +90,9 @@ var HordeCore = {
         this.initLoading(opts.loading);
 
         ajaxopts.onSuccess = function(t) {
+            if (Object.isFunction(opts.ajaxopts.onSuccess)) {
+                opts.ajaxopts.onSuccess(t);
+            }
             this.doActionComplete(action, t, opts);
         }.bind(this);
 
@@ -107,12 +111,16 @@ var HordeCore = {
     submitForm: function(form, opts)
     {
         opts = opts || {};
+        opts.ajaxopts = opts.ajaxopts || {};
 
-        var ajaxopts = Object.extend(this.doActionOpts(), opts.ajaxopts || {});
+        var ajaxopts = Object.extend(this.doActionOpts(), opts.ajaxopts);
 
         this.initLoading(opts.loading);
 
         ajaxopts.onSuccess = function(t) {
+            if (Object.isFunction(opts.ajaxopts.onSuccess)) {
+                opts.ajaxopts.onSuccess(t);
+            }
             this.doActionComplete(form, t, opts);
         }.bind(this);
         ajaxopts.parameters = $H(ajaxopts.parameters || {});
@@ -158,6 +166,7 @@ var HordeCore = {
         form.submit();
     },
 
+    // @todo This should be handled entirely within submit()
     handleSubmit: function(form, opts)
     {
         form = $(form);
@@ -182,8 +191,8 @@ var HordeCore = {
     },
 
     // params: (Hash) URL parameters
-    // TODO: Put internal params (SID, token, regenerate_sid) into special
-    // container only accessible to base Ajax Application object.
+    // @todo: Put internal params (SID, token, regenerate_sid) into special
+    //        container only accessible to base Ajax Application object.
     addRequestParams: function(params)
     {
         var sid = this.sessionId();
@@ -555,7 +564,7 @@ var HordeCore = {
     },
 
     /**
-     * TODO: Remove for H6.
+     * @todo Remove for H6.
      */
     closePopup: function()
     {

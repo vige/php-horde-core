@@ -1,3 +1,10 @@
+php-horde-core (2.13.1+debian0-2) unstable; urgency=medium
+
+  * Update Vcs-Browser to use cgit instead of gitweb
+  * Add dep-8 (automatic as-installed package testing)
+
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 26 Aug 2014 21:54:55 +0200
+
 php-horde-core (2.13.1+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.13.1

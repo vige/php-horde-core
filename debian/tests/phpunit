@@ -1,0 +1,2 @@
+#!/bin/sh
+php Horde_Core-2.13.1/test/Horde/Core/AllTests.php

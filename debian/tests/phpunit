@@ -1,2 +1,7 @@
 #!/bin/sh
-php Horde_Core-2.13.1/test/Horde/Core/AllTests.php
+
+set -x
+set -e
+
+cd Horde_Core*/test/./Horde/Core
+phpunit -v .

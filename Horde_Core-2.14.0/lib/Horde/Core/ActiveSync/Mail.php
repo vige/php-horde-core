@@ -137,7 +137,7 @@ class Horde_Core_ActiveSync_Mail
     {
         switch ($property) {
         case 'imapMessage':
-            if (isset($this->_getImapMessage)) {
+            if (!isset($this->_imapMessage)) {
                 $this->_getImapMessage();
             }
             return $this->_imapMessage;
@@ -215,10 +215,31 @@ class Horde_Core_ActiveSync_Mail
         if (empty($this->_raw)) {
             throw new Horde_ActiveSync_Exception('No data set or received from EAS client.');
         }
+        $this->_callPreSendHook();
         if (!$this->_parentFolder || ($this->_parentFolder && $this->_replaceMime)) {
             $this->_sendRaw();
         } else {
             $this->_sendSmart();
+        }
+    }
+
+    protected function _callPreSendHook()
+    {
+        $hooks = $GLOBALS['injector']->getInstance('Horde_Core_Hooks');
+        $params = array(
+            'raw' => $this->_raw,
+            'imap_msg' => $this->imapMessage,
+            'parent' => $this->_parentFolder,
+            'reply' => $this->_reply,
+            'forward' => $this->_forward);
+        try {
+            if (!$result = $hooks->callHook('activesync_email_presend', 'horde', array($params))) {
+                throw new Horde_ActiveSync_Exception('There was an issue running the activesync_email_presend hook.');
+            }
+            if ($result instanceof Horde_ActiveSync_Mime) {
+                $this->_raw->replaceMime($result->base);
+            }
+        } catch (Horde_Exception_HookNotSet $e) {
         }
     }
 
@@ -279,12 +300,7 @@ class Horde_Core_ActiveSync_Mail
     protected function _sendSmart()
     {
         $mime_message = $this->_raw->getMimeObject();
-        $mail = new Horde_Mime_Mail($this->_headers->toArray());
-        try {
-            $this->_getImapMessage();
-        } catch (Horde_Exception_NotFound $e) {
-            throw new Horde_ActiveSync_Exception($e->getMessage());
-        }
+        $mail = new Horde_Mime_Mail($this->_headers->toArray(array('charset' => 'UTF-8')));
         $base_part = $this->imapMessage->getStructure();
         $plain_id = $base_part->findBody('plain');
         $html_id = $base_part->findBody('html');
@@ -306,15 +322,13 @@ class Horde_Core_ActiveSync_Mail
         if ($this->_forward) {
             foreach ($base_part->contentTypeMap() as $mid => $type) {
                 if ($this->imapMessage->isAttachment($mid, $type)) {
-                    $apart = $this->imapMessage->getMimePart($mid);
-                    $mail->addMimePart($apart);
+                    $mail->addMimePart($this->imapMessage->getMimePart($mid));
                 }
             }
         }
         foreach ($mime_message->contentTypeMap() as $mid => $type) {
             if ($mid != 0 && $mid != $mime_message->findBody('plain') && $mid != $mime_message->findBody('html')) {
-                $part = $mime_message->getPart($mid);
-                $mail->addMimePart($part);
+                $mail->addMimePart($mime_message->getPart($mid));
             }
         }
 
@@ -399,6 +413,9 @@ class Horde_Core_ActiveSync_Mail
      */
     protected function _getImapMessage()
     {
+        if (empty($this->_id) || empty($this->_parentFolder)) {
+            return;
+        }
         $this->_imapMessage = array_pop($this->_imap->getImapMessage($this->_parentFolder, $this->_id, array('headers' => true)));
         if (empty($this->_imapMessage)) {
             throw new Horde_Exception_NotFound('The forwarded/replied message was not found.');

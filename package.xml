@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0http://pear.php.net/dtd/package-2.0.xsd">
  <name>Horde_Core</name>
  <channel>pear.horde.org</channel>
  <summary>Horde Core Framework libraries</summary>
@@ -28,11 +28,11 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-08-21</date>
- <time>17:28:49</time>
+ <date>2014-09-08</date>
+ <time>11:42:16</time>
  <version>
-  <release>2.13.1</release>
-  <api>2.13.0</api>
+  <release>2.14.0</release>
+  <api>2.14.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -40,14 +40,13 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mms] Ensure persistently stored data is not overwritten by another session.
-* [mms] Fix boostrapping DB object when using SQL as the Horde cache driver (Bug #13439).
-* [mjr] Support ITEMOPERATIONS_EMPTYFOLDER requests via ActiveSync.
-* [mjr] Fetch correct data for EAS ItemSettings requests.
-* [jan] Catch exception from application in portal block (Bug #13427).
-* [jan] Fix returning session start time from session handler (Bug #13428).
-* [mjr] Add support for synchronizing user-defined IMAP flags as EAS Email categories.
-* [mjr] Fix BC break when detecting the ActiveSync state driver.
+* [mjr] Fix dependency on Horde_HashTable (Bug #13549).
+* [mjr] Add activesync_email_presend hook.
+* [mjr] Fix issue where replying or forwarding broken email messages would break ActiveSync synchronization when saving to Sent mail.
+* [mjr] Fix issues with 8-bit characters in Subject header when sending smart replies via ActiveSync (Bug #13456).
+* [mjr] Fix GAL searches returning all address book entries.
+* [jan] Improve positioning of date picker popup (Karim Geiger &lt;me@karim-geiger.de&gt;).
+* [jan] Really fix returning session start time from session handler (Bug #13428).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -229,7 +228,7 @@
    <file baseinstalldir="/" md5sum="bb08555adde290bf9deaa0a49d93ee33" name="js/addressbooksprefs.js" role="horde" />
    <file baseinstalldir="/" md5sum="3c6794703b205f49b6168a90bcc70a0a" name="js/alarmprefs.js" role="horde" />
    <file baseinstalldir="/" md5sum="bb3650f97c15243b492fe78e84bd7be0" name="js/autocomplete.js" role="horde" />
-   <file baseinstalldir="/" md5sum="61f45803524300a1a0aac2b5dc41738c" name="js/calendar.js" role="horde" />
+   <file baseinstalldir="/" md5sum="d5a26a2d4cb55a5b1abfabc7a944efa8" name="js/calendar.js" role="horde" />
    <file baseinstalldir="/" md5sum="40e64326d6109296374e143292cbe29c" name="js/colorpicker.js" role="horde" />
    <file baseinstalldir="/" md5sum="26deed2137e53f5291027d191d1672ba" name="js/dialog.js" role="horde" />
    <file baseinstalldir="/" md5sum="7e25ff4a24342bd0dfef2224e3957bad" name="js/form_assign.js" role="horde" />
@@ -266,9 +265,9 @@
    <file baseinstalldir="/" md5sum="92eb2b1a0a78d774226cdcf499bbc0ae" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="64016cb05e742a9928a5ed4b7e4fc419" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="1fbab524387d48d2e6c2bf8f86a40841" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="5c909e4ab5c94eea610802b367502375" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="800824d78402ae4ef291a8637773c270" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="f529bc4b7f5dcd05b3de1ce3649cd267" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="5e2782e3c10a54bf427ca07ae556cb0f" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="13d4655b257446645ea769af33349323" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="a0bd026dc55cba20b13239fea0b59813" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="13c3eef6896af7f28418a790af3a2ff2" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="226b10a7e92837c5ae2c97be06ad8a9b" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
    <file baseinstalldir="/" md5sum="a1449211dbc13ac9e760a30b311f60be" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
@@ -344,7 +343,7 @@
    <file baseinstalldir="/" md5sum="a6ee9c83fe1298859b7d1f458a904fb7" name="lib/Horde/Core/Factory/Data.php" role="php" />
    <file baseinstalldir="/" md5sum="0642060ca7e20c907d0a6d53f03c4bab" name="lib/Horde/Core/Factory/DavServer.php" role="php" />
    <file baseinstalldir="/" md5sum="3067774b55afa0a00caf1d29f3872402" name="lib/Horde/Core/Factory/DavStorage.php" role="php" />
-   <file baseinstalldir="/" md5sum="dc6145252bd0bd5be15e58bb6a68bb08" name="lib/Horde/Core/Factory/Db.php" role="php" />
+   <file baseinstalldir="/" md5sum="4b4d2feb774a7510fdf6398be6d22375" name="lib/Horde/Core/Factory/Db.php" role="php" />
    <file baseinstalldir="/" md5sum="59dec5f73b7f362488df16a7c8b61c70" name="lib/Horde/Core/Factory/DbBase.php" role="php" />
    <file baseinstalldir="/" md5sum="bd65d8b06fcbaf69068ad6fc6b07c0e6" name="lib/Horde/Core/Factory/DbPear.php" role="php" />
    <file baseinstalldir="/" md5sum="91d4fed4ed77aa76ac944b4bd457d5c4" name="lib/Horde/Core/Factory/Dns.php" role="php" />
@@ -370,7 +369,7 @@
    <file baseinstalldir="/" md5sum="eeaf8ab92e4b5ecda706f6b3d47c5bc7" name="lib/Horde/Core/Factory/Lock.php" role="php" />
    <file baseinstalldir="/" md5sum="409ed910121cf0175aa10f2edbe9d97f" name="lib/Horde/Core/Factory/Logger.php" role="php" />
    <file baseinstalldir="/" md5sum="855479ebfdc8f50b891dfef88a2db85d" name="lib/Horde/Core/Factory/LoginTasks.php" role="php" />
-   <file baseinstalldir="/" md5sum="f21ecb45f48b522f844649bddf15efba" name="lib/Horde/Core/Factory/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="05203b66bbef34eee48596211fb13aea" name="lib/Horde/Core/Factory/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="aff75d828f1da5e74e08bf84d70d3b1b" name="lib/Horde/Core/Factory/MailBase.php" role="php" />
    <file baseinstalldir="/" md5sum="d8eeaccb79bd9f496b807e01224b6e20" name="lib/Horde/Core/Factory/Mapper.php" role="php" />
    <file baseinstalldir="/" md5sum="c2ee69a337e41f54a2e8940cac97ff78" name="lib/Horde/Core/Factory/Matcher.php" role="php" />
@@ -385,7 +384,7 @@
    <file baseinstalldir="/" md5sum="0da2d4cede065fe084135bd21e94ede0" name="lib/Horde/Core/Factory/QueueStorage.php" role="php" />
    <file baseinstalldir="/" md5sum="cf94ecaf082ac464fe2a20b2a94b97a2" name="lib/Horde/Core/Factory/Request.php" role="php" />
    <file baseinstalldir="/" md5sum="72883072b538f6f8178614ee28a1c5c4" name="lib/Horde/Core/Factory/Secret.php" role="php" />
-   <file baseinstalldir="/" md5sum="bf3afcd6f8040185489ed1a0e5d2db14" name="lib/Horde/Core/Factory/SessionHandler.php" role="php" />
+   <file baseinstalldir="/" md5sum="51eeb4e85b0d147c4606aa2348db8f78" name="lib/Horde/Core/Factory/SessionHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="90af0638668ca2f9b7563d06c644b3d9" name="lib/Horde/Core/Factory/Share.php" role="php" />
    <file baseinstalldir="/" md5sum="7d2502a764ab094a2576726f4cc634b0" name="lib/Horde/Core/Factory/ShareBase.php" role="php" />
    <file baseinstalldir="/" md5sum="27749cf562b82ebc39a3318760ed486b" name="lib/Horde/Core/Factory/SpellChecker.php" role="php" />
@@ -524,7 +523,7 @@
    <file baseinstalldir="/" md5sum="da68c000958a8d245bb36cde45b5c3a7" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="126c449639f27b7653300db038989e83" name="lib/Horde/Menu.php" role="php" />
    <file baseinstalldir="/" md5sum="52f6ca1cc39ea73bccfd0021d0545b8f" name="lib/Horde/PageOutput.php" role="php" />
-   <file baseinstalldir="/" md5sum="e144dcc8422b2e85a35ec9c491e86f68" name="lib/Horde/Registry.php" role="php" />
+   <file baseinstalldir="/" md5sum="5545d7f0856637ac17bd84aeb8754f00" name="lib/Horde/Registry.php" role="php" />
    <file baseinstalldir="/" md5sum="2d5124c3bb34ea7b27388c25e211aa7e" name="lib/Horde/Session.php" role="php" />
    <file baseinstalldir="/" md5sum="18ebba4b7316931262e10011eaeb945c" name="lib/Horde/Shutdown.php" role="php" />
    <file baseinstalldir="/" md5sum="40c8d3249b57618810d3856b3943ab8a" name="lib/Horde/Themes.php" role="php" />
@@ -726,6 +725,13 @@
     <exclude>3.0.0alpha1</exclude>
    </package>
    <package>
+    <name>Horde_HashTable</name>
+    <channel>pear.horde.org</channel>
+    <min>1.2.0</min>
+    <max>2.0.0alpha1</max>
+    <exclude>2.0.0alpha1</exclude>
+   </package>
+   <package>
     <name>Horde_History</name>
     <channel>pear.horde.org</channel>
     <min>2.0.0</min>
@@ -905,7 +911,7 @@
    <package>
     <name>Horde_ActiveSync</name>
     <channel>pear.horde.org</channel>
-    <min>2.18.0</min>
+    <min>2.19.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -950,13 +956,6 @@
     <min>2.0.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_HashTable</name>
-    <channel>pear.horde.org</channel>
-    <min>1.0.0</min>
-    <max>2.0.0alpha1</max>
-    <exclude>2.0.0alpha1</exclude>
    </package>
    <package>
     <name>Horde_Http</name>
@@ -3410,6 +3409,27 @@
 * [jan] Fix returning session start time from session handler (Bug #13428).
 * [mjr] Add support for synchronizing user-defined IMAP flags as EAS Email categories.
 * [mjr] Fix BC break when detecting the ActiveSync state driver.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.14.0</release>
+    <api>2.14.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-09-08</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix dependency on Horde_HashTable (Bug #13549).
+* [mjr] Add activesync_email_presend hook.
+* [mjr] Fix issue where replying or forwarding broken email messages would break ActiveSync synchronization when saving to Sent mail.
+* [mjr] Fix issues with 8-bit characters in Subject header when sending smart replies via ActiveSync (Bug #13456).
+* [mjr] Fix GAL searches returning all address book entries.
+* [jan] Improve positioning of date picker popup (Karim Geiger &lt;me@karim-geiger.de&gt;).
+* [jan] Really fix returning session start time from session handler (Bug #13428).
    </notes>
   </release>
  </changelog>

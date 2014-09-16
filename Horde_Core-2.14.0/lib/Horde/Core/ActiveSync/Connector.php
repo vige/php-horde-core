@@ -372,7 +372,7 @@ class Horde_Core_ActiveSync_Connector
                 'office');
         }
         if (!empty($options['pictures'])) {
-            $fields[$gal][] = 'photo';
+            $return_fields[$gal][] = 'photo';
         }
         $opts = array(
             'matchBegin' => true,
@@ -869,11 +869,13 @@ class Horde_Core_ActiveSync_Connector
      * @param string $action      The action to log. One of: 'forward', 'reply',
      *                            'reply_all'.
      * @param string $mid         The Message-ID to log.
-     * @param string $recipients  The recipients the mail was forwarded/replied
-     *                            to.
+     * @param string $recipients  The recipients the mail was forwarded to.
      */
     public function mail_logMaillog($action, $mid, $recipients = null)
     {
+        if (!empty($recipients)) {
+            $recipients = array('recipients' => $recipients);
+        }
         if ($this->_registry->hasMethod('logMaillog', $this->_registry->hasInterface('mail'))) {
             $this->_registry->mail->logMaillog($action, $mid, $recipients);
         }

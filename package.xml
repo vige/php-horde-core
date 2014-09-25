@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-09-08</date>
- <time>11:42:16</time>
+ <date>2014-09-18</date>
+ <time>14:24:30</time>
  <version>
-  <release>2.14.0</release>
+  <release>2.14.1</release>
   <api>2.14.0</api>
  </version>
  <stability>
@@ -40,13 +40,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix dependency on Horde_HashTable (Bug #13549).
-* [mjr] Add activesync_email_presend hook.
-* [mjr] Fix issue where replying or forwarding broken email messages would break ActiveSync synchronization when saving to Sent mail.
-* [mjr] Fix issues with 8-bit characters in Subject header when sending smart replies via ActiveSync (Bug #13456).
-* [mjr] Fix GAL searches returning all address book entries.
-* [jan] Improve positioning of date picker popup (Karim Geiger &lt;me@karim-geiger.de&gt;).
-* [jan] Really fix returning session start time from session handler (Bug #13428).
+* [mjr] Fix handling of EAS categories containing spaces in the name.
+* [jan] Catch exceptions if not being able to find an LDAP user DN (Bug #13571).
+* [mms] Fix using master SMTP credentials when a CLI script uses the &apos;user_admin&apos; registry flag.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -262,11 +258,11 @@
    <file baseinstalldir="/" md5sum="98212048ba3ec32d1e316d16863ff52c" name="js/tooltips.js" role="horde" />
    <file baseinstalldir="/" md5sum="25d69f64167ec099a2dc87a79358938c" name="js/webnotification.js" role="horde" />
    <file baseinstalldir="/" md5sum="f1a2a212095e588b2d38ae3d728f15dc" name="lib/Horde/Config/Form.php" role="php" />
-   <file baseinstalldir="/" md5sum="92eb2b1a0a78d774226cdcf499bbc0ae" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
+   <file baseinstalldir="/" md5sum="7192f3a06f694ebc474a67c71900a8af" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="64016cb05e742a9928a5ed4b7e4fc419" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="1fbab524387d48d2e6c2bf8f86a40841" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="5e2782e3c10a54bf427ca07ae556cb0f" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="13d4655b257446645ea769af33349323" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="1dcef88c5b412f63cfec419ca694d87d" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="a0bd026dc55cba20b13239fea0b59813" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="13c3eef6896af7f28418a790af3a2ff2" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="226b10a7e92837c5ae2c97be06ad8a9b" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -365,11 +361,11 @@
    <file baseinstalldir="/" md5sum="bcc925ba20c66c01e0d3b3e2fe92effb" name="lib/Horde/Core/Factory/KolabSession.php" role="php" />
    <file baseinstalldir="/" md5sum="032f9e3b844071c527347f80d8e0f478" name="lib/Horde/Core/Factory/KolabStorage.php" role="php" />
    <file baseinstalldir="/" md5sum="52e57d3ea1a3a7c3f9e7ccc4131e2780" name="lib/Horde/Core/Factory/LanguageDetect.php" role="php" />
-   <file baseinstalldir="/" md5sum="d4ed95a519b8ee398d35904d4a7151a3" name="lib/Horde/Core/Factory/Ldap.php" role="php" />
+   <file baseinstalldir="/" md5sum="9615c960e33ac0269de5850c0a19da42" name="lib/Horde/Core/Factory/Ldap.php" role="php" />
    <file baseinstalldir="/" md5sum="eeaf8ab92e4b5ecda706f6b3d47c5bc7" name="lib/Horde/Core/Factory/Lock.php" role="php" />
    <file baseinstalldir="/" md5sum="409ed910121cf0175aa10f2edbe9d97f" name="lib/Horde/Core/Factory/Logger.php" role="php" />
    <file baseinstalldir="/" md5sum="855479ebfdc8f50b891dfef88a2db85d" name="lib/Horde/Core/Factory/LoginTasks.php" role="php" />
-   <file baseinstalldir="/" md5sum="05203b66bbef34eee48596211fb13aea" name="lib/Horde/Core/Factory/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="73614b5b03526b60583524e3cce4bd9a" name="lib/Horde/Core/Factory/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="aff75d828f1da5e74e08bf84d70d3b1b" name="lib/Horde/Core/Factory/MailBase.php" role="php" />
    <file baseinstalldir="/" md5sum="d8eeaccb79bd9f496b807e01224b6e20" name="lib/Horde/Core/Factory/Mapper.php" role="php" />
    <file baseinstalldir="/" md5sum="c2ee69a337e41f54a2e8940cac97ff78" name="lib/Horde/Core/Factory/Matcher.php" role="php" />
@@ -911,7 +907,7 @@
    <package>
     <name>Horde_ActiveSync</name>
     <channel>pear.horde.org</channel>
-    <min>2.19.0</min>
+    <min>2.19.1</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -3430,6 +3426,23 @@
 * [mjr] Fix GAL searches returning all address book entries.
 * [jan] Improve positioning of date picker popup (Karim Geiger &lt;me@karim-geiger.de&gt;).
 * [jan] Really fix returning session start time from session handler (Bug #13428).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.14.1</release>
+    <api>2.14.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-09-18</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix handling of EAS categories containing spaces in the name.
+* [jan] Catch exceptions if not being able to find an LDAP user DN (Bug #13571).
+* [mms] Fix using master SMTP credentials when a CLI script uses the &apos;user_admin&apos; registry flag.
    </notes>
   </release>
  </changelog>

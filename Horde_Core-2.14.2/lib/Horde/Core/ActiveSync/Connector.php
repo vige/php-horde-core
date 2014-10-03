@@ -327,13 +327,16 @@ class Horde_Core_ActiveSync_Connector
      */
     public function getRecipientCache($max = 100)
     {
+        if (!$this->_registry->hasInterface('mail')) {
+            return array();
+        }
         $cache = $GLOBALS['injector']->getInstance('Horde_Cache');
         $cache_key = 'HCASC:' . $this->_registry->getAuth() . ':' . $max;
         if (!$cache->exists($cache_key, 3600)) {
             $results = $this->_registry->mail->favouriteRecipients($max);
             $cache->set($cache_key, json_encode($results));
         } else {
-            $results = json_decode($cache->get($cache_key, 3600));
+            $results = json_decode($cache->get($cache_key, 3600), true);
         }
 
         return $results;

@@ -2304,14 +2304,13 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                     $result = array(
                         'displayname' => $result['name'],
                         'emailaddress' => $result['email'],
-                        'entries' => array($this->_mungeCert($result['smimePublicKey'])),
+                        'entries' => !empty($result['smimePublicKey']) ? array($this->_mungeCert($result['smimePublicKey'])) : array(),
                         'type' => $result['source'] == $gal ? Horde_ActiveSync::RESOLVE_RESULT_GAL : Horde_ActiveSync::RESOLVE_RESULT_ADDRESSBOOK,
                         'picture' => !empty($picture) ? $picture : null
                     );
                     $return[] = $result;
                 }
             }
-
         } else {
             $options = array(
                 'maxcerts' => 0,
@@ -3002,6 +3001,14 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
 
         $picture_count = 0;
         foreach ($rows as $row) {
+            // Explicitly disallow returning contact groups since EAS clients
+            // only expect a SINGLE email address to be returned. Returning
+            // multiple email addresses, or the group syntax will cause most
+            // clients to silently throw out all but the first email address in
+            // the list, or will completely fail to send the message altogether.
+            if (empty($row['__type']) || $row['__type'] != 'Object') {
+                continue;
+            }
             $entry = array(
                 Horde_ActiveSync::GAL_ALIAS => !empty($row['alias']) ? $row['alias'] : '',
                 Horde_ActiveSync::GAL_DISPLAYNAME => $row['name'],

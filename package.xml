@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-09-18</date>
- <time>14:24:30</time>
+ <date>2014-10-02</date>
+ <time>12:19:49</time>
  <version>
-  <release>2.14.1</release>
+  <release>2.14.2</release>
   <api>2.14.0</api>
  </version>
  <stability>
@@ -40,9 +40,10 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix handling of EAS categories containing spaces in the name.
-* [jan] Catch exceptions if not being able to find an LDAP user DN (Bug #13571).
-* [mms] Fix using master SMTP credentials when a CLI script uses the &apos;user_admin&apos; registry flag.
+* [mjr] Fix generating reply text from EAS clients that only reply in HTML (Bug #13615).
+* [mjr] Remove Yahoo related code from HordeMap API.
+* [mjr] Add Reply-To header to email sent via ActiveSync if available in identity (Ticket #13592).
+* [mjr] Prevent sending contact lists as results in GAL searches.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -211,7 +212,6 @@
    <file baseinstalldir="/" md5sum="ca6b8f7037cf91bd146a65ffbe4760e1" name="js/map/OpenLayers-debug.js" role="horde" />
    <file baseinstalldir="/" md5sum="ad70d33997bddd68ccc1994ebe8898ac" name="js/map/OpenLayers.js" role="horde" />
    <file baseinstalldir="/" md5sum="bfee0ee56a4949e452b34906cab26865" name="js/map/osm.js" role="horde" />
-   <file baseinstalldir="/" md5sum="96671f6114efa6cf76a476306c0ba423" name="js/map/yahoo.js" role="horde" />
    <file baseinstalldir="/" md5sum="c6321f204481f259724bd6455c0fdded" name="js/scriptaculous/builder.js" role="horde" />
    <file baseinstalldir="/" md5sum="03b502fd8ae202eb164b348749392720" name="js/scriptaculous/controls.js" role="horde" />
    <file baseinstalldir="/" md5sum="046759400db7a6096376e50110104edd" name="js/scriptaculous/dragdrop.js" role="horde" />
@@ -235,16 +235,16 @@
    <file baseinstalldir="/" md5sum="c722c21a43308363a2bf9866a6afa325" name="js/horde-jquery.js" role="horde" />
    <file baseinstalldir="/" md5sum="3a128a2b39cda329b48105e967ae3623" name="js/horde.js" role="horde" />
    <file baseinstalldir="/" md5sum="85870a397c25e11c6dae9a5cce10bbf5" name="js/hordeblocks.js" role="horde" />
-   <file baseinstalldir="/" md5sum="d69146a8ebe06b61f1548eadd4e45102" name="js/hordecore.js" role="horde" />
+   <file baseinstalldir="/" md5sum="687036f4674db8b7ca9e0e974bc75497" name="js/hordecore.js" role="horde" />
    <file baseinstalldir="/" md5sum="e5d4e650fe27484f4562244ac2d196f3" name="js/hordetree.js" role="horde" />
    <file baseinstalldir="/" md5sum="57c120849ff8e90e3453f1dcff7197dc" name="js/identityselect.js" role="horde" />
    <file baseinstalldir="/" md5sum="d6d87aa14f785a1a9af40e3eb7eac639" name="js/image.js" role="horde" />
    <file baseinstalldir="/" md5sum="93a79e6998373c464f875aaeb4fdac4f" name="js/imple.js" role="horde" />
    <file baseinstalldir="/" md5sum="6b67ad5a9ee0340a9ddeff6df05a5f4a" name="js/inplaceeditor.js" role="horde" />
-   <file baseinstalldir="/" md5sum="8250e957ff476ecc3fa3a9689c2a55df" name="js/keynavlist.js" role="horde" />
+   <file baseinstalldir="/" md5sum="f9792cfe9a3aa09b7610e75e845451e5" name="js/keynavlist.js" role="horde" />
    <file baseinstalldir="/" md5sum="ac7ae7b966d94e8244ced82583b523c4" name="js/liquidmetal.js" role="horde" />
    <file baseinstalldir="/" md5sum="8e6583f39e295b6592b44e6a5720a12b" name="js/open_html_helper.js" role="horde" />
-   <file baseinstalldir="/" md5sum="ca98b7532bf596ae8de4662e01041c6f" name="js/popup.js" role="horde" />
+   <file baseinstalldir="/" md5sum="affb0f98b3b2b08eabfccdba785ee5e7" name="js/popup.js" role="horde" />
    <file baseinstalldir="/" md5sum="0ba36243c696361674a3b6ed28e561ed" name="js/prefs.js" role="horde" />
    <file baseinstalldir="/" md5sum="190fcc41d648b49889af34af25e4c21d" name="js/prettyautocomplete.js" role="horde" />
    <file baseinstalldir="/" md5sum="9943f9a5e4b77830a7425bc598ccb3dd" name="js/prototype.js" role="horde" />
@@ -261,9 +261,9 @@
    <file baseinstalldir="/" md5sum="7192f3a06f694ebc474a67c71900a8af" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="64016cb05e742a9928a5ed4b7e4fc419" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="1fbab524387d48d2e6c2bf8f86a40841" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="5e2782e3c10a54bf427ca07ae556cb0f" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="1dcef88c5b412f63cfec419ca694d87d" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="a0bd026dc55cba20b13239fea0b59813" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="1cea76425accdd1e6ccaf50fb171c28c" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="49a532a660b89c39fc1f644373dc5f41" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="9a9fcc4d2e74fe2f23fb160cc4eef46c" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="13c3eef6896af7f28418a790af3a2ff2" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="226b10a7e92837c5ae2c97be06ad8a9b" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
    <file baseinstalldir="/" md5sum="a1449211dbc13ac9e760a30b311f60be" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
@@ -466,7 +466,7 @@
    <file baseinstalldir="/" md5sum="78394e9689a9381df653e028e0675c93" name="lib/Horde/Core/Cli.php" role="php" />
    <file baseinstalldir="/" md5sum="b6df507fc03921d18febeb1ae55b2221" name="lib/Horde/Core/History.php" role="php" />
    <file baseinstalldir="/" md5sum="efc5db3982047ce251087a86496bdbbd" name="lib/Horde/Core/Hooks.php" role="php" />
-   <file baseinstalldir="/" md5sum="d1fbac4a9253dde2b74d8816176b829e" name="lib/Horde/Core/HordeMap.php" role="php" />
+   <file baseinstalldir="/" md5sum="87ebe84202df4666c1c7dc541a22bd57" name="lib/Horde/Core/HordeMap.php" role="php" />
    <file baseinstalldir="/" md5sum="c0558a35babb3bd2b42cb2df2087108b" name="lib/Horde/Core/LoginTasks.php" role="php" />
    <file baseinstalldir="/" md5sum="8423d37d537d4534f30ed6794145458a" name="lib/Horde/Core/Nosql.php" role="php" />
    <file baseinstalldir="/" md5sum="4c50eb40bcb09a035063bfe8ec8d5476" name="lib/Horde/Core/Perms.php" role="php" />
@@ -518,7 +518,7 @@
    <file baseinstalldir="/" md5sum="6f6da88f7af8fa9377cf11aab0d37f2b" name="lib/Horde/ErrorHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="da68c000958a8d245bb36cde45b5c3a7" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="126c449639f27b7653300db038989e83" name="lib/Horde/Menu.php" role="php" />
-   <file baseinstalldir="/" md5sum="52f6ca1cc39ea73bccfd0021d0545b8f" name="lib/Horde/PageOutput.php" role="php" />
+   <file baseinstalldir="/" md5sum="b2b264c02d32be00975d0ce14bfbdce2" name="lib/Horde/PageOutput.php" role="php" />
    <file baseinstalldir="/" md5sum="5545d7f0856637ac17bd84aeb8754f00" name="lib/Horde/Registry.php" role="php" />
    <file baseinstalldir="/" md5sum="2d5124c3bb34ea7b27388c25e211aa7e" name="lib/Horde/Session.php" role="php" />
    <file baseinstalldir="/" md5sum="18ebba4b7316931262e10011eaeb945c" name="lib/Horde/Shutdown.php" role="php" />
@@ -1241,7 +1241,6 @@
    <install as="js/map/OpenLayers-debug.js" name="js/map/OpenLayers-debug.js" />
    <install as="js/map/OpenLayers.js" name="js/map/OpenLayers.js" />
    <install as="js/map/osm.js" name="js/map/osm.js" />
-   <install as="js/map/yahoo.js" name="js/map/yahoo.js" />
    <install as="js/map/img/blank.gif" name="js/map/img/blank.gif" />
    <install as="js/map/img/cloud-popup-relative.png" name="js/map/img/cloud-popup-relative.png" />
    <install as="js/map/img/drag-rectangle-off.png" name="js/map/img/drag-rectangle-off.png" />
@@ -3443,6 +3442,24 @@
 * [mjr] Fix handling of EAS categories containing spaces in the name.
 * [jan] Catch exceptions if not being able to find an LDAP user DN (Bug #13571).
 * [mms] Fix using master SMTP credentials when a CLI script uses the &apos;user_admin&apos; registry flag.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.14.2</release>
+    <api>2.14.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-10-02</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix generating reply text from EAS clients that only reply in HTML (Bug #13615).
+* [mjr] Remove Yahoo related code from HordeMap API.
+* [mjr] Add Reply-To header to email sent via ActiveSync if available in identity (Ticket #13592).
+* [mjr] Prevent sending contact lists as results in GAL searches.
    </notes>
   </release>
  </changelog>

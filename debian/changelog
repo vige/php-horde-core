@@ -1,3 +1,9 @@
+php-horde-core (2.14.2+debian0-2) UNRELEASED; urgency=medium
+
+  * Fixed DEP-8 tests, by removing "set -x"
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 11 Oct 2014 11:31:11 +0200
+
 php-horde-core (2.14.2+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.14.2+debian0

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -x
 set -e
 
 cd Horde_Core*/test/./Horde/Core

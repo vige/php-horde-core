@@ -2,6 +2,7 @@ php-horde-core (2.20.0+debian0-1) UNRELEASED; urgency=medium
 
   * Update Standards-Version to 3.9.6, no change
   * New upstream version 2.20.0+debian0
+  * Add missing dependency on libjs-excanvas
 
  -- Mathieu Parent <sathieu@debian.org>  Sun, 03 May 2015 23:12:35 +0200
 

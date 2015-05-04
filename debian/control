@@ -12,7 +12,7 @@ XS-Testsuite: autopkgtest
 
 Package: php-horde-core
 Architecture: all
-Depends: ${misc:Depends}, ${phppear:Debian-Depends}, libjs-jquery-mobile, libjs-jquery, libjs-prototype, libjs-scriptaculous
+Depends: ${misc:Depends}, ${phppear:Debian-Depends}, libjs-excanvas, libjs-jquery-mobile, libjs-jquery, libjs-prototype, libjs-scriptaculous
 Recommends: ${phppear:Debian-Recommends}
 Suggests: php-horde-test, php-horde-javascriptminify-jsmin
 Breaks: ${phppear:Debian-Breaks}

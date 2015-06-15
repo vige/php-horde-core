@@ -831,6 +831,11 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
      *                                  if $from_ts is 0. Needed to avoid race
      *                                  conditions when we don't have any history
      *                                  data. @since 2.6.0
+     *                                  @todo If we can pass the synckey (
+     *                                  perhaps as part of $folder), we can
+     *                                  just look for synckey 0 to know when
+     *                                  we CAN trigger an initial sync without
+     *                                  this flag.
      * @param integer $maxitems         Maximum number of recipients for a RI
      *                                  collection. @since 2.12.0
      * @param boolean $refreshFilter    Force a SOFTDELETE operation and check
@@ -841,8 +846,14 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
      * @return array  An array of hashes that contain the ids of items that have
      *                changed in the specified collection along with a 'type'
      *                flag that indicates the type of change.
-     * @todo H6 - clean up method parameters, update parent class etc...
-     *            return a new ids object.
+     * @todo H6 - Clean up method parameters, update parent class etc...
+     *          - Return a new ids object.
+     *          - Refactor to use a Repository pattern for each supported
+     *            collection and move the bulk of the logic in the switch
+     *            structure below to the various classes - and refactor out most
+     *            of the stuff in the registry connector since the Repositories
+     *            will handle the basic CRUD operations and change detection on
+     *            each collection.
      */
     public function getServerChanges(
         $folder, $from_ts, $to_ts, $cutoffdate, $ping, $ignoreFirstSync = false, $maxitems = 100, $refreshFilter = false)
@@ -1041,6 +1052,7 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 }
             }
             break;
+
         case 'RI':
             $folder->setChanges($this->_connector->getRecipientCache($maxitems));
             $changes = array(
@@ -1049,13 +1061,18 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 'modify' => array(),
                 'soft' => array());
             break;
+
         case Horde_ActiveSync::CLASS_EMAIL:
             if (empty($this->_imap)) {
                 $this->_endBuffer();
                 return array();
             }
             $this->_logger->info(sprintf(
-                '[%s] %s IMAP MODSEQ: %d', $this->_pid, $folder->serverid(), $folder->modseq()));
+                '[%s] %s IMAP PREVIOUS MODSEQ: %d',
+                $this->_pid,
+                $folder->serverid(),
+                $folder->modseq())
+            );
             if ($ping) {
                 try {
                     $ping_res = $this->_imap->ping($folder);
@@ -1077,13 +1094,20 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                     return array();
                 }
             } else {
-                // SOFTDELETE
-                if (!$soft = $refreshFilter) {
+                // SOFTDELETE, but only if we aren't refreshing FILTERTYPE.
+                $soft = false;
+                if (!$refreshFilter) {
                     $sd = $folder->getSoftDeleteTimes();
-                    if ($sd[1] + 82800 + mt_rand(0, 3600) < time()) {
-                        $soft = true;
+                    if (empty($sd[0]) && empty($sd[1]) && !empty($cutoffdate)) {
+                        // No SOFTDELETE performed, this is likely the first
+                        // sync so we must prime the SOFTDELETE values.
+                        $folder->setSoftDeleteTimes((int)$cutoffdate, time());
                     } else {
-                        $soft = false;
+                        if ($sd[1] + 82800 + mt_rand(0, 3600) < time()) {
+                            $soft = true;
+                        } else {
+                            $soft = false;
+                        }
                     }
                 }
 
@@ -1093,7 +1117,9 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                         array(
                             'sincedate' => (int)$cutoffdate,
                             'protocolversion' => $this->_version,
-                            'softdelete' => $soft));
+                            'softdelete' => $soft,
+                            'refreshfilter' => $refreshFilter)
+                    );
                     // Poll the maillog for reply/forward state changes.
                     if (empty($GLOBALS['conf']['activesync']['no_maillogsync'])) {
                         $folder = $this->_getMaillogChanges($folder, $from_ts);
@@ -1120,11 +1146,21 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
         }
 
         $results = array();
-        foreach ($changes['add'] as $add) {
-            $results[] = array(
-                'id' => $add,
-                'type' => Horde_ActiveSync::CHANGE_TYPE_CHANGE,
-                'flags' => Horde_ActiveSync::FLAG_NEWMESSAGE);
+        if (!$folder->haveInitialSync) {
+            $this->_logger->info(sprintf(
+                '[%s] Initial sync, only sending UID.',
+                $this->_pid));
+            $this->_endBuffer();
+            $add = $changes['add'];
+            $changes = null;
+            return $add;
+        } else {
+            foreach ($changes['add'] as $add) {
+                $results[] = array(
+                    'id' => $add,
+                    'type' => Horde_ActiveSync::CHANGE_TYPE_CHANGE,
+                    'flags' => Horde_ActiveSync::FLAG_NEWMESSAGE);
+            }
         }
 
         // For CLASS_EMAIL, all changes are a change in flags, categories or
@@ -1257,7 +1293,7 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             try {
                 $message = $this->_connector->contacts_export($id, array(
                     'protocolversion' => $this->_version,
-                    'truncation' => $collection['truncation'],
+                    'truncation' => empty($collection['truncation']) ? Horde_ActiveSync::TRUNCATION_9 : $collection['truncation'],
                     'bodyprefs' => $collection['bodyprefs'],
                     'mimesupport' => $collection['mimesupport'],
                     'device' => $this->_device));
@@ -1323,7 +1359,7 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 $this->_endBuffer();
                 throw new Horde_Exception_NotFound();
             }
-            $msg = current($messages);
+            $msg = array_pop($messages);
 
             // Check for verb status from the Maillog.
             if ($this->_version >= Horde_ActiveSync::VERSION_FOURTEEN) {
@@ -1831,7 +1867,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 if ($message->read !== '') {
                     $this->setReadFlag($folderid, $id, $message->read);
                     $stat['flags'] = array_merge($stat['flags'], array('read' => $message->read));
-                } elseif ($message->propertyExists('flag')) {
+                }
+                if ($message->propertyExists('flag')) {
                     if (!$message->flag) {
                         $message->flag = Horde_ActiveSync::messageFactory('Flag');
                     }

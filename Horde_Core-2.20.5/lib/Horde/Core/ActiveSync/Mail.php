@@ -19,7 +19,7 @@
  * @package Core
  *
  * @property-read Horde_ActiveSync_Imap_Adapter $imapAdapter  The imap adapter.
- * @property-read boolean $replacemime  Flag to indicate we are to replace the MIME contents of a SMART request.
+ * @property      boolean $replacemime  Flag to indicate we are to replace the MIME contents of a SMART request.
  * @property-read integer $id  The UID of the source email for any SMARTREPLY or SMARTFORWARD requests.
  * @property-read boolean $reply  Flag indicating a SMARTREPLY request.
  * @property-read boolean $forward  Flag indicating a SMARTFORWARD request.
@@ -79,7 +79,7 @@ class Horde_Core_ActiveSync_Mail
      *
      * @var boolean
      */
-    protected $_replaceMime = false;
+    protected $_replacemime = false;
 
     /**
      * The current EAS user.
@@ -99,7 +99,7 @@ class Horde_Core_ActiveSync_Mail
      * Internal cache of the mailer used when sending SMART[REPLY|FORWARD].
      * Used to fetch the raw message used to save to sent mail folder.
      *
-     * @var Horde_Mail
+     * @var Horde_Mime_Mail
      */
     protected $_mailer;
 
@@ -117,6 +117,13 @@ class Horde_Core_ActiveSync_Mail
      * @var Horde_ActiveSync_Imap_Adapter
      */
     protected $_imap;
+
+    /**
+     * EAS version in use.
+     *
+     * @var string
+     */
+    protected $_version;
 
     /**
      * Const'r
@@ -151,6 +158,14 @@ class Horde_Core_ActiveSync_Mail
             return $this->$property;
         }
     }
+
+    public function __set($property, $value)
+    {
+        if ($property == 'replacemime') {
+            $this->_replacemime = $value;
+        }
+    }
+
 
     /**
      * Set the raw message content received from the EAS client to send.
@@ -221,7 +236,7 @@ class Horde_Core_ActiveSync_Mail
             throw new Horde_ActiveSync_Exception('No data set or received from EAS client.');
         }
         $this->_callPreSendHook();
-        if (!$this->_parentFolder || ($this->_parentFolder && $this->_replaceMime)) {
+        if (!$this->_parentFolder || ($this->_parentFolder && $this->_replacemime)) {
             $this->_sendRaw();
         } else {
             $this->_sendSmart();
@@ -258,7 +273,9 @@ class Horde_Core_ActiveSync_Mail
         if (!empty($this->_mailer)) {
             return $this->_mailer->getRaw();
         }
-        return $this->_headers->toString(array('charset' => 'UTF-8')) . $this->_raw->getMessage();
+        $stream = new Horde_Stream_Temp(array('max_memory' => 262144));
+        $stream->add($this->_headers->toString(array('charset' => 'UTF-8')) . $this->_raw->getMessage(), true);
+        return $stream;
     }
 
     /**
@@ -283,17 +300,50 @@ class Horde_Core_ActiveSync_Mail
                 ->send($recipients, $h_array, $this->_raw->getMessage()->stream);
         } catch (Horde_Mail_Exception $e) {
             throw new Horde_ActiveSync_Exception($e->getMessage());
+        } catch (InvalidArgumentException $e) {
+            // Some clients (HTC One devices, for one) generate HTML signatures
+            // that contain line lengths too long for servers without BINARYMIME
+            // to send. If we are here, see if that's the reason why by trying
+            // to wrap any text/html parts.
+            if (!$this->_tryWithoutBinary($recipients, $h_array)) {
+                throw new Horde_ActiveSync_Exception($e->getMessage());
+            }
         }
 
         // Replace MIME? Don't have original body, but still need headers.
         // @TODO: Get JUST the headers?
-        if ($this->_replaceMime) {
+        if ($this->_replacemime) {
             try {
                 $this->_getImapMessage();
             } catch (Horde_Exception_NotFound $e) {
                 throw new Horde_ActiveSync_Exception($e->getMessage());
             }
         }
+    }
+
+    /**
+     * Some clients (HTC One devices, for one) generate HTML signatures
+     * that contain line lengths too long for servers without BINARYMIME to
+     * send. If we are here, see if that's the reason by checking content
+     * encoding and trying again.
+     *
+     * @return boolean
+     */
+    protected function _tryWithoutBinary($recipients, array $headers)
+    {
+        // All we need to do is re-assign the mime object. This will cause the
+        // content transfer encoding to be re-evaulated and set to an approriate
+        // value if needed.
+        $mime = $this->_raw->getMimeObject();
+        $this->_raw->replaceMime($mime);
+        try {
+            $GLOBALS['injector']->getInstance('Horde_Mail')
+                ->send($recipients, $headers, $this->_raw->getMessage()->stream);
+        } catch (Exception $e) {
+            return false;
+        }
+
+        return true;
     }
 
     /**

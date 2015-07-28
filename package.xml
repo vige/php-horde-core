@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-06-11</date>
- <time>13:39:29</time>
+ <date>2015-07-21</date>
+ <time>21:47:37</time>
  <version>
-  <release>2.20.5</release>
+  <release>2.20.7</release>
   <api>2.20.0</api>
  </version>
  <stability>
@@ -40,10 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix typo that was causing ActiveSync FILTERTYPE changes to go undetected.
-* [mjr] Support for Horde_History in Horde_Kolab_Storage. Requires Horde_Kolab_Storage 2.2.0+.
-* [jan] Don&apos;t allow empty From: addresses if verifying identities.
-* [mjr] Fix fatal error when disconnecting a user Twitter account.
+* [mjr] Prevent various broken behaviors on ActiveSync clients due to errors copying an email to sent mail folder or updating the maillog (Bug #14058).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -261,12 +258,12 @@
    <file baseinstalldir="/" md5sum="6a6c571e248f9e7322ea05d94c2375f4" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="caff16a3f67d6c108ab1edf7c88fbf0b" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="6ebf297b6dc384940254895848f3f467" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="f35a46afe1b2d21b7135d5696effed05" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="b00cc668b7551988b8a94cca3e678afc" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="f0b3951808fb85bbd0dfa7e232e163ec" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="c93e46d9d8fa6bf05a2d9e9d8bee2ac2" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="4c5777653378874cfffb514bddd89369" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="b5b68a1446b5ef5b2e80f7316e3fea30" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="81449fbf8c8514c5de6111149cd7cb89" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
-   <file baseinstalldir="/" md5sum="b25fe345a2511e1051b415f820013d7b" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
+   <file baseinstalldir="/" md5sum="c335d50c1729b70be27fd6f2901929cb" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
    <file baseinstalldir="/" md5sum="3cda80274379c8db7f7bef93df7003d3" name="lib/Horde/Core/Ajax/Application/Handler/Imple.php" role="php" />
    <file baseinstalldir="/" md5sum="38315bd832415405dc2d7c76b870e873" name="lib/Horde/Core/Ajax/Application/Handler/Noop.php" role="php" />
    <file baseinstalldir="/" md5sum="a98cd8ac4a9893355438e919600f37ca" name="lib/Horde/Core/Ajax/Application/Handler/Prefs.php" role="php" />
@@ -300,7 +297,7 @@
    <file baseinstalldir="/" md5sum="25394c5d0271aa55e5c24dd0344019a6" name="lib/Horde/Core/Auth/Signup/Null.php" role="php" />
    <file baseinstalldir="/" md5sum="961b59a17248f2a4c27ba3bb20ab001e" name="lib/Horde/Core/Auth/Signup/Sql.php" role="php" />
    <file baseinstalldir="/" md5sum="3c3f8148f658016b3bfdc06811ebb9d4" name="lib/Horde/Core/Auth/Signup/SqlObject.php" role="php" />
-   <file baseinstalldir="/" md5sum="db334affd892bbd9a885b0cdaace4828" name="lib/Horde/Core/Auth/Application.php" role="php" />
+   <file baseinstalldir="/" md5sum="88c82694143e3f211b47c8f6c688337e" name="lib/Horde/Core/Auth/Application.php" role="php" />
    <file baseinstalldir="/" md5sum="4305107f6d107e7902ed84c368aabc65" name="lib/Horde/Core/Auth/Composite.php" role="php" />
    <file baseinstalldir="/" md5sum="04fa071f310643d338825ae68904b626" name="lib/Horde/Core/Auth/Imsp.php" role="php" />
    <file baseinstalldir="/" md5sum="b93027269ed605045ddd2b1f7f688b31" name="lib/Horde/Core/Auth/Ldap.php" role="php" />
@@ -328,7 +325,7 @@
    <file baseinstalldir="/" md5sum="6bfac165a95eeb776efffcf5257053f0" name="lib/Horde/Core/Factory/ActiveSyncServer.php" role="php" />
    <file baseinstalldir="/" md5sum="b65dd5690259797c8f0d956c47c96b59" name="lib/Horde/Core/Factory/ActiveSyncState.php" role="php" />
    <file baseinstalldir="/" md5sum="7c768e143aedc0e585b1ec029c956ba0" name="lib/Horde/Core/Factory/Ajax.php" role="php" />
-   <file baseinstalldir="/" md5sum="7552df072cdea02fd70b0736b819e817" name="lib/Horde/Core/Factory/Alarm.php" role="php" />
+   <file baseinstalldir="/" md5sum="7b5c89a02b370245cc3283824b7fc1e4" name="lib/Horde/Core/Factory/Alarm.php" role="php" />
    <file baseinstalldir="/" md5sum="333c460fe5c138558c5827fd25d64500" name="lib/Horde/Core/Factory/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="0883bf6b735bc791861a95005934e2c7" name="lib/Horde/Core/Factory/AuthSignup.php" role="php" />
    <file baseinstalldir="/" md5sum="4ac70a29037fb03884aae3f688650e83" name="lib/Horde/Core/Factory/Base.php" role="php" />
@@ -360,7 +357,7 @@
    <file baseinstalldir="/" md5sum="c09754cda115be722389fe321a96e19b" name="lib/Horde/Core/Factory/JavascriptCache.php" role="php" />
    <file baseinstalldir="/" md5sum="f1a9d7f870f0106b3f5c53239c562228" name="lib/Horde/Core/Factory/KolabServer.php" role="php" />
    <file baseinstalldir="/" md5sum="fe441fe2309ca02925d9f4a526d4e5fe" name="lib/Horde/Core/Factory/KolabSession.php" role="php" />
-   <file baseinstalldir="/" md5sum="c7cb1e50f3972b8fe9cea1be22b61946" name="lib/Horde/Core/Factory/KolabStorage.php" role="php" />
+   <file baseinstalldir="/" md5sum="cd5577b98268849c628b1bc190b78cb1" name="lib/Horde/Core/Factory/KolabStorage.php" role="php" />
    <file baseinstalldir="/" md5sum="97ab8813f62033c2c7ae6a24023cb7ca" name="lib/Horde/Core/Factory/LanguageDetect.php" role="php" />
    <file baseinstalldir="/" md5sum="5f074ffe4c3661c7408351e4fb6e3173" name="lib/Horde/Core/Factory/Ldap.php" role="php" />
    <file baseinstalldir="/" md5sum="9c1c31bff226b54f9ae95fd73aea3894" name="lib/Horde/Core/Factory/Lock.php" role="php" />
@@ -375,7 +372,7 @@
    <file baseinstalldir="/" md5sum="f9117f15414d5c67a92ab4cb6205e521" name="lib/Horde/Core/Factory/Nosql.php" role="php" />
    <file baseinstalldir="/" md5sum="a8a2eb5fad766d01585e1801db7c3f82" name="lib/Horde/Core/Factory/NosqlBase.php" role="php" />
    <file baseinstalldir="/" md5sum="0884ed4e1af3e5f9b4b7d68aa30a922c" name="lib/Horde/Core/Factory/Notification.php" role="php" />
-   <file baseinstalldir="/" md5sum="c4a26102f36c392587b972593739820e" name="lib/Horde/Core/Factory/Perms.php" role="php" />
+   <file baseinstalldir="/" md5sum="ecd2d0e328be6208447f84a52a2d918e" name="lib/Horde/Core/Factory/Perms.php" role="php" />
    <file baseinstalldir="/" md5sum="c7104e4327c26e6a2d5c0514c4813682" name="lib/Horde/Core/Factory/PermsCore.php" role="php" />
    <file baseinstalldir="/" md5sum="352a5eebd7dc78bb08769eeeddaece41" name="lib/Horde/Core/Factory/Prefs.php" role="php" />
    <file baseinstalldir="/" md5sum="0da2d4cede065fe084135bd21e94ede0" name="lib/Horde/Core/Factory/QueueStorage.php" role="php" />
@@ -3766,7 +3763,7 @@
    <date>2015-06-01</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
-* [mjr] Work around broken ActiveSync clients that send incorrect line lengths for text/html parts (Bug: 13901).
+* [mjr] Work around broken ActiveSync clients that send incorrect line lengths for text/html parts (Bug #13901).
    </notes>
   </release>
   <release>
@@ -3785,6 +3782,37 @@
 * [mjr] Support for Horde_History in Horde_Kolab_Storage. Requires Horde_Kolab_Storage 2.2.0+.
 * [jan] Don&apos;t allow empty From: addresses if verifying identities.
 * [mjr] Fix fatal error when disconnecting a user Twitter account.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.20.6</release>
+    <api>2.20.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-07-06</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] SECURITY: Don&apos;t allow to login with an emtpy password.
+* [jan] Give administrators access to all groups, even with $conf[&apos;share&apos;][&apos;any_group&apos;] disabled.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.20.7</release>
+    <api>2.20.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-07-22</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Prevent various broken behaviors on ActiveSync clients due to errors copying an email to sent mail folder or updating the maillog (Bug #14058).
    </notes>
   </release>
  </changelog>

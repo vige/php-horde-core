@@ -79,6 +79,21 @@ class Horde_Core_Factory_KolabStorage extends Horde_Core_Factory_Base
     {
         $configuration = $this->_injector->getInstance('Horde_Kolab_Storage_Configuration');
 
+        // Cache configuration
+        $cache = !empty($configuration['cache'])
+            ? $configuration['cache']
+            : 'Mock';
+        switch ($cache) {
+        case 'Horde':
+            $cacheob = $this->_injector->getInstance('Horde_Cache');
+            break;
+        case 'Mock':
+        default:
+            $cacheob = new Horde_Cache(
+                new Horde_Cache_Storage_Mock(), array('compress' => true)
+            );
+        }
+
         $params = array(
             'driver' => 'horde',
             'params' => array(
@@ -87,7 +102,14 @@ class Horde_Core_Factory_KolabStorage extends Horde_Core_Factory_Base
                 'password' => $GLOBALS['registry']->getAuthCredential('password'),
                 'port'     => $configuration['port'],
                 'secure'   => $configuration['secure'],
-                'debug'    => isset($configuration['debug']) ? $configuration['debug'] : null,
+                'debug'    => isset($configuration['debug'])
+                    ? $configuration['debug']
+                    : null,
+                'cache' =>  array(
+                    'backend' => new Horde_Imap_Client_Cache_Backend_Cache(
+                        array('cacheob' => $cacheob)
+                    )
+                )
             ),
             'queries' => array(
                 'list' => array(
@@ -116,6 +138,14 @@ class Horde_Core_Factory_KolabStorage extends Horde_Core_Factory_Base
             $params['history'] = $history;
             $params['history_prefix_generator'] = new Horde_Core_Kolab_Storage_HistoryPrefix();
         } catch(Horde_Exception $e) {
+        }
+
+        if (!empty($configuration['strategy'])) {
+            $classname = 'Horde_Kolab_Storage_Synchronization_' . basename($configuration['strategy']);
+            if (!class_exists($classname)) {
+                throw new Horde_Exception(sprintf('Class %s not found.', $classname));
+            }
+            $params['sync_strategy'] = new $classname();
         }
 
         $factory = new Horde_Kolab_Storage_Factory($params);

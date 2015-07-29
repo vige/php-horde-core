@@ -1,8 +1,8 @@
-php-horde-core (2.20.7+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.20.7+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.20.7+debian0
 
- -- Mathieu Parent <sathieu@debian.org>  Tue, 28 Jul 2015 20:31:56 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 29 Jul 2015 06:32:51 +0200
 
 php-horde-core (2.20.5+debian0-1) unstable; urgency=medium
 

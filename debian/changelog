@@ -1,3 +1,10 @@
+php-horde-core (2.20.7+debian0-2) UNRELEASED; urgency=medium
+
+  * Remove XS-Testsuite header in d/control
+  * Update gbp.conf
+
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 07 Aug 2015 09:03:15 +0200
+
 php-horde-core (2.20.7+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.20.7+debian0

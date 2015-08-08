@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-07-21</date>
- <time>21:47:37</time>
+ <date>2015-07-30</date>
+ <time>22:27:06</time>
  <version>
-  <release>2.20.7</release>
+  <release>2.20.8</release>
   <api>2.20.0</api>
  </version>
  <stability>
@@ -40,7 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Prevent various broken behaviors on ActiveSync clients due to errors copying an email to sent mail folder or updating the maillog (Bug #14058).
+* [mjr] Map Kolab distribution-list items to the contacts API (Bug #14038).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -401,7 +401,7 @@
    <file baseinstalldir="/" md5sum="0c03d5fa66d7749025625edc2455a5c1" name="lib/Horde/Core/HashTable/Wrapper.php" role="php" />
    <file baseinstalldir="/" md5sum="712f0338d662d22e4071549000c40e1d" name="lib/Horde/Core/Imsp/Utils.php" role="php" />
    <file baseinstalldir="/" md5sum="f866c5ea6fae64c448146a5435698041" name="lib/Horde/Core/Itip/Response/Options/Horde.php" role="php" />
-   <file baseinstalldir="/" md5sum="b3dd40b344595349233242fce7f3e89f" name="lib/Horde/Core/Kolab/Storage/HistoryPrefix.php" role="php" />
+   <file baseinstalldir="/" md5sum="aeb666207d3de1c9d4109405251e0cf6" name="lib/Horde/Core/Kolab/Storage/HistoryPrefix.php" role="php" />
    <file baseinstalldir="/" md5sum="d4e50a2f96b0b138218588832a30d651" name="lib/Horde/Core/Log/Logger.php" role="php" />
    <file baseinstalldir="/" md5sum="d6f1d61f187493f77b60da05ec2cf3aa" name="lib/Horde/Core/Log/Object.php" role="php" />
    <file baseinstalldir="/" md5sum="a67c4d663bdac5fad9764897e67e70d7" name="lib/Horde/Core/Log/Wrapper.php" role="php" />
@@ -3813,6 +3813,21 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Prevent various broken behaviors on ActiveSync clients due to errors copying an email to sent mail folder or updating the maillog (Bug #14058).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.20.8</release>
+    <api>2.20.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-07-31</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Map Kolab distribution-list items to the contacts API (Bug #14038).
    </notes>
   </release>
  </changelog>

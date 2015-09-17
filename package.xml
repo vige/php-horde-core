@@ -28,11 +28,11 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-07-30</date>
- <time>22:27:06</time>
+ <date>2015-09-07</date>
+ <time>15:46:38</time>
  <version>
-  <release>2.20.8</release>
-  <api>2.20.0</api>
+  <release>2.21.0</release>
+  <api>2.21.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -40,7 +40,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Map Kolab distribution-list items to the contacts API (Bug #14038).
+* [mjr] Fix dependency on possibly missing Horde_Kolab_Storage_HistoryPrefix interface (Bug #14099).
+* [mjr] Add beforeUpdate callback to prettyautocompleter.js.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -243,7 +244,7 @@
    <file baseinstalldir="/" md5sum="2560c9f2c284b9c6cddd02a9dda7a086" name="js/open_html_helper.js" role="horde" />
    <file baseinstalldir="/" md5sum="b697fefccd35c232d88a02f70df082ac" name="js/popup.js" role="horde" />
    <file baseinstalldir="/" md5sum="094b34e852a4f463c9b3104b2c9ee9eb" name="js/prefs.js" role="horde" />
-   <file baseinstalldir="/" md5sum="94d215536f4bf5cf8c70637354270678" name="js/prettyautocomplete.js" role="horde" />
+   <file baseinstalldir="/" md5sum="d1fd5f877c907a80400273aa24feed95" name="js/prettyautocomplete.js" role="horde" />
    <file baseinstalldir="/" md5sum="d0e163d9e963eb8629b29f6ca7ecc850" name="js/prototype.js" role="horde" />
    <file baseinstalldir="/" md5sum="a6de30e7f0a3934d016d6e38bec1c232" name="js/redbox.js" role="horde" />
    <file baseinstalldir="/" md5sum="198b526b22fa73a6f8e0d0e3e966d1b3" name="js/smartmobile.js" role="horde" />
@@ -258,8 +259,8 @@
    <file baseinstalldir="/" md5sum="6a6c571e248f9e7322ea05d94c2375f4" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="caff16a3f67d6c108ab1edf7c88fbf0b" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="6ebf297b6dc384940254895848f3f467" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="f0b3951808fb85bbd0dfa7e232e163ec" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="c93e46d9d8fa6bf05a2d9e9d8bee2ac2" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="85bf286313ffe2794a10ac3176381a0d" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="e442eb32b71d022c6f09b7a883f51315" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="4c5777653378874cfffb514bddd89369" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="b5b68a1446b5ef5b2e80f7316e3fea30" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="81449fbf8c8514c5de6111149cd7cb89" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -271,7 +272,7 @@
    <file baseinstalldir="/" md5sum="c7fdec74143f15c6a72450ef66fe397c" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Ajax.php" role="php" />
    <file baseinstalldir="/" md5sum="803eaa48b1f1ef9ed51d07db616ceee9" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Base.php" role="php" />
    <file baseinstalldir="/" md5sum="019c8c832a7c99fe7e963431b4d1f8f4" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Local.php" role="php" />
-   <file baseinstalldir="/" md5sum="4d3551420cb323c9ecc77b4d21b285a1" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Pretty.php" role="php" />
+   <file baseinstalldir="/" md5sum="a10f70f121472f02f4f1a196ed35ef05" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Pretty.php" role="php" />
    <file baseinstalldir="/" md5sum="7559005ec410ff4cee5314c258233cb4" name="lib/Horde/Core/Ajax/Imple/Geocoder/Geonames.php" role="php" />
    <file baseinstalldir="/" md5sum="89d8c09f94b7df5b5fef670f2410544a" name="lib/Horde/Core/Ajax/Imple/AutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="bd5e9ee0f343321d63b4a54fe8d6b8f1" name="lib/Horde/Core/Ajax/Imple/ContactAutoCompleter.php" role="php" />
@@ -306,7 +307,7 @@
    <file baseinstalldir="/" md5sum="cf7e07a54884cbb68d70896c0329365a" name="lib/Horde/Core/Auth/UsernameHook.php" role="php" />
    <file baseinstalldir="/" md5sum="2929b3213d0b07dcf93c51a25f80ec7e" name="lib/Horde/Core/Auth/X509.php" role="php" />
    <file baseinstalldir="/" md5sum="0637c7c1cd42b2ffd9739911675219d5" name="lib/Horde/Core/Block/Layout/Manager.php" role="php" />
-   <file baseinstalldir="/" md5sum="bd1c47a97ea608eeaf7d03f46fb0135e" name="lib/Horde/Core/Block/Layout/View.php" role="php" />
+   <file baseinstalldir="/" md5sum="6f1bc33e1968ce64a0aa98fe6f5646e4" name="lib/Horde/Core/Block/Layout/View.php" role="php" />
    <file baseinstalldir="/" md5sum="f474d1f4c05288fa5425d1598c2b8f77" name="lib/Horde/Core/Block/Collection.php" role="php" />
    <file baseinstalldir="/" md5sum="6201fb9c773d5d780864357112d3c1ea" name="lib/Horde/Core/Block/Layout.php" role="php" />
    <file baseinstalldir="/" md5sum="8df69fd60971e7febaf633fd29fa33e3" name="lib/Horde/Core/Block/Upgrade.php" role="php" />
@@ -357,7 +358,7 @@
    <file baseinstalldir="/" md5sum="c09754cda115be722389fe321a96e19b" name="lib/Horde/Core/Factory/JavascriptCache.php" role="php" />
    <file baseinstalldir="/" md5sum="f1a9d7f870f0106b3f5c53239c562228" name="lib/Horde/Core/Factory/KolabServer.php" role="php" />
    <file baseinstalldir="/" md5sum="fe441fe2309ca02925d9f4a526d4e5fe" name="lib/Horde/Core/Factory/KolabSession.php" role="php" />
-   <file baseinstalldir="/" md5sum="cd5577b98268849c628b1bc190b78cb1" name="lib/Horde/Core/Factory/KolabStorage.php" role="php" />
+   <file baseinstalldir="/" md5sum="172b99d8177043f9432f2c02e9c3347f" name="lib/Horde/Core/Factory/KolabStorage.php" role="php" />
    <file baseinstalldir="/" md5sum="97ab8813f62033c2c7ae6a24023cb7ca" name="lib/Horde/Core/Factory/LanguageDetect.php" role="php" />
    <file baseinstalldir="/" md5sum="5f074ffe4c3661c7408351e4fb6e3173" name="lib/Horde/Core/Factory/Ldap.php" role="php" />
    <file baseinstalldir="/" md5sum="9c1c31bff226b54f9ae95fd73aea3894" name="lib/Horde/Core/Factory/Lock.php" role="php" />
@@ -394,7 +395,7 @@
    <file baseinstalldir="/" md5sum="562a7b126fafe89bce9f645d0b24c7ee" name="lib/Horde/Core/Factory/Variables.php" role="php" />
    <file baseinstalldir="/" md5sum="5dbac1ac7c618079e74abc0c5f383c40" name="lib/Horde/Core/Factory/Vfs.php" role="php" />
    <file baseinstalldir="/" md5sum="c07328f7c379340eb172857ea0af1c03" name="lib/Horde/Core/Factory/View.php" role="php" />
-   <file baseinstalldir="/" md5sum="39db29649afb525522681a1fbcf2131c" name="lib/Horde/Core/Factory/Weather.php" role="php" />
+   <file baseinstalldir="/" md5sum="70f7a8b2c9b522ed917a29a40f31664a" name="lib/Horde/Core/Factory/Weather.php" role="php" />
    <file baseinstalldir="/" md5sum="19f10ed9d5958e8d5901f6e9fa9bc3e0" name="lib/Horde/Core/Group/Ldap.php" role="php" />
    <file baseinstalldir="/" md5sum="0973370b5e7975fa2dc00d2042cc6782" name="lib/Horde/Core/HashTable/PersistentSession.php" role="php" />
    <file baseinstalldir="/" md5sum="80ce22d36aea938e3c2b3dfee5a4d109" name="lib/Horde/Core/HashTable/Vfs.php" role="php" />
@@ -3828,6 +3829,37 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Map Kolab distribution-list items to the contacts API (Bug #14038).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.20.9</release>
+    <api>2.20.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-08-29</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Support configuration for version 2 of WorldWeatherOnline&apos;s API.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.21.0</release>
+    <api>2.21.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-09-07</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix dependency on possibly missing Horde_Kolab_Storage_HistoryPrefix interface (Bug #14099).
+* [mjr] Add beforeUpdate callback to prettyautocompleter.js.
    </notes>
   </release>
  </changelog>

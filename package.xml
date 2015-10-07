@@ -28,11 +28,11 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-09-07</date>
- <time>15:46:38</time>
+ <date>2015-09-25</date>
+ <time>12:26:34</time>
  <version>
-  <release>2.21.0</release>
-  <api>2.21.0</api>
+  <release>2.22.0</release>
+  <api>2.22.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -40,8 +40,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix dependency on possibly missing Horde_Kolab_Storage_HistoryPrefix interface (Bug #14099).
-* [mjr] Add beforeUpdate callback to prettyautocompleter.js.
+* [mjr] ActiveSync logging improvements.
+* [mjr] Add support for OpenWeatherMap layers in Horde_Map.
+* [mjr] Fix edge-case issue with ActiveSync folder list generation when installed application contains no user writable sources.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -201,7 +202,7 @@
    <file baseinstalldir="/" md5sum="91f1e6a688f23709df98387824cce212" name="js/map/bing.js" role="horde" />
    <file baseinstalldir="/" md5sum="e92f6783b263673f6ac5c8af75f9f894" name="js/map/cloudmade.js" role="horde" />
    <file baseinstalldir="/" md5sum="019b44781de7087e67ce6c395d7900c9" name="js/map/google.js" role="horde" />
-   <file baseinstalldir="/" md5sum="226753c6de4d6d5832b13b19cf595ec0" name="js/map/horde.js" role="horde" />
+   <file baseinstalldir="/" md5sum="2e16d61a5cf38ca1b2986d2be3fa769d" name="js/map/horde.js" role="horde" />
    <file baseinstalldir="/" md5sum="3c9245f4902d7a52f88263ec1e3086f6" name="js/map/map.js" role="horde" />
    <file baseinstalldir="/" md5sum="de3dc8dc52527d1115a59931c95318c5" name="js/map/mapquest.js" role="horde" />
    <file baseinstalldir="/" md5sum="b5135bce230247571adc5b7c19b7b728" name="js/map/mytopo.js" role="horde" />
@@ -210,6 +211,7 @@
    <file baseinstalldir="/" md5sum="ca6b8f7037cf91bd146a65ffbe4760e1" name="js/map/OpenLayers-debug.js" role="horde" />
    <file baseinstalldir="/" md5sum="ad70d33997bddd68ccc1994ebe8898ac" name="js/map/OpenLayers.js" role="horde" />
    <file baseinstalldir="/" md5sum="7a512f5c98f85f8c1520263e767434ac" name="js/map/osm.js" role="horde" />
+   <file baseinstalldir="/" md5sum="7ab159878deaab8889a81224ae750c88" name="js/map/owm.js" role="horde" />
    <file baseinstalldir="/" md5sum="c6321f204481f259724bd6455c0fdded" name="js/scriptaculous/builder.js" role="horde" />
    <file baseinstalldir="/" md5sum="03b502fd8ae202eb164b348749392720" name="js/scriptaculous/controls.js" role="horde" />
    <file baseinstalldir="/" md5sum="046759400db7a6096376e50110104edd" name="js/scriptaculous/dragdrop.js" role="horde" />
@@ -259,8 +261,8 @@
    <file baseinstalldir="/" md5sum="6a6c571e248f9e7322ea05d94c2375f4" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="caff16a3f67d6c108ab1edf7c88fbf0b" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="6ebf297b6dc384940254895848f3f467" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="85bf286313ffe2794a10ac3176381a0d" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="e442eb32b71d022c6f09b7a883f51315" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="15987fc19ca56cd2b4cc744828c9754f" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="685e7e4458cf281814d5fa4877c54043" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="4c5777653378874cfffb514bddd89369" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="b5b68a1446b5ef5b2e80f7316e3fea30" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="81449fbf8c8514c5de6111149cd7cb89" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -395,7 +397,7 @@
    <file baseinstalldir="/" md5sum="562a7b126fafe89bce9f645d0b24c7ee" name="lib/Horde/Core/Factory/Variables.php" role="php" />
    <file baseinstalldir="/" md5sum="5dbac1ac7c618079e74abc0c5f383c40" name="lib/Horde/Core/Factory/Vfs.php" role="php" />
    <file baseinstalldir="/" md5sum="c07328f7c379340eb172857ea0af1c03" name="lib/Horde/Core/Factory/View.php" role="php" />
-   <file baseinstalldir="/" md5sum="70f7a8b2c9b522ed917a29a40f31664a" name="lib/Horde/Core/Factory/Weather.php" role="php" />
+   <file baseinstalldir="/" md5sum="3feae01ac65ec9e4610ef1f5cc8bf4f6" name="lib/Horde/Core/Factory/Weather.php" role="php" />
    <file baseinstalldir="/" md5sum="19f10ed9d5958e8d5901f6e9fa9bc3e0" name="lib/Horde/Core/Group/Ldap.php" role="php" />
    <file baseinstalldir="/" md5sum="0973370b5e7975fa2dc00d2042cc6782" name="lib/Horde/Core/HashTable/PersistentSession.php" role="php" />
    <file baseinstalldir="/" md5sum="80ce22d36aea938e3c2b3dfee5a4d109" name="lib/Horde/Core/HashTable/Vfs.php" role="php" />
@@ -518,7 +520,7 @@
    <file baseinstalldir="/" md5sum="752d88f9c3f2a52eacea9dca61d23b70" name="lib/Horde/Themes/Image.php" role="php" />
    <file baseinstalldir="/" md5sum="f7f291ac447142623328a407b0bceb7a" name="lib/Horde/Themes/Sound.php" role="php" />
    <file baseinstalldir="/" md5sum="c200cb14fdbfbb1e813b73ff150bca7f" name="lib/Horde/Config.php" role="php" />
-   <file baseinstalldir="/" md5sum="15403923c20fc6167de8a995b195038f" name="lib/Horde/Deprecated.php" role="php" />
+   <file baseinstalldir="/" md5sum="1514b91598c78b8b5b2e7c3aad72000a" name="lib/Horde/Deprecated.php" role="php" />
    <file baseinstalldir="/" md5sum="f2dc45c88c6043e8af9ca086cdc7c4fd" name="lib/Horde/ErrorHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="5aa04dc7b8b40634692fbf4254020bed" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="d3929349fee0b02b1f055df2b761b486" name="lib/Horde/Menu.php" role="php" />
@@ -1244,6 +1246,7 @@
    <install as="js/map/OpenLayers-debug.js" name="js/map/OpenLayers-debug.js" />
    <install as="js/map/OpenLayers.js" name="js/map/OpenLayers.js" />
    <install as="js/map/osm.js" name="js/map/osm.js" />
+   <install as="js/map/owm.js" name="js/map/owm.js" />
    <install as="js/map/img/blank.gif" name="js/map/img/blank.gif" />
    <install as="js/map/img/cloud-popup-relative.png" name="js/map/img/cloud-popup-relative.png" />
    <install as="js/map/img/drag-rectangle-off.png" name="js/map/img/drag-rectangle-off.png" />
@@ -3860,6 +3863,23 @@
    <notes>
 * [mjr] Fix dependency on possibly missing Horde_Kolab_Storage_HistoryPrefix interface (Bug #14099).
 * [mjr] Add beforeUpdate callback to prettyautocompleter.js.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.22.0</release>
+    <api>2.22.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-09-25</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] ActiveSync logging improvements.
+* [mjr] Add support for OpenWeatherMap layers in Horde_Map.
+* [mjr] Fix edge-case issue with ActiveSync folder list generation when installed application contains no user writable sources.
    </notes>
   </release>
  </changelog>

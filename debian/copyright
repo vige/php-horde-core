@@ -58,7 +58,7 @@ License: BSD-2-clause-like
  of the authors and should not be interpreted as representing official policies,
  either expressed or implied, of OpenLayers Contributors.
 
-Files: js/liquidmetal.js
+Files: Horde_Core-*/js/liquidmetal.js
 Copyright: 2009 Ryan McGeary (ryanonjavascript@mcgeary.org)
 License: Expat
  Permission is hereby granted, free of charge, to any person obtaining

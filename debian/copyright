@@ -5,7 +5,7 @@ Upstream-Contact: Horde <horde@lists.horde.org>
 Source: http://pear.horde.org/
 
 Files: *
-Copyright: 1999-2011 Horde LLC (http://www.horde.org/)
+Copyright: 1999-2015 Horde LLC (http://www.horde.org/)
 	   2001-2003 Robert E. Coyle (robertecoyle@hotmail.com)
 License: LGPL-2.1
  This library is free software; you can redistribute it and/or

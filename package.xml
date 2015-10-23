@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-09-25</date>
- <time>12:26:34</time>
+ <date>2015-10-20</date>
+ <time>10:44:03</time>
  <version>
-  <release>2.22.0</release>
+  <release>2.22.1</release>
   <api>2.22.0</api>
  </version>
  <stability>
@@ -40,9 +40,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] ActiveSync logging improvements.
-* [mjr] Add support for OpenWeatherMap layers in Horde_Map.
-* [mjr] Fix edge-case issue with ActiveSync folder list generation when installed application contains no user writable sources.
+* [mjr] Fix ajax updating of Weather block when weather map is shown.
+* [mjr] Fix detecting an application&apos;s ability to send Horde_Alarm notifications (Bug #14098).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -211,7 +210,7 @@
    <file baseinstalldir="/" md5sum="ca6b8f7037cf91bd146a65ffbe4760e1" name="js/map/OpenLayers-debug.js" role="horde" />
    <file baseinstalldir="/" md5sum="ad70d33997bddd68ccc1994ebe8898ac" name="js/map/OpenLayers.js" role="horde" />
    <file baseinstalldir="/" md5sum="7a512f5c98f85f8c1520263e767434ac" name="js/map/osm.js" role="horde" />
-   <file baseinstalldir="/" md5sum="7ab159878deaab8889a81224ae750c88" name="js/map/owm.js" role="horde" />
+   <file baseinstalldir="/" md5sum="9f939ae15c01f91a1b77c5303d2b71cf" name="js/map/owm.js" role="horde" />
    <file baseinstalldir="/" md5sum="c6321f204481f259724bd6455c0fdded" name="js/scriptaculous/builder.js" role="horde" />
    <file baseinstalldir="/" md5sum="03b502fd8ae202eb164b348749392720" name="js/scriptaculous/controls.js" role="horde" />
    <file baseinstalldir="/" md5sum="046759400db7a6096376e50110104edd" name="js/scriptaculous/dragdrop.js" role="horde" />
@@ -262,7 +261,7 @@
    <file baseinstalldir="/" md5sum="caff16a3f67d6c108ab1edf7c88fbf0b" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="6ebf297b6dc384940254895848f3f467" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="15987fc19ca56cd2b4cc744828c9754f" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="685e7e4458cf281814d5fa4877c54043" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="b907136f2af1da846f365fb4ba333b34" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="4c5777653378874cfffb514bddd89369" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="b5b68a1446b5ef5b2e80f7316e3fea30" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="81449fbf8c8514c5de6111149cd7cb89" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -280,7 +279,7 @@
    <file baseinstalldir="/" md5sum="bd5e9ee0f343321d63b4a54fe8d6b8f1" name="lib/Horde/Core/Ajax/Imple/ContactAutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="9804115bf8f494079a9c363966ddbefa" name="lib/Horde/Core/Ajax/Imple/InPlaceEditor.php" role="php" />
    <file baseinstalldir="/" md5sum="4928d414dc3d312665e0046b7417a5fd" name="lib/Horde/Core/Ajax/Imple/SpellChecker.php" role="php" />
-   <file baseinstalldir="/" md5sum="1554fae032501d7a0080c2754fe398c2" name="lib/Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" role="php" />
+   <file baseinstalldir="/" md5sum="019ee169196eb7e0cc734dfc713231ed" name="lib/Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="dd96090d48afccc75a4d6c8c8cae079e" name="lib/Horde/Core/Ajax/Response/HordeCore/JsonHtml.php" role="php" />
    <file baseinstalldir="/" md5sum="27768853ad087283b6cea868e40163f9" name="lib/Horde/Core/Ajax/Response/HordeCore/NoAuth.php" role="php" />
    <file baseinstalldir="/" md5sum="b3fe58ae14358002940dbc8b0b29df6b" name="lib/Horde/Core/Ajax/Response/HordeCore/Reload.php" role="php" />
@@ -328,7 +327,7 @@
    <file baseinstalldir="/" md5sum="6bfac165a95eeb776efffcf5257053f0" name="lib/Horde/Core/Factory/ActiveSyncServer.php" role="php" />
    <file baseinstalldir="/" md5sum="b65dd5690259797c8f0d956c47c96b59" name="lib/Horde/Core/Factory/ActiveSyncState.php" role="php" />
    <file baseinstalldir="/" md5sum="7c768e143aedc0e585b1ec029c956ba0" name="lib/Horde/Core/Factory/Ajax.php" role="php" />
-   <file baseinstalldir="/" md5sum="7b5c89a02b370245cc3283824b7fc1e4" name="lib/Horde/Core/Factory/Alarm.php" role="php" />
+   <file baseinstalldir="/" md5sum="4ed00d66efc980d24cc76a969f64c573" name="lib/Horde/Core/Factory/Alarm.php" role="php" />
    <file baseinstalldir="/" md5sum="333c460fe5c138558c5827fd25d64500" name="lib/Horde/Core/Factory/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="0883bf6b735bc791861a95005934e2c7" name="lib/Horde/Core/Factory/AuthSignup.php" role="php" />
    <file baseinstalldir="/" md5sum="4ac70a29037fb03884aae3f688650e83" name="lib/Horde/Core/Factory/Base.php" role="php" />
@@ -3880,6 +3879,22 @@
 * [mjr] ActiveSync logging improvements.
 * [mjr] Add support for OpenWeatherMap layers in Horde_Map.
 * [mjr] Fix edge-case issue with ActiveSync folder list generation when installed application contains no user writable sources.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.22.1</release>
+    <api>2.22.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-10-20</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix ajax updating of Weather block when weather map is shown.
+* [mjr] Fix detecting an application&apos;s ability to send Horde_Alarm notifications (Bug #14098).
    </notes>
   </release>
  </changelog>

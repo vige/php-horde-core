@@ -1,11 +1,12 @@
-php-horde-core (2.22.0+debian0-2) UNRELEASED; urgency=medium
+php-horde-core (2.22.1+debian0-1) UNRELEASED; urgency=medium
 
   * Upgaded to debhelper compat 9
   * d/copyright improvements, including:
     - OpenLayers.js moved from horde
     - js/map/* moved from horde
+  * New upstream version 2.22.1+debian0
 
- -- Mathieu Parent <sathieu@debian.org>  Wed, 21 Oct 2015 07:49:38 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 23 Oct 2015 06:17:49 +0200
 
 php-horde-core (2.22.0+debian0-1) unstable; urgency=medium
 

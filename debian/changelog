@@ -1,4 +1,4 @@
-php-horde-core (2.22.1+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.22.1+debian0-1) unstable; urgency=medium
 
   * Upgaded to debhelper compat 9
   * d/copyright improvements, including:
@@ -6,7 +6,7 @@ php-horde-core (2.22.1+debian0-1) UNRELEASED; urgency=medium
     - js/map/* moved from horde
   * New upstream version 2.22.1+debian0
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 23 Oct 2015 06:17:49 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 24 Oct 2015 21:52:49 +0200
 
 php-horde-core (2.22.0+debian0-1) unstable; urgency=medium
 

@@ -49,6 +49,14 @@ class Horde_Session_Null extends Horde_Session implements Horde_Shutdown_Task
     {
         global $conf;
 
+        // Set this here, since we actually do start a php session. Even though
+        // it gets closed immediately, it can still create a session file on
+        // the same session backend as the globally configured Horde sessions.
+        // This may help clean up the large number of session files that can
+        // be created by things like ActiveSync.
+        if (!empty($conf['session']['timeout'])) {
+            ini_set('session.gc_maxlifetime', $conf['session']['timeout']);
+        }
         session_cache_limiter(is_null($cache_limiter) ? $conf['session']['cache_limiter'] : $cache_limiter);
 
         $this->sessionHandler = new Horde_Support_Stub();
@@ -63,6 +71,12 @@ class Horde_Session_Null extends Horde_Session implements Horde_Shutdown_Task
      */
     public function start()
     {
+        /* Limit session ID to 32 bytes. Session IDs are NOT cryptographically
+         * secure hashes. Instead, they are nothing more than a way to
+         * generate random strings. */
+        ini_set('session.hash_function', 0);
+        ini_set('session.hash_bits_per_character', 5);
+
         // We must start a session to ensure that session_id() is available,
         // but since we don't actually need to write to it, close it at once
         // to avoid session lock issues.

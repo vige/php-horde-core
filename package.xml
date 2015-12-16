@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-12-04</date>
- <time>10:50:57</time>
+ <date>2015-12-14</date>
+ <time>09:33:54</time>
  <version>
-  <release>2.22.3</release>
+  <release>2.22.4</release>
   <api>2.22.0</api>
  </version>
  <stability>
@@ -40,7 +40,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix issue with synchronizing IMAP folder names that contain only numbers.
+* [mjr] SECURITY: Fix XSS in Horde_Core_VarRenderer_Html (reported by Centurion Information Security &lt;www.centurioninfosec.sg&gt;).
+* [mjr] Support sending MDN via ActiveSync (Request #23080).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -259,9 +260,10 @@
    <file baseinstalldir="/" md5sum="6a6c571e248f9e7322ea05d94c2375f4" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="cbfd97339978114b6583aa0fe40d9f7d" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="6ebf297b6dc384940254895848f3f467" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="15987fc19ca56cd2b4cc744828c9754f" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="574c34819e76874347defb0d322c579f" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="a32c0ea053ad3ac6febb690c62b8325e" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="055d5c5f10e8106d1bd48b675f4f7d41" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="4c5777653378874cfffb514bddd89369" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="23d3a7ccfda82cfec6c3f9104cf6aec7" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="b5b68a1446b5ef5b2e80f7316e3fea30" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="81449fbf8c8514c5de6111149cd7cb89" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
    <file baseinstalldir="/" md5sum="c335d50c1729b70be27fd6f2901929cb" name="lib/Horde/Core/Ajax/Application/Handler/Groups.php" role="php" />
@@ -448,7 +450,7 @@
    <file baseinstalldir="/" md5sum="827a71ab9864244dd14f88036a993cc5" name="lib/Horde/Core/Tree/Renderer/Html.php" role="php" />
    <file baseinstalldir="/" md5sum="8741d981952b5026e699119e84e1b34a" name="lib/Horde/Core/Tree/Renderer/Javascript.php" role="php" />
    <file baseinstalldir="/" md5sum="180bd67aa62e2b9e150d7262825753c8" name="lib/Horde/Core/Tree/Renderer/Simplehtml.php" role="php" />
-   <file baseinstalldir="/" md5sum="bc8d7493edb5d60b91364b1ce3032d2a" name="lib/Horde/Core/Ui/VarRenderer/Html.php" role="php" />
+   <file baseinstalldir="/" md5sum="9b5890eb875ebe042049b01f0afe9454" name="lib/Horde/Core/Ui/VarRenderer/Html.php" role="php" />
    <file baseinstalldir="/" md5sum="6d79015107a69f7935f84de6934171fe" name="lib/Horde/Core/Ui/VarRenderer/TablesetHtml.php" role="php" />
    <file baseinstalldir="/" md5sum="b5d86c8da99ab3a494c2c4086095f236" name="lib/Horde/Core/Ui/FlagImage.php" role="php" />
    <file baseinstalldir="/" md5sum="f708bd1ab09fbedf2c52d321bf5383fa" name="lib/Horde/Core/Ui/JsCalendar.php" role="php" />
@@ -1376,6 +1378,7 @@
    <install as="Horde/Core/ActiveSync/Connector.php" name="lib/Horde/Core/ActiveSync/Connector.php" />
    <install as="Horde/Core/ActiveSync/Driver.php" name="lib/Horde/Core/ActiveSync/Driver.php" />
    <install as="Horde/Core/ActiveSync/Mail.php" name="lib/Horde/Core/ActiveSync/Mail.php" />
+   <install as="Horde/Core/ActiveSync/Mdn.php" name="lib/Horde/Core/ActiveSync/Mdn.php" />
    <install as="Horde/Core/ActiveSync/Imap/Factory.php" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" />
    <install as="Horde/Core/ActiveSync/Logger/Factory.php" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" />
    <install as="Horde/Core/Ajax/Application.php" name="lib/Horde/Core/Ajax/Application.php" />
@@ -3925,6 +3928,22 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Fix issue with synchronizing IMAP folder names that contain only numbers.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.22.4</release>
+    <api>2.22.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-12-14</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] SECURITY: Fix XSS in Horde_Core_VarRenderer_Html (reported by Centurion Information Security &lt;www.centurioninfosec.sg&gt;).
+* [mjr] Support sending MDN via ActiveSync (Request #23080).
    </notes>
   </release>
  </changelog>

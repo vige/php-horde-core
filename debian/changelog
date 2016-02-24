@@ -1,8 +1,9 @@
-php-horde-core (2.15.0+debian0-1+deb8u1) unstable; urgency=medium
+php-horde-core (2.15.0+debian0-1+deb8u1) unstable; urgency=high
 
-  * Escape form value, fix XSS in Horde_Core_VarRenderer_Html (Closes: #813590)
+  * CVE-2015-8807: Escape form value, fix XSS in Horde_Core_VarRenderer_Html
+    (Closes: #813590)
 
- -- Mathieu Parent <sathieu@debian.org>  Thu, 04 Feb 2016 14:03:38 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 24 Feb 2016 22:00:11 +0100
 
 php-horde-core (2.15.0+debian0-1) unstable; urgency=medium
 

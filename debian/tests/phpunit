@@ -2,5 +2,12 @@
 
 set -e
 
+# We need to be root here ...
+for locale in 'en_US ISO-8859-1'; do
+  sed -i -e "0,/^[# ]*$locale *$/ s/^[# ]*$locale *$/$locale/" /etc/locale.gen
+done
+locale-gen
+
+# ... but not here
 cd Horde_Core*/test/./Horde/Core
-phpunit -v .
+su www-data --preserve-environment --shell /bin/sh --command 'phpunit -v .'

@@ -1,8 +1,8 @@
-php-horde-core (2.22.6+debian0-3) UNRELEASED; urgency=medium
+php-horde-core (2.22.6+debian0-3) unstable; urgency=medium
 
   * Install en_US locale during test
 
- -- Mathieu Parent <math.parent@gmail.com>  Sat, 19 Mar 2016 23:14:32 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 19 Mar 2016 23:32:35 +0100
 
 php-horde-core (2.22.6+debian0-2) unstable; urgency=medium
 

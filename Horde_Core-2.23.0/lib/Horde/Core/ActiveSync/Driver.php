@@ -477,7 +477,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                     }
                 }
             }
-            if ($this->_version > Horde_ActiveSync::VERSION_TWELVEONE) {
+            if ($this->_version > Horde_ActiveSync::VERSION_TWELVEONE &&
+                $GLOBALS['registry']->hasInterface('contacts')) {
                 $folders[] = $this->_getFolder('RI', array('class' => 'RI'));
             }
 
@@ -1113,7 +1114,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             break;
 
         case Horde_ActiveSync::CLASS_EMAIL:
-            if (empty($this->_imap)) {
+            if (empty($this->_imap) ||
+                $folder->serverid() == 'OUTBOX') {
                 $this->_endBuffer();
                 return array();
             }
@@ -1145,6 +1147,7 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 }
             } else {
                 // SOFTDELETE, but only if we aren't refreshing FILTERTYPE.
+                // @todo - Move the soft delete check(s) into the AS library.
                 $soft = false;
                 if (!$refreshFilter) {
                     $sd = $folder->getSoftDeleteTimes();
@@ -1813,6 +1816,12 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             $this->_pid,
             $folderid,
             $id));
+
+        // Short circuit OUTBOX modifications to work around broken clients.
+        if ($folderid == 'OUTBOX') {
+            return false;
+        }
+
         ob_start();
 
         $folder_split = $this->_parseFolderId($folderid);
@@ -2030,9 +2039,14 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             if (!empty($this->_cache) && $this->_cache->exists($cache_key, 0)) {
                 $results = json_decode($this->_cache->get($cache_key, 0), true);
             } else {
-                $results = $this->_searchMailbox($query);
-                if (!empty($this->_cache)) {
-                    $this->_cache->set($cache_key, json_encode($results));
+                try {
+                    $results = $this->_searchMailbox($query);
+                    if (!empty($this->_cache)) {
+                        $this->_cache->set($cache_key, json_encode($results));
+                    }
+                } catch (Horde_ActiveSync_Exception $e) {
+                    $this->_logger->err($e->getMessage());
+                    $results = array();
                 }
             }
 
@@ -2307,6 +2321,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
      */
     public function getSettings(array $settings, $device)
     {
+        global $injector, $prefs, $registry;
+
         $res = array();
         foreach ($settings as $key => $setting) {
             switch ($key) {
@@ -2339,21 +2355,30 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 );
                 break;
             case 'userinformation':
-                $identities= $GLOBALS['injector']
+                $identities = $injector
                     ->getInstance('Horde_Core_Factory_Identity')
-                    ->create($GLOBALS['registry']->getAuth());
-
+                    ->create($registry->getAuth());
+                $as_ident = $prefs->getValue('activesync_identity');
+                if ($as_ident != 'horde') {
+                    $identities->setDefault($prefs->getValue('activesync_identity'));
+                } else {
+                    $as_ident = $identities->getDefault();
+                }
                 $default_email = $identities->getValue('from_addr');
                 $email_addresses = array($default_email);
                 $accounts = array();
                 if ($this->_version >= Horde_ActiveSync::VERSION_FOURTEENONE) {
-                    // @TODO Do clients actually support multiple accounts?
-                    // Can't find one that does. For now, only return the
-                    // default identity.
-                    $ident = $identities->get();
-                    $emails = !empty($ident['alias_addr']) ? $ident['alias_addr'] : array();
-                    $emails[] = $ident['from_addr'];
-                    $accounts[] = array('fullname' => $ident['fullname'], 'emailaddresses' => array_reverse($emails));
+                    $identity = $identities->get();
+                    $emails = !empty($identity['alias_addr']) ? $identity['alias_addr'] : array();
+                    $emails[] = $identity['from_addr'];
+                    $accounts[] = array('fullname' => $identity['fullname'], 'emailaddresses' => array_reverse($emails), 'accountname' => $identity['id']);
+                    foreach ($identities as $id => $identity) {
+                        if ($id != $as_ident) {
+                            $emails = !empty($identity['alias_addr']) ? $identity['alias_addr'] : array();
+                            $emails[] = $identity['from_addr'];
+                            $accounts[] = array('fullname' => $identity['fullname'], 'emailaddresses' => array_reverse($emails), 'accountname' => $identity['id'], 'id' => $id);
+                        }
+                    }
                 }
                 $res['userinformation'] = array(
                     'emailaddresses' => $email_addresses,
@@ -3086,6 +3111,9 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                     }
                     ++$level;
                 }
+
+                // Fake Outbox for broken clients.
+                $folders[] = $this->_buildDummyFolder(self::SPECIAL_OUTBOX);
 
                 $this->_mailFolders = $folders;
             }

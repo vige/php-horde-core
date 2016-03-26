@@ -1,3 +1,9 @@
+php-horde-core (2.23.0+debian0-1) UNRELEASED; urgency=medium
+
+  * New upstream version 2.23.0+debian0
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 26 Mar 2016 09:29:28 +0100
+
 php-horde-core (2.22.6+debian0-3) unstable; urgency=medium
 
   * Install en_US locale during test

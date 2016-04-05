@@ -1,3 +1,9 @@
+php-horde-core (2.23.0+debian0-2) UNRELEASED; urgency=medium
+
+  * Install en_US.UTF-8 locale instead during test
+
+ -- Mathieu Parent <math.parent@gmail.com>  Tue, 05 Apr 2016 06:44:58 +0200
+
 php-horde-core (2.23.0+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.23.0+debian0

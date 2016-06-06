@@ -1,3 +1,10 @@
+php-horde-core (2.23.0+debian0-3) UNRELEASED; urgency=medium
+
+  * Update Standards-Version to 3.9.8, no change
+  * Updated d/watch to use https
+
+ -- Mathieu Parent <sathieu@debian.org>  Mon, 06 Jun 2016 21:31:25 +0200
+
 php-horde-core (2.23.0+debian0-2) unstable; urgency=medium
 
   * Install en_US.UTF-8 locale instead during test

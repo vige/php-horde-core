@@ -1,9 +1,9 @@
-php-horde-core (2.23.0+debian0-3) UNRELEASED; urgency=medium
+php-horde-core (2.23.0+debian0-3) unstable; urgency=medium
 
   * Update Standards-Version to 3.9.8, no change
   * Updated d/watch to use https
 
- -- Mathieu Parent <sathieu@debian.org>  Mon, 06 Jun 2016 21:31:25 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 08 Jun 2016 07:24:43 +0200
 
 php-horde-core (2.23.0+debian0-2) unstable; urgency=medium
 

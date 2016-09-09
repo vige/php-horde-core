@@ -1,11 +1,11 @@
-php-horde-core (2.26.1+debian0-1) UNRELEASED; urgency=high
+php-horde-core (2.26.1+debian0-1) unstable; urgency=high
 
   * New upstream version 2.26.1+debian0
     + SECURITY: Add CSRF protection tokens to portal layout forms
     + SECURITY: enable CSRF token for configuration form again
     + For the above: Closes: #837148 and urgency set to high.
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 09 Sep 2016 10:29:44 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 09 Sep 2016 14:03:02 +0200
 
 php-horde-core (2.24.0+debian0-1) unstable; urgency=medium
 

@@ -28,11 +28,11 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2016-09-06</date>
- <time>21:24:33</time>
+ <date>2016-09-21</date>
+ <time>04:09:37</time>
  <version>
-  <release>2.26.1</release>
-  <api>2.26.0</api>
+  <release>2.27.0</release>
+  <api>2.27.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -40,7 +40,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] Fix Horde_Form dependency (Bug #14460).
+* [mjr] Fix BC break in Weather block (Bug #14473).
+* [mjr] Fix locking user account after bad logins (Bug #14467).
+* [mjr] Add support for EAS 16 draft email sync.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -258,9 +260,10 @@
    <file baseinstalldir="/" md5sum="1e7d3f7ebc728260e6557a35779b4cf6" name="lib/Horde/Config/Form.php" role="php" />
    <file baseinstalldir="/" md5sum="cdd2eab308ddc6cba1ed9436d3923e7d" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="062554925219411cd9ee35dffd18ef43" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
+   <file baseinstalldir="/" md5sum="85fe0ece02f6d16a2f3a14c84ef12233" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="633ca782cad8b259d4c50d0272f3ce77" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="7213898daea88ed97c4825767135e0ab" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="6b4ab65507b6518aa3dc918000426900" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="66f62ade8083d1ca151489a29fb2443d" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="aac4f06a594401bc11b11080fe055f16" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="5f65efe1300cefc557a8ee54e5444097" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="aabf1ac76108300faad99435e670d293" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
@@ -283,6 +286,7 @@
    <file baseinstalldir="/" md5sum="2f9b17e7ebbcc92544c9ca730b04f7ba" name="lib/Horde/Core/Ajax/Imple/InPlaceEditor.php" role="php" />
    <file baseinstalldir="/" md5sum="971cc08aa640f3dc4476fbaf48c2bc8c" name="lib/Horde/Core/Ajax/Imple/SpellChecker.php" role="php" />
    <file baseinstalldir="/" md5sum="e5691a1ce09ffa0e1d76e5c5fcdbbed6" name="lib/Horde/Core/Ajax/Imple/UserAutoCompleter.php" role="php" />
+   <file baseinstalldir="/" md5sum="2d01b84519ace43102cf6692669e7ec7" name="lib/Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" role="php" />
    <file baseinstalldir="/" md5sum="998cef823a86f407dca2bf3e75d76b79" name="lib/Horde/Core/Ajax/Response/HordeCore/JsonHtml.php" role="php" />
    <file baseinstalldir="/" md5sum="309f0c36d3f9fdf452e66ca61ce991dc" name="lib/Horde/Core/Ajax/Response/HordeCore/NoAuth.php" role="php" />
    <file baseinstalldir="/" md5sum="467fda06f933a9d77e650a3a090b22ab" name="lib/Horde/Core/Ajax/Response/HordeCore/Reload.php" role="php" />
@@ -302,7 +306,7 @@
    <file baseinstalldir="/" md5sum="f274b10b9811c94b62861fe0bb57f4a7" name="lib/Horde/Core/Auth/Signup/Null.php" role="php" />
    <file baseinstalldir="/" md5sum="dfd9e454476022ea28b66aef6e8aa166" name="lib/Horde/Core/Auth/Signup/Sql.php" role="php" />
    <file baseinstalldir="/" md5sum="cd57d2988207ebecfbbba81a0644b067" name="lib/Horde/Core/Auth/Signup/SqlObject.php" role="php" />
-   <file baseinstalldir="/" md5sum="74426c35ed2b1fc98bd02f917c228516" name="lib/Horde/Core/Auth/Application.php" role="php" />
+   <file baseinstalldir="/" md5sum="0db38488802a007eba100c8373655c3b" name="lib/Horde/Core/Auth/Application.php" role="php" />
    <file baseinstalldir="/" md5sum="d6663d40f3d7bd3053cd56f5122bce3e" name="lib/Horde/Core/Auth/Composite.php" role="php" />
    <file baseinstalldir="/" md5sum="f6b0d2869a060cf3ae53af701d72a1f3" name="lib/Horde/Core/Auth/Imsp.php" role="php" />
    <file baseinstalldir="/" md5sum="dc9671ee8350aa447b0c7e6faf8a1272" name="lib/Horde/Core/Auth/Ldap.php" role="php" />
@@ -917,7 +921,7 @@
    <package>
     <name>Horde_ActiveSync</name>
     <channel>pear.horde.org</channel>
-    <min>2.31.0</min>
+    <min>2.37.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -1386,6 +1390,7 @@
    <install as="Horde/Core/ActiveSync/Mdn.php" name="lib/Horde/Core/ActiveSync/Mdn.php" />
    <install as="Horde/Core/ActiveSync/Imap/Factory.php" name="lib/Horde/Core/ActiveSync/Imap/Factory.php" />
    <install as="Horde/Core/ActiveSync/Logger/Factory.php" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" />
+   <install as="Horde/Core/ActiveSync/Mail/Draft.php" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" />
    <install as="Horde/Core/Ajax/Application.php" name="lib/Horde/Core/Ajax/Application.php" />
    <install as="Horde/Core/Ajax/Imple.php" name="lib/Horde/Core/Ajax/Imple.php" />
    <install as="Horde/Core/Ajax/Response.php" name="lib/Horde/Core/Ajax/Response.php" />
@@ -1401,6 +1406,7 @@
    <install as="Horde/Core/Ajax/Imple/InPlaceEditor.php" name="lib/Horde/Core/Ajax/Imple/InPlaceEditor.php" />
    <install as="Horde/Core/Ajax/Imple/SpellChecker.php" name="lib/Horde/Core/Ajax/Imple/SpellChecker.php" />
    <install as="Horde/Core/Ajax/Imple/UserAutoCompleter.php" name="lib/Horde/Core/Ajax/Imple/UserAutoCompleter.php" />
+   <install as="Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" name="lib/Horde/Core/Ajax/Imple/WeatherLocationAutoCompleter.php" />
    <install as="Horde/Core/Ajax/Imple/AutoCompleter/Ajax.php" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Ajax.php" />
    <install as="Horde/Core/Ajax/Imple/AutoCompleter/Base.php" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Base.php" />
    <install as="Horde/Core/Ajax/Imple/AutoCompleter/Local.php" name="lib/Horde/Core/Ajax/Imple/AutoCompleter/Local.php" />
@@ -4084,7 +4090,7 @@
    <date>2016-09-06</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
-* [jan] SECURITY: Add CSRF protection tokens to portal layout forms and fix open URL redirection (Reported by Florian Köllich &lt;florian.koellich@tirol.gv.at&gt;).
+* [jan] SECURITY: Add CSRF protection tokens to portal layout forms and fix open URL redirection (Reported by ssys GmbH).
 * [jan] SECURITY: enable CSRF token for configuration form again (Reported by Dawid Gounski via Beyond Security&apos;s SecuriTeam Secure Disclosure program).
 * [mjr] Changes to support EAS attachment sync support for Appointment objects.
 * [mjr] Refactor ajax weather location autocompleter and add support for metar data.
@@ -4100,10 +4106,27 @@
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2016-09-06</date>
+   <date>2016-09-11</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Fix Horde_Form dependency (Bug #14460).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.27.0</release>
+    <api>2.27.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-09-21</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix BC break in Weather block (Bug #14473).
+* [mjr] Fix locking user account after bad logins (Bug #14467).
+* [mjr] Add support for EAS 16 draft email sync.
    </notes>
   </release>
  </changelog>

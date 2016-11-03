@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2016-09-21</date>
- <time>04:09:37</time>
+ <date>2016-11-03</date>
+ <time>15:06:11</time>
  <version>
-  <release>2.27.0</release>
+  <release>2.27.1</release>
   <api>2.27.0</api>
  </version>
  <stability>
@@ -40,9 +40,11 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix BC break in Weather block (Bug #14473).
-* [mjr] Fix locking user account after bad logins (Bug #14467).
-* [mjr] Add support for EAS 16 draft email sync.
+* [jan] Allow administrators to log in if preference backend is not available.
+* [mjr] Log message headers on error when sending email via ActiveSync.
+* [jan] Fix warning if an old locale is longer than 255 characters (Bug #14489).
+* [jan] Fix abbreviated Norwegian month names in JavaScript to include trailing dot (Bug #14488).
+* [jan] Fix reading session data from the command line with PHP 7.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -77,7 +79,7 @@
    <file baseinstalldir="/" md5sum="1b0035543f536304ee8cac56833f02e5" name="js/date/mk-MK.js" role="horde" />
    <file baseinstalldir="/" md5sum="95669c959e74b10058d212483159fd52" name="js/date/nb-NO.js" role="horde" />
    <file baseinstalldir="/" md5sum="7f8967e4051511da1267164d350e3618" name="js/date/nl-NL.js" role="horde" />
-   <file baseinstalldir="/" md5sum="039f3bade421387a60f2d797e55b2387" name="js/date/nn-NO.js" role="horde" />
+   <file baseinstalldir="/" md5sum="1067b539569877a43b8ae20bcc7afe97" name="js/date/nn-NO.js" role="horde" />
    <file baseinstalldir="/" md5sum="48e693767e4f272e6cbc1f43d800ebbb" name="js/date/pl-PL.js" role="horde" />
    <file baseinstalldir="/" md5sum="f002224c44f4f2b990d79dd8c222f86d" name="js/date/pt-BR.js" role="horde" />
    <file baseinstalldir="/" md5sum="2a1e047e3bba3d43e0b9abe61a72398c" name="js/date/pt-PT.js" role="horde" />
@@ -263,7 +265,7 @@
    <file baseinstalldir="/" md5sum="85fe0ece02f6d16a2f3a14c84ef12233" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="633ca782cad8b259d4c50d0272f3ce77" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="66f62ade8083d1ca151489a29fb2443d" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="aac4f06a594401bc11b11080fe055f16" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="7dab63712580dc62d8c354c002a52fa1" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="5f65efe1300cefc557a8ee54e5444097" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="aabf1ac76108300faad99435e670d293" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
@@ -389,7 +391,7 @@
    <file baseinstalldir="/" md5sum="0da2d4cede065fe084135bd21e94ede0" name="lib/Horde/Core/Factory/QueueStorage.php" role="php" />
    <file baseinstalldir="/" md5sum="cf94ecaf082ac464fe2a20b2a94b97a2" name="lib/Horde/Core/Factory/Request.php" role="php" />
    <file baseinstalldir="/" md5sum="72883072b538f6f8178614ee28a1c5c4" name="lib/Horde/Core/Factory/Secret.php" role="php" />
-   <file baseinstalldir="/" md5sum="cd374c23014f2d4e86d816bb4f5afcd5" name="lib/Horde/Core/Factory/SessionHandler.php" role="php" />
+   <file baseinstalldir="/" md5sum="2363223f698d4f85d2a011d4cd3271d5" name="lib/Horde/Core/Factory/SessionHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="fccbc4c5dd5e7bf0fe9aff02a1a5cd89" name="lib/Horde/Core/Factory/Share.php" role="php" />
    <file baseinstalldir="/" md5sum="c48fbe3d71cc8763670c23bf65401d12" name="lib/Horde/Core/Factory/ShareBase.php" role="php" />
    <file baseinstalldir="/" md5sum="c956125dd5452ac95e6bbf04acf704c4" name="lib/Horde/Core/Factory/SpellChecker.php" role="php" />
@@ -416,7 +418,7 @@
    <file baseinstalldir="/" md5sum="7917c98195aa645544f133309b18a66c" name="lib/Horde/Core/Log/Logger.php" role="php" />
    <file baseinstalldir="/" md5sum="f440f04de4f7a2e28954acdddd97351c" name="lib/Horde/Core/Log/Object.php" role="php" />
    <file baseinstalldir="/" md5sum="a2bc9b6d8faa033c5b158950cf078409" name="lib/Horde/Core/Log/Wrapper.php" role="php" />
-   <file baseinstalldir="/" md5sum="db599b73c67a40db56976c423f438e9a" name="lib/Horde/Core/LoginTasks/Backend/Horde.php" role="php" />
+   <file baseinstalldir="/" md5sum="04e8fd3ef1fa16060fa820634504983b" name="lib/Horde/Core/LoginTasks/Backend/Horde.php" role="php" />
    <file baseinstalldir="/" md5sum="9e3a76b59e0dfe62bf7856a065a6879a" name="lib/Horde/Core/LoginTasks/SystemTask/Upgrade.php" role="php" />
    <file baseinstalldir="/" md5sum="0e27e4d9fec4ed7a4fc70e99e7dcb7e9" name="lib/Horde/Core/Mime/Headers/Received.php" role="php" />
    <file baseinstalldir="/" md5sum="78a43fafb5fad684669a31e296cafad1" name="lib/Horde/Core/Mime/Viewer/Syntaxhighlighter.php" role="php" />
@@ -502,7 +504,7 @@
    <file baseinstalldir="/" md5sum="d5919b8cc84b86a638a5d43ce6d6e412" name="lib/Horde/Registry/Hordeconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="d9c5c51c0ee705a93e252eec15bd444e" name="lib/Horde/Registry/Loadconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="4012812c0d33dae22200d4ecf90e7ec0" name="lib/Horde/Registry/Logout.php" role="php" />
-   <file baseinstalldir="/" md5sum="8fed7a55789c0e5a8af3a7a2cd7911ae" name="lib/Horde/Registry/Nlsconfig.php" role="php" />
+   <file baseinstalldir="/" md5sum="d46782de19980e5a7c172fc2cea2b8a4" name="lib/Horde/Registry/Nlsconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="29b75226fa7d87544ea4384afbc615fa" name="lib/Horde/Registry/Registryconfig.php" role="php" />
    <file baseinstalldir="/" md5sum="c9ad3489ddce61bafa2ab89e65de187d" name="lib/Horde/Script/Cache/File.php" role="php" />
    <file baseinstalldir="/" md5sum="a1205781f265fba82a7597f9a2de4329" name="lib/Horde/Script/Cache/HordeCache.php" role="php" />
@@ -533,8 +535,8 @@
    <file baseinstalldir="/" md5sum="238998ea3ea529aec344f0d1afead5de" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="d3acba261c7ba2e9bcd9a092d377894d" name="lib/Horde/Menu.php" role="php" />
    <file baseinstalldir="/" md5sum="9d88e31faf522be8d052c2978e334858" name="lib/Horde/PageOutput.php" role="php" />
-   <file baseinstalldir="/" md5sum="600ebdfaebea4040d9ecfd14a6f2ced5" name="lib/Horde/Registry.php" role="php" />
-   <file baseinstalldir="/" md5sum="fd5fdfc82ff005e16cf4febdf5712124" name="lib/Horde/Session.php" role="php" />
+   <file baseinstalldir="/" md5sum="813bc3bb96e298d0d4e5b34718bb406a" name="lib/Horde/Registry.php" role="php" />
+   <file baseinstalldir="/" md5sum="3f0817449c15e51b238cc358444c0aea" name="lib/Horde/Session.php" role="php" />
    <file baseinstalldir="/" md5sum="20c1f790e25817d6cdb025b6ad03e8ca" name="lib/Horde/Shutdown.php" role="php" />
    <file baseinstalldir="/" md5sum="3bdfa3b7d9556a31b7efe03d02290b9c" name="lib/Horde/Themes.php" role="php" />
    <file baseinstalldir="/" md5sum="615fac0e93d3fe83235a7fc3d3dc09eb" name="lib/Horde.php" role="php" />
@@ -4127,6 +4129,25 @@
 * [mjr] Fix BC break in Weather block (Bug #14473).
 * [mjr] Fix locking user account after bad logins (Bug #14467).
 * [mjr] Add support for EAS 16 draft email sync.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.27.1</release>
+    <api>2.27.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-11-03</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Allow administrators to log in if preference backend is not available.
+* [mjr] Log message headers on error when sending email via ActiveSync.
+* [jan] Fix warning if an old locale is longer than 255 characters (Bug #14489).
+* [jan] Fix abbreviated Norwegian month names in JavaScript to include trailing dot (Bug #14488).
+* [jan] Fix reading session data from the command line with PHP 7.
    </notes>
   </release>
  </changelog>

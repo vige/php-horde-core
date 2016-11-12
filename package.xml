@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2016-11-03</date>
- <time>15:06:11</time>
+ <date>2016-11-06</date>
+ <time>00:56:47</time>
  <version>
-  <release>2.27.1</release>
+  <release>2.27.2</release>
   <api>2.27.0</api>
  </version>
  <stability>
@@ -40,11 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] Allow administrators to log in if preference backend is not available.
-* [mjr] Log message headers on error when sending email via ActiveSync.
-* [jan] Fix warning if an old locale is longer than 255 characters (Bug #14489).
-* [jan] Fix abbreviated Norwegian month names in JavaScript to include trailing dot (Bug #14488).
-* [jan] Fix reading session data from the command line with PHP 7.
+* [mjr] Prevent building invalid HTML when building an email from a SMART_REPLY (Bug #14500).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -266,7 +262,7 @@
    <file baseinstalldir="/" md5sum="633ca782cad8b259d4c50d0272f3ce77" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="66f62ade8083d1ca151489a29fb2443d" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
    <file baseinstalldir="/" md5sum="7dab63712580dc62d8c354c002a52fa1" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="5f65efe1300cefc557a8ee54e5444097" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="00c04c9cfc0a7519dbd66cb37778cf81" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="aabf1ac76108300faad99435e670d293" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="cbde5d149deb8390fa26921e5f2c11ed" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -4148,6 +4144,21 @@
 * [jan] Fix warning if an old locale is longer than 255 characters (Bug #14489).
 * [jan] Fix abbreviated Norwegian month names in JavaScript to include trailing dot (Bug #14488).
 * [jan] Fix reading session data from the command line with PHP 7.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.27.2</release>
+    <api>2.27.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-11-06</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Prevent building invalid HTML when building an email from a SMART_REPLY (Bug #14500).
    </notes>
   </release>
  </changelog>

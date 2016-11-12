@@ -605,10 +605,9 @@ class Horde_Core_ActiveSync_Mail
     {
         $subtype = $html == true ? 'html' : 'plain';
         $msg = Horde_String::convertCharset(
-            $body_data[$subtype]['body'],
+            (string)$body_data[$subtype]['body'],
             $body_data[$subtype]['charset'],
             'UTF-8');
-        trim($msg);
         if (!$html) {
             if ($part->getContentTypeParameter('format') == 'flowed') {
                 $flowed = new Horde_Text_Flowed($msg, 'UTF-8');
@@ -624,6 +623,19 @@ class Horde_Core_ActiveSync_Mail
             if ($flow) {
                 $flowed = new Horde_Text_Flowed($msg, 'UTF-8');
                 $msg = $flowed->toFlowed(true);
+            }
+        } else {
+            // This filter requires the tidy extenstion.
+            if (Horde_Util::extensionExists('tidy')) {
+                return Horde_Text_Filter::filter(
+                    $msg,
+                    'Cleanhtml',
+                    array('body_only' => true)
+                );
+            } else {
+                // If no tidy, use Horde_Dom.
+                $dom = new Horde_Domhtml($msg, 'UTF-8');
+                return $dom->returnBody();
             }
         }
 

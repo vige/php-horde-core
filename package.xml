@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2016-11-06</date>
- <time>00:56:47</time>
+ <date>2016-11-14</date>
+ <time>18:24:48</time>
  <version>
-  <release>2.27.2</release>
+  <release>2.27.3</release>
   <api>2.27.0</api>
  </version>
  <stability>
@@ -40,7 +40,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Prevent building invalid HTML when building an email from a SMART_REPLY (Bug #14500).
+* [mjr] Improve handling of certain ActiveSync failures.
+* [jan] Fix parsing abbreviated Norwegian month names too (Bug #14503).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -75,7 +76,7 @@
    <file baseinstalldir="/" md5sum="1b0035543f536304ee8cac56833f02e5" name="js/date/mk-MK.js" role="horde" />
    <file baseinstalldir="/" md5sum="95669c959e74b10058d212483159fd52" name="js/date/nb-NO.js" role="horde" />
    <file baseinstalldir="/" md5sum="7f8967e4051511da1267164d350e3618" name="js/date/nl-NL.js" role="horde" />
-   <file baseinstalldir="/" md5sum="1067b539569877a43b8ae20bcc7afe97" name="js/date/nn-NO.js" role="horde" />
+   <file baseinstalldir="/" md5sum="2d38e9477f33393d68818e626df7debb" name="js/date/nn-NO.js" role="horde" />
    <file baseinstalldir="/" md5sum="48e693767e4f272e6cbc1f43d800ebbb" name="js/date/pl-PL.js" role="horde" />
    <file baseinstalldir="/" md5sum="f002224c44f4f2b990d79dd8c222f86d" name="js/date/pt-BR.js" role="horde" />
    <file baseinstalldir="/" md5sum="2a1e047e3bba3d43e0b9abe61a72398c" name="js/date/pt-PT.js" role="horde" />
@@ -261,7 +262,7 @@
    <file baseinstalldir="/" md5sum="85fe0ece02f6d16a2f3a14c84ef12233" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="633ca782cad8b259d4c50d0272f3ce77" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="66f62ade8083d1ca151489a29fb2443d" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="7dab63712580dc62d8c354c002a52fa1" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="75fc18adc616fae318b845e89cbc389e" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="00c04c9cfc0a7519dbd66cb37778cf81" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="aabf1ac76108300faad99435e670d293" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
@@ -4159,6 +4160,22 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Prevent building invalid HTML when building an email from a SMART_REPLY (Bug #14500).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.27.3</release>
+    <api>2.27.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-11-14</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Improve handling of certain ActiveSync failures.
+* [jan] Fix parsing abbreviated Norwegian month names too (Bug #14503).
    </notes>
   </release>
  </changelog>

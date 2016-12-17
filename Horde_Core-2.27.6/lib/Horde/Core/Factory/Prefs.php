@@ -67,18 +67,24 @@ class Horde_Core_Factory_Prefs extends Horde_Core_Factory_Base
                   $conf['prefs']['driver'] == 'Session') {
             $driver = 'Horde_Prefs_Storage_Null';
             $params = array();
-            $opts['cache'] = false;
+            $opts['cache'] = $conf['prefs']['driver'] == 'Session';
         } else {
-            $driver = $conf['prefs']['driver'];
-            switch (Horde_String::lower($driver)) {
-            case 'nosql':
-                $nosql = $this->_injector->getInstance('Horde_Core_Factory_Nosql')->create('horde', 'prefs');
-                if ($nosql instanceof Horde_Mongo_Client) {
-                    $driver = 'mongo';
+            try {
+                $driver = $conf['prefs']['driver'];
+                switch (Horde_String::lower($driver)) {
+                case 'nosql':
+                    $nosql = $this->_injector->getInstance('Horde_Core_Factory_Nosql')->create('horde', 'prefs');
+                    if ($nosql instanceof Horde_Mongo_Client) {
+                        $driver = 'mongo';
+                    }
+                    break;
                 }
-                break;
+                $driver = $this->_getDriverName($driver, 'Horde_Prefs_Storage');
+            } catch (Horde_Exception $e) {
+                $this->_notifyError($e);
+                $driver = 'Horde_Prefs_Storage_Null';
+                $opts['cache'] = false;
             }
-            $driver = $this->_getDriverName($driver, 'Horde_Prefs_Storage');
             $params = Horde::getDriverConfig('prefs', $driver);
         }
 

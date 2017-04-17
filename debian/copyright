@@ -26,6 +26,14 @@ Files: Horde_Core-*/js/liquidmetal.js
 Copyright: 2009 Ryan McGeary (ryanonjavascript@mcgeary.org)
 License: Expat
 
+Files: Horde_Core-*/js/jquery.mobile/jquery.js
+Copyright: 2005-2014 jQuery Foundation, Inc. and other contributors
+License: Expat
+
+Files: Horde_Core-*/js/jquery.mobile/jquery.mobile.js
+Copyright: 2010-2013 jQuery Foundation, Inc. and other contributors
+License: GPL-2 or Expat
+
 Files: debian/*
 Copyright: 2011-2015 Mathieu Parent <math.parent@gmail.com>
 License: LGPL-2.1+

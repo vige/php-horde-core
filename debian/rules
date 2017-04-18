@@ -11,5 +11,6 @@ override_dh_auto_configure:
 	sed -i '/js\/excanvas\//d' */package.xml
 	sed -i '/js\/jquery.mobile\/jquery\.mobile\.min\.js/d' */package.xml
 	sed -i '/js\/jquery.mobile\/jquery\.min\.js/d' */package.xml
+	sed -i '/js\/jquery.mobile\/jquery\.min\.css/d' */package.xml
 	sed -i '/js\/prototype\.js/d' */package.xml
 	sed -i '/js\/scriptaculous/d' */package.xml

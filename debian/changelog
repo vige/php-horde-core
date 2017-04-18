@@ -1,3 +1,9 @@
+php-horde-core (2.27.6+debian1-2) unstable; urgency=medium
+
+  * Replace minified CSS by non-minified one
+
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 18 Apr 2017 20:15:11 +0200
+
 php-horde-core (2.27.6+debian1-1) unstable; urgency=medium
 
   * Use jquery and jquery-mobile from upstream Horde_Core to fix IMP

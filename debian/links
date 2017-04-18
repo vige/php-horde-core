@@ -1,5 +1,6 @@
 /usr/share/javascript/excanvas usr/share/horde/js/excanvas
 /usr/share/horde/js/jquery.mobile/jquery.mobile.js usr/share/horde/js/jquery.mobile/jquery.mobile.min.js
+/usr/share/horde/js/jquery.mobile/jquery.mobile.css usr/share/horde/js/jquery.mobile/jquery.mobile.min.css
 /usr/share/horde/js/jquery.mobile/jquery.js usr/share/horde/js/jquery.mobile/jquery.min.js
 /usr/share/javascript/prototype/prototype.js usr/share/horde/js/prototype.js
 /usr/share/javascript/scriptaculous usr/share/horde/js/scriptaculous

@@ -1,3 +1,9 @@
+php-horde-core (2.29.1+debian0-1) UNRELEASED; urgency=medium
+
+  * New upstream version 2.29.1+debian0
+
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 29 Jun 2017 11:25:25 +0200
+
 php-horde-core (2.27.6+debian1-2) unstable; urgency=medium
 
   * Replace minified CSS by non-minified one

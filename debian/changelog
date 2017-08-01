@@ -1,3 +1,9 @@
+php-horde-core (2.30.0+debian0-1) UNRELEASED; urgency=medium
+
+  * New upstream version 2.30.0+debian0
+
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 01 Aug 2017 21:33:08 +0200
+
 php-horde-core (2.29.1+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.29.1+debian0

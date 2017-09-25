@@ -28,10 +28,10 @@
   <email>mrubinsk@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2017-08-01</date>
- <time>12:12:10</time>
+ <date>2017-08-28</date>
+ <time>11:14:49</time>
  <version>
-  <release>2.30.0</release>
+  <release>2.30.2</release>
   <api>2.30.0</api>
  </version>
  <stability>
@@ -40,9 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] SECURITY: Fix XSS vulnerability with pathinfo component in Horde::selfUrl().
-* [jan] Deprecate Horde::redirect().
-* [jan] Add Horde::signUrl() and Horde::verifySignedUrl().
+* [jan] Fix double line breaks in task description tooltips (Bug #14684).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -261,7 +259,7 @@
    <file baseinstalldir="/" md5sum="f2bfbdc4c224ab77cb3ee601a945f217" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="1ba8b36b077b2dd5d806acec1ef76de2" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="884d3a5c883b444326ec9ebc24d2d09a" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="e0992e82a62817abdc31692e49713d99" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="1c192d0e3598ff7ff49cdf562b255602" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="fac3d5b4c22c2b6ddae3067f9cd34a2d" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="f4ba1443376de1d967129048a61ca800" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
@@ -535,7 +533,7 @@
    <file baseinstalldir="/" md5sum="cd475e105e26a9b35a06cd04fbfc7e76" name="lib/Horde/Session.php" role="php" />
    <file baseinstalldir="/" md5sum="2aecbae03e328dd46a95697a9aa9b965" name="lib/Horde/Shutdown.php" role="php" />
    <file baseinstalldir="/" md5sum="bf044cf08228e05f1f4ffbd066c0ca94" name="lib/Horde/Themes.php" role="php" />
-   <file baseinstalldir="/" md5sum="85727b540bdd364bc82d7ade43c0f8f2" name="lib/Horde.php" role="php" />
+   <file baseinstalldir="/" md5sum="c20e91b211a5eb274329b5bce61c4b0e" name="lib/Horde.php" role="php" />
    <file baseinstalldir="/" md5sum="aa9a34c94565107a4159d8e4c1cc3874" name="locale/ar/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="f36a3ef97140638feeb8f524d6254d61" name="locale/bg/LC_MESSAGES/Horde_Core.po" role="data" />
    <file baseinstalldir="/" md5sum="0ed371cd28fe6ca855427c08591af4fe" name="locale/bs/LC_MESSAGES/Horde_Core.po" role="data" />
@@ -4378,6 +4376,36 @@
 * [jan] SECURITY: Fix XSS vulnerability with pathinfo component in Horde::selfUrl().
 * [jan] Deprecate Horde::redirect().
 * [jan] Add Horde::signUrl() and Horde::verifySignedUrl().
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.30.1</release>
+    <api>2.30.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2017-08-19</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix issue that could break ActiveSync sync if object not found.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.30.2</release>
+    <api>2.30.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2017-08-28</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Fix double line breaks in task description tooltips (Bug #14684).
    </notes>
   </release>
  </changelog>

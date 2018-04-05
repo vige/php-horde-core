@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Horde Core Framework libraries
 Upstream-Contact: Horde <horde@lists.horde.org>
 		  Horde development <dev@lists.horde.org>

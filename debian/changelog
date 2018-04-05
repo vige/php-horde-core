@@ -1,4 +1,4 @@
-php-horde-core (2.31.2+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.31.2+debian0-1) unstable; urgency=medium
 
   * Update Standards-Version to 4.1.3, no change
   * Upgrade debhelper to compat 11
@@ -7,7 +7,7 @@ php-horde-core (2.31.2+debian0-1) UNRELEASED; urgency=medium
   * Use secure copyright format URI
   * Replace "Priority: extra" by "Priority: optional"
 
- -- Mathieu Parent <sathieu@debian.org>  Thu, 05 Apr 2018 10:35:15 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 05 Apr 2018 14:53:29 +0200
 
 php-horde-core (2.31.1+debian0-1) unstable; urgency=medium
 

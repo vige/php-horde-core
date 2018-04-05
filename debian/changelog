@@ -4,8 +4,10 @@ php-horde-core (2.31.2+debian0-1) UNRELEASED; urgency=medium
   * Upgrade debhelper to compat 11
   * Update Vcs-* fields
   * New upstream version 2.31.2+debian0
+  * Use secure copyright format URI
+  * Replace "Priority: extra" by "Priority: optional"
 
- -- Mathieu Parent <sathieu@debian.org>  Thu, 05 Apr 2018 09:51:29 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 05 Apr 2018 10:35:15 +0200
 
 php-horde-core (2.31.1+debian0-1) unstable; urgency=medium
 

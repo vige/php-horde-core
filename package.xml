@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2017-11-26</date>
- <time>12:22:40</time>
+ <date>2018-02-10</date>
+ <time>18:18:55</time>
  <version>
-  <release>2.31.1</release>
+  <release>2.31.2</release>
   <api>2.31.0</api>
  </version>
  <stability>
@@ -40,12 +40,11 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix setting and semantic meaning of the &apos;oofstate&apos; property when returning Out of Office data to EAS clients.
-* [mjr] Detect if the failure was due to trying to delete a special mailbox (Bug #14732).
+* [mjr] Fix reporting status of OOF messages to EAS clients (Bug #14779).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="29bc48a56d01637f2d4001c6e8680614" name="doc/Horde/Core/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="e84d238542893e13867327be0a4e959b" name="doc/Horde/Core/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="448263295cf592643828bb7121113a01" name="doc/Horde/Core/COPYING" role="doc" />
    <file baseinstalldir="/" md5sum="8d8bc2873f10a78518a7e58c9e7aa5f2" name="js/date/ar-SY.js" role="horde" />
    <file baseinstalldir="/" md5sum="4963da977cab7b7308bc69944f825882" name="js/date/bg-BG.js" role="horde" />
@@ -260,8 +259,8 @@
    <file baseinstalldir="/" md5sum="579fc7641ac7f681f70be91968c58613" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="f2bfbdc4c224ab77cb3ee601a945f217" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="1ba8b36b077b2dd5d806acec1ef76de2" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="884d3a5c883b444326ec9ebc24d2d09a" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="5649086c08af16478ba87e76ef43f1dc" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="2d36686b02e6121b0e4c1e0de973fb80" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="9afba595d23278d6427fe7eb7c333cd4" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="fac3d5b4c22c2b6ddae3067f9cd34a2d" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="f4ba1443376de1d967129048a61ca800" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
@@ -2279,8 +2278,6 @@
    </notes>
   </release>
   <release>
-   <date>2012-07-05</date>
-   <time>12:25:25</time>
    <version>
     <release>2.0.0alpha1</release>
     <api>2.0.0alpha1</api>
@@ -2289,6 +2286,7 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
+   <date>2012-07-05</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * First alpha release for Horde 5.
@@ -2738,7 +2736,7 @@
    <date>2013-03-04</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
-
+*
    </notes>
   </release>
   <release>
@@ -4439,8 +4437,24 @@
    <date>2017-11-26</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
+* [mjr] Fix checking for active APIs for ActiveSync without throwing exceptions.
 * [mjr] Fix setting and semantic meaning of the &apos;oofstate&apos; property when returning Out of Office data to EAS clients.
 * [mjr] Detect if the failure was due to trying to delete a special mailbox (Bug #14732).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.2</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2018-02-10</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix reporting status of OOF messages to EAS clients (Bug #14779).
    </notes>
   </release>
  </changelog>

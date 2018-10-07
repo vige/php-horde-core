@@ -1,9 +1,9 @@
-php-horde-core (2.31.3+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.31.3+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.31.3+debian0
   * Fix CVE-2017-16907 XSS via Color field (Closes: #909800)
 
- -- Mathieu Parent <sathieu@debian.org>  Sun, 07 Oct 2018 22:31:03 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 07 Oct 2018 22:32:13 +0200
 
 php-horde-core (2.31.2+debian0-2) unstable; urgency=medium
 

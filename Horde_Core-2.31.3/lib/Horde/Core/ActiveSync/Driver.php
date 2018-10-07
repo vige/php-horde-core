@@ -929,6 +929,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
      *            of the stuff in the registry connector since the Repositories
      *            will handle the basic CRUD operations and change detection on
      *            each collection.
+     *          - Use an object instead of hashes to return in the changes array
+     *            to better define the available properties.
      */
     public function getServerChanges(
         $folder, $from_ts, $to_ts, $cutoffdate, $ping, $ignoreFirstSync = false, $maxitems = 100, $refreshFilter = false)
@@ -1219,25 +1221,26 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             }
         }
 
-        $results = array();
+        // Short circuit initial sync.
         if (!$folder->haveInitialSync) {
             $this->_logger->meta('Initial sync, only sending UID.');
             $this->_endBuffer();
             $add = $changes['add'];
             $changes = null;
             return $add;
-        } else {
-            foreach ($changes['add'] as $add) {
-                $type = ($folder->collectionClass() == Horde_ActiveSync::CLASS_EMAIL &&
-                         $folder->serverid() == $this->getSpecialFolderNameByType(self::SPECIAL_DRAFTS))
-                    ? Horde_ActiveSync::CHANGE_TYPE_DRAFT
-                    : Horde_ActiveSync::CHANGE_TYPE_CHANGE;
-                $results[] = array(
-                    'id' => $add,
-                    'type' => $type,
-                    'flags' => Horde_ActiveSync::FLAG_NEWMESSAGE
-                );
-            }
+        }
+
+        $results = array();
+        foreach ($changes['add'] as $add) {
+            $type = ($folder->collectionClass() == Horde_ActiveSync::CLASS_EMAIL &&
+                     $folder->serverid() == $this->getSpecialFolderNameByType(self::SPECIAL_DRAFTS))
+                ? Horde_ActiveSync::CHANGE_TYPE_DRAFT
+                : Horde_ActiveSync::CHANGE_TYPE_CHANGE;
+            $results[] = array(
+                'id' => $add,
+                'type' => $type,
+                'flags' => Horde_ActiveSync::FLAG_NEWMESSAGE
+            );
         }
 
         // For CLASS_EMAIL, all changes are a change in flags, categories or
@@ -2193,6 +2196,14 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
         $rfc822, $forward = false, $reply = false, $parent = false, $save = true,
         Horde_ActiveSync_Message_SendMail $message = null)
     {
+        // Ignore if we do not support email operations.
+        // @TODO: This assumes the only way to not have an imap object is
+        // if we turn off email support. We should probably make this a flag.
+        if (empty($this->_imap)) {
+            $this->_logger->notice("No IMAP object. Ignoring.");
+            return true;
+        }
+
         ob_start();
         $mailer = new Horde_Core_ActiveSync_Mail($this->_imap, $this->_user, $this->_version);
         $raw_message = !empty($message)

@@ -2085,7 +2085,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                         array('flagged' => $message->flag->flagstatus)
                     );
                 }
-                if ($message->propertyExists('categories')) {
+                if ($message->propertyExists('categories') &&
+                    $message->categories) {
                     // We *try* to make sure the category is added as a custom
                     // IMAP flag. This might fail in some edge cases, like e.g.
                     // with non-ascii characters.
@@ -3485,9 +3486,10 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             // multiple email addresses, or the group syntax will cause most
             // clients to silently throw out all but the first email address in
             // the list, or will completely fail to send the message altogether.
-            if (empty($row['__type']) || $row['__type'] != 'Object') {
+            if (!empty($row['__type']) && ($row['__type'] != 'Object')) {
                 continue;
             }
+
             $entry = array(
                 Horde_ActiveSync::GAL_ALIAS => !empty($row['alias']) ? $row['alias'] : '',
                 Horde_ActiveSync::GAL_DISPLAYNAME => $row['name'],

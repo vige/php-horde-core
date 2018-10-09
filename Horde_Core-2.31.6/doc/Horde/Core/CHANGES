@@ -1,4 +1,28 @@
 -------
+v2.31.6
+-------
+
+[mjr] SECURITY: Fix XSS vulnerability when rendering a colorpicker (Bug
+      #14857).
+
+
+-------
+v2.31.5
+-------
+
+[mjr] Work around buggy EAS clients that send badly formed HTML in SMARTREPLY
+      (Bug #14841).
+
+
+-------
+v2.31.4
+-------
+
+[mjr] Fix returning EAS GAL search results (Bug #14843).
+[jan] Avoid fatal error if an ActiveSync message has empty categories.
+
+
+-------
 v2.31.3
 -------
 

@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2018-06-10</date>
- <time>19:11:12</time>
+ <date>2018-09-26</date>
+ <time>08:51:19</time>
  <version>
-  <release>2.31.3</release>
+  <release>2.31.6</release>
   <api>2.31.0</api>
  </version>
  <stability>
@@ -40,11 +40,11 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Protect against empty imap adapters when no email support is enabled for EAS (Bug #14820).
+* [mjr] SECURITY: Fix XSS vulnerability when rendering a colorpicker (Bug #14857).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="bc98bf4b6c0b46074bb8bfac13c34711" name="doc/Horde/Core/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="c0a9e90d60fdec957c807f0c7bf0849f" name="doc/Horde/Core/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="448263295cf592643828bb7121113a01" name="doc/Horde/Core/COPYING" role="doc" />
    <file baseinstalldir="/" md5sum="8d8bc2873f10a78518a7e58c9e7aa5f2" name="js/date/ar-SY.js" role="horde" />
    <file baseinstalldir="/" md5sum="4963da977cab7b7308bc69944f825882" name="js/date/bg-BG.js" role="horde" />
@@ -260,8 +260,8 @@
    <file baseinstalldir="/" md5sum="f2bfbdc4c224ab77cb3ee601a945f217" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="1ba8b36b077b2dd5d806acec1ef76de2" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="1412c6fe9081e5009210f496dc3515f3" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="93635339e71ebb8962eefb688703689d" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="fac3d5b4c22c2b6ddae3067f9cd34a2d" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="873d7296093835eb3a759155371b2781" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="9e023b8cc2ded42e2f54d0c620331443" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="f4ba1443376de1d967129048a61ca800" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="10a6336a9d78644fcd369b11d45615bf" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -455,7 +455,7 @@
    <file baseinstalldir="/" md5sum="27a92aca919293c2546ab6d2133d7b3b" name="lib/Horde/Core/Tree/Renderer/Html.php" role="php" />
    <file baseinstalldir="/" md5sum="2cb488cac2cc5c416d13709939706cd4" name="lib/Horde/Core/Tree/Renderer/Javascript.php" role="php" />
    <file baseinstalldir="/" md5sum="e007f6c2cb7776252e35f34e8e0d025b" name="lib/Horde/Core/Tree/Renderer/Simplehtml.php" role="php" />
-   <file baseinstalldir="/" md5sum="a1c086252458aaf79474f6492bd49bd3" name="lib/Horde/Core/Ui/VarRenderer/Html.php" role="php" />
+   <file baseinstalldir="/" md5sum="2aae019a2b34dc9b27ec7a7336a57eea" name="lib/Horde/Core/Ui/VarRenderer/Html.php" role="php" />
    <file baseinstalldir="/" md5sum="ecd1583416b73f433d6d06fd62367dd1" name="lib/Horde/Core/Ui/VarRenderer/TablesetHtml.php" role="php" />
    <file baseinstalldir="/" md5sum="2a4e4f88a00914c1a58b15b29da7c8b5" name="lib/Horde/Core/Ui/FlagImage.php" role="php" />
    <file baseinstalldir="/" md5sum="feaa0dd12396dec1c5214a1a9f613c04" name="lib/Horde/Core/Ui/JsCalendar.php" role="php" />
@@ -4470,6 +4470,53 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Protect against empty imap adapters when no email support is enabled for EAS (Bug #14820).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.4</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2018-08-09</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix returning EAS GAL search results (Bug #14843).
+* [jan] Avoid fatal error if an ActiveSync message has empty categories.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.5</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2018-08-11</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Work around buggy EAS clients that send badly formed HTML in SMARTREPLY (Bug #14841).
+* |+
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.6</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2018-09-26</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] SECURITY: Fix XSS vulnerability when rendering a colorpicker (Bug #14857).
    </notes>
   </release>
  </changelog>

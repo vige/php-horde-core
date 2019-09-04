@@ -3,7 +3,7 @@
  <name>Horde_Core</name>
  <channel>pear.horde.org</channel>
  <summary>Core Horde Framework library</summary>
- <description>These classes provide the core functionality of the Horde Application Framework.</description>
+ <description>A library that provides the core functionality of the Horde Application Framework.</description>
  <lead>
   <name>Jan Schneider</name>
   <user>jan</user>
@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2018-09-26</date>
- <time>08:51:19</time>
+ <date>2019-08-18</date>
+ <time>15:40:49</time>
  <version>
-  <release>2.31.6</release>
+  <release>2.31.10</release>
   <api>2.31.0</api>
  </version>
  <stability>
@@ -40,11 +40,11 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] SECURITY: Fix XSS vulnerability when rendering a colorpicker (Bug #14857).
+* [mjr] Fix minimum required ActiveSync version.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="c0a9e90d60fdec957c807f0c7bf0849f" name="doc/Horde/Core/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="dc2356075f0b8535930cbedbaa378b93" name="doc/Horde/Core/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="448263295cf592643828bb7121113a01" name="doc/Horde/Core/COPYING" role="doc" />
    <file baseinstalldir="/" md5sum="8d8bc2873f10a78518a7e58c9e7aa5f2" name="js/date/ar-SY.js" role="horde" />
    <file baseinstalldir="/" md5sum="4963da977cab7b7308bc69944f825882" name="js/date/bg-BG.js" role="horde" />
@@ -259,8 +259,8 @@
    <file baseinstalldir="/" md5sum="579fc7641ac7f681f70be91968c58613" name="lib/Horde/Core/ActiveSync/Logger/Factory.php" role="php" />
    <file baseinstalldir="/" md5sum="f2bfbdc4c224ab77cb3ee601a945f217" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="1ba8b36b077b2dd5d806acec1ef76de2" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
-   <file baseinstalldir="/" md5sum="1412c6fe9081e5009210f496dc3515f3" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="873d7296093835eb3a759155371b2781" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="db2423a8994dee86d07f4e3b025620bc" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
+   <file baseinstalldir="/" md5sum="2e34811fe2b212230026afc3aeb60d8c" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
    <file baseinstalldir="/" md5sum="9e023b8cc2ded42e2f54d0c620331443" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="f4ba1443376de1d967129048a61ca800" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
@@ -479,7 +479,7 @@
    <file baseinstalldir="/" md5sum="cf6350f721b304e84b63c6ef103f3310" name="lib/Horde/Core/Hooks.php" role="php" />
    <file baseinstalldir="/" md5sum="2bf0a803eb288f5e4032f050aaf85c93" name="lib/Horde/Core/HordeMap.php" role="php" />
    <file baseinstalldir="/" md5sum="fc8490cb28463cc111c08bd812265e4f" name="lib/Horde/Core/LoginTasks.php" role="php" />
-   <file baseinstalldir="/" md5sum="90b2082567a1c95dfb9c2f0d192d516f" name="lib/Horde/Core/Nosql.php" role="php" />
+   <file baseinstalldir="/" md5sum="214e5e9c4d3624d23f969ecc6f97a97d" name="lib/Horde/Core/Nosql.php" role="php" />
    <file baseinstalldir="/" md5sum="f4a45e7411700ad77293ca133d96f491" name="lib/Horde/Core/Perms.php" role="php" />
    <file baseinstalldir="/" md5sum="d7f70505dc2f8c56076c5615d3517971" name="lib/Horde/Core/TagBrowser.php" role="php" />
    <file baseinstalldir="/" md5sum="6f0c83d376d7921838d4b48725a65498" name="lib/Horde/Core/Tagger.php" role="php" />
@@ -918,7 +918,7 @@
    <package>
     <name>Horde_ActiveSync</name>
     <channel>pear.horde.org</channel>
-    <min>2.39.0</min>
+    <min>2.40.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -4501,7 +4501,6 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Work around buggy EAS clients that send badly formed HTML in SMARTREPLY (Bug #14841).
-* |+
    </notes>
   </release>
   <release>
@@ -4517,6 +4516,68 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] SECURITY: Fix XSS vulnerability when rendering a colorpicker (Bug #14857).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.7</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-01-13</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix returning image binary data with EAS ResolveRecipient requests.
+* [mjr] Fix returning images with EAS search results.
+* [mjr] Fix handling of EAS ResolveRecipient requests without AVAILABILITY query.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.8</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-02-09</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Improve ActiveSync RESOLVERECIPIENT reqeuests.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.9</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-08-18</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Improvements for handling TNEF attachments over ActiveSync.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.10</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-08-18</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix minimum required ActiveSync version.
    </notes>
   </release>
  </changelog>

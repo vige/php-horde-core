@@ -464,7 +464,7 @@ class Horde_Core_ActiveSync_Connector
                 'office');
         }
         if (!empty($options['pictures'])) {
-            $return_fields[$gal][] = 'photo';
+            $return_fields[] = 'photo';
         }
         $opts = array(
             'matchBegin' => true,
@@ -513,16 +513,19 @@ class Horde_Core_ActiveSync_Connector
         if (!in_array($gal, $sources)) {
             $sources[] = $gal;
         }
+        $fields = array();
         foreach ($sources as $source) {
-            $fields[$source] = array('name', 'email', 'alias', 'smimePublicKey');
-            if (!empty($opts['pictures'])) {
-                $fields[$source]['photo'];
-            }
+            $fields[$source] = array('email');
+        }
+        $returnFields = array('name', 'email', 'alias', 'smimePublicKey');
+        if (!empty($opts['pictures'])) {
+                $returnFields[$source]['photo'];
         }
 
         $options = array(
             'matchBegin' => true,
             'sources' => $sources,
+            'returnFields' => $returnFields,
             'fields' => $fields
         );
         if (isset($opts['maxAmbiguous']) && $opts['maxAmbiguous'] == 0) {

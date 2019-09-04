@@ -1,3 +1,33 @@
+--------
+v2.31.10
+--------
+
+[mjr] Fix minimum required ActiveSync version.
+
+
+-------
+v2.31.9
+-------
+
+[mjr] Improvements for handling TNEF attachments over ActiveSync.
+
+
+-------
+v2.31.8
+-------
+
+[mjr] Improve ActiveSync RESOLVERECIPIENT reqeuests.
+
+
+-------
+v2.31.7
+-------
+
+[mjr] Fix returning image binary data with EAS ResolveRecipient requests.
+[mjr] Fix returning images with EAS search results.
+[mjr] Fix handling of EAS ResolveRecipient requests without AVAILABILITY query.
+
+
 -------
 v2.31.6
 -------

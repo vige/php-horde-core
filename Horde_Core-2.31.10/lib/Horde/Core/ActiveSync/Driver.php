@@ -2605,8 +2605,8 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
             if (empty($ol['pop']['host'])) {
                 unset($ol['pop']);
             } else {
-                if (empty($ol['port']['port'])) {
-                    unset($ol['imap']['port']);
+                if (empty($ol['pop']['port'])) {
+                    unset($ol['pop']['port']);
                 }
             }
             $params = array_merge($params, $ol);
@@ -2703,20 +2703,19 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                                   strlen($result['photo']) > $opts['maxsize']) {
                             $picture->status = Horde_ActiveSync_Status::PICTURE_TOO_LARGE;
                         } else {
-                            $picture->data = $result['photo'];
+                            $picture->data = $result['photo']['load']['data'];
                             $picture->status = Horde_ActiveSync_Status::PICTURE_SUCCESS;
                             ++$picture_count;
                         }
-                        $entry[Horde_ActiveSync::GAL_PICTURE] = $picture;
                     }
-                    $result = array(
+                    $entry = array(
                         'displayname' => $result['name'],
                         'emailaddress' => $result['email'],
                         'entries' => !empty($result['smimePublicKey']) ? array($this->_mungeCert($result['smimePublicKey'])) : array(),
                         'type' => $result['source'] == $gal ? Horde_ActiveSync::RESOLVE_RESULT_GAL : Horde_ActiveSync::RESOLVE_RESULT_ADDRESSBOOK,
                         'picture' => !empty($picture) ? $picture : null
                     );
-                    $return[] = $result;
+                    $return[] = $entry;
                 }
             }
         } else {
@@ -2728,11 +2727,18 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
                 'pictures' => !empty($opts['pictures'])
             );
             $entry = current($this->resolveRecipient('certificate', $search, $options));
-            $opts['starttime']->setTimezone(date_default_timezone_get());
-            $opts['endtime']->setTimezone(date_default_timezone_get());
+
+            // These are empty if we do not have a AVAILABILITY request.
+            if ($availability_request = (!empty($opts['starttime']) && !empty($opts['endtime']))) {
+                $opts['starttime']->setTimezone(date_default_timezone_get());
+                $opts['endtime']->setTimezone(date_default_timezone_get());
+            }
+
             if (!empty($entry)) {
                 $fb = $this->_connector->resolveRecipient($search, $opts);
-                $entry['availability'] = self::buildFbString($fb[$search], $opts['starttime'], $opts['endtime']);
+                if ($availability_request) {
+                    $entry['availability'] = self::buildFbString($fb[$search], $opts['starttime'], $opts['endtime']);
+                }
                 $return[] = $entry;
             }
         }
@@ -3118,6 +3124,24 @@ class Horde_Core_ActiveSync_Driver extends Horde_ActiveSync_Driver_Base
         }
 
         return time();
+    }
+
+    /**
+     * Set the currently connected device
+     *
+     * @param Horde_ActiveSync_Device $device  The device object.
+     */
+    public function setDevice(Horde_ActiveSync_Device $device)
+    {
+        parent::setDevice($device);
+        // @todo remove is_callable for Horde 6(?)
+        if (!empty($this->_imap) && is_callable(array($this->_imap, 'setOptions'))) {
+            $options = array(
+                Horde_ActiveSync_Imap_Message::OPTIONS_DECODE_TNEF =>
+                !$this->_device->hasQuirk(Horde_ActiveSync_Device::QUIRK_SUPPORTS_TNEF)
+            );
+            $this->_imap->setOptions($options);
+        }
     }
 
     /**

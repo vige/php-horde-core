@@ -5,3 +5,6 @@ include:
 
 autopkgtest:
   allow_failure: true
+
+lintian:
+  allow_failure: true

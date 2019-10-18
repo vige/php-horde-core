@@ -2,6 +2,7 @@ php-horde-core (2.31.10+debian0-1) UNRELEASED; urgency=medium
 
   * New upstream version 2.31.10+debian0
   * Bump debhelper from old 11 to 12.
+  * salsa-ci.yml: Allow autopkgtest failure
 
  -- Mathieu Parent <sathieu@debian.org>  Wed, 04 Sep 2019 18:32:25 +0200
 

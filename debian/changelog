@@ -1,5 +1,7 @@
 php-horde-core (2.31.10+debian0-2) UNRELEASED; urgency=medium
 
+  * Re-upload to Debian. (Closes: #959289).
+
   * d/control: Add to Uploaders: Mike Gabriel.
   * d/control: Drop from Uploaders: Debian QA Group.
 

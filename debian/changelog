@@ -7,8 +7,9 @@ php-horde-core (2.31.10+debian0-2) UNRELEASED; urgency=medium
   * d/control: Bump Standards-Version: to 4.5.0. No changes needed.
   * d/control: Add Rules-Requires-Root: field and set it to 'no'.
   * d/copyright: Update copyright attributions.
+  * d/upstream/metadata: Add file. Comply with DEP-12.
 
- -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 May 2020 16:09:19 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 May 2020 16:38:06 +0200
 
 php-horde-core (2.31.10+debian0-1) unstable; urgency=medium
 

@@ -1,3 +1,3 @@
 Tests: phpunit
-Restrictions: needs-recommends needs-root
+Restrictions: needs-root
 Depends: @, php-cli, php-horde-test

@@ -3,6 +3,20 @@ Upstream-Name: Horde Core Framework libraries
 Upstream-Contact: Horde <horde@lists.horde.org>
                   Horde development <dev@lists.horde.org>
 Source: http://pear.horde.org/
+Comment:
+ We don't use these minified file versions shipped in upstream
+ sources:
+ .
+   * ./Horde_Core-2.31.10/js/map/OpenLayers.js
+     -> replaced by ./Horde_Core-2.31.10/js/map/OpenLayers-debug.js
+        (same code, non-minified version)
+   * ./Horde_Core-2.31.10/js/jquery.mobile/jquery.mobile.min.css
+     -> replaced by ./debian/_sources/jquery.mobile.css
+        (same file version obtained from upstream VCS, non-minified)
+ .
+ However, we don't remove those file from the source tarball to
+ ease the bulk management of all php-horde* packages utilizing the
+ same workflow. This may get improved at a later point of time.
 
 Files: *
 Copyright: 1999-2017, Horde LLC (http://www.horde.org/)

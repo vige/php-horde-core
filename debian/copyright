@@ -4,19 +4,21 @@ Upstream-Contact: Horde <horde@lists.horde.org>
                   Horde development <dev@lists.horde.org>
 Source: http://pear.horde.org/
 Comment:
- We don't use these minified file versions shipped in upstream
- sources:
+ On gbp import-orig, several Javascript (and CSS) files get stripped off
+ of the upstream tarball:
  .
-   * ./Horde_Core-2.31.10/js/map/OpenLayers.js
-     -> replaced by ./Horde_Core-2.31.10/js/map/OpenLayers-debug.js
-        (same code, non-minified version)
-   * ./Horde_Core-2.31.10/js/jquery.mobile/jquery.mobile.min.css
-     -> replaced by ./debian/_sources/jquery.mobile.css
-        (same file version obtained from upstream VCS, non-minified)
+ Un-bundling these:
  .
- However, we don't remove those file from the source tarball to
- ease the bulk management of all php-horde* packages utilizing the
- same workflow. This may get improved at a later point of time.
+   * Horde_Core-*/js/excanvas
+   * Horde_Core-*/js/prototype.js
+   * Horde_Core-*/js/scriptaculous
+ .
+ Dropping these minified file version:
+ .
+   * Horde_Core-*/js/jquery.mobile/jquery.min.js
+   * Horde_Core-*/js/jquery.mobile/jquery.mobile.min.js
+   * Horde_Core-*/js/jquery.mobile/jquery.mobile.min.css
+   * Horde_Core-*/js/map/OpenLayers.js
 
 Files: *
 Copyright: 1999-2017, Horde LLC (http://www.horde.org/)

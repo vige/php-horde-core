@@ -48,6 +48,12 @@ Copyright: 2001-2003, Robert E. Coyle <robertecoyle@hotmail.com>
            2003-2017, Horde LLC (http://www.horde.org/)
 License: LGPL-2.1
 
+Files: Horde_Core-*/js/date/*
+Copyright: 2006-2007, Coolite Inc. (http://www.coolite.com/)
+           2006-2008, Coolite Inc. (http://www.coolite.com/)
+           2008, Claus Tondering
+License: Expat
+
 Files: Horde_Core-*/js/flotr2/*
 Copyright: 2011, Jacob Thornton
 License: Expat
@@ -68,14 +74,23 @@ Copyright: 2005-2011, OpenLayers Contributors (http://openlayers.org/)
            2006, Yahoo! Inc. (http://www.yahoo.com/)
 License: BSD-2-clause-like and Expat and Apache-2.0 and BSD-3-clause
 
+Files: Horde_Core-*/js/map/google.js
+       Horde_Core-*/js/map/bing.js
+Copyright: 2011-2017, Horde LLC (http://www.horde.org/)
+           2006-2011, OpenLayers Contributors
+License: GPL-2 and BSD-2-clause-like
+
 Files: Horde_Core-*/js/jquery.mobile/jquery.js
 Copyright: 2005, 2014, jQuery Foundation, Inc. and other contributors
            2008, 2014, jQuery Foundation, Inc. and other contributors
 License: Expat
 
 Files: Horde_Core-*/js/jquery.mobile/jquery.mobile.js
-Copyright: 2010, 2013, jQuery Foundation, Inc. and other contributors
-           2010, "Cowboy" Ben Alman
+Copyright: 2010, "Cowboy" Ben Alman
+           2010, 2013, jQuery Foundation, Inc. and other contributors
+           2012, Scott Jehl
+           2012, Paul Irish
+           2012, Nicholas Zakas
 License: Expat and, Expat or GPL-2
 
 Files: Horde_Core-*/js/jquery.mobile/jquery.mobile.min.css
@@ -112,7 +127,7 @@ Comment:
  See https://github.com/jwestbrook/Prototype.Growler/blob/master/Growler.js
 
 Files: Horde_Core-*/js/liquidmetal.js
-Copyright: 2009, Ryan McGeary (ryanonjavascript@mcgeary.org)
+Copyright: 2009-2012, Ryan McGeary (ryanonjavascript@mcgeary.org)
 License: Expat
 
 Files: Horde_Core-*/js/webnotification.js

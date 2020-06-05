@@ -1,6 +1,20 @@
-php-horde-core (2.31.10+debian0-3) unstable; urgency=medium
+php-horde-core (2.31.10+debian0-4) unstable; urgency=medium
 
   * Re-upload to Debian. (Closes: #959289).
+
+  * d/gbp.conf:
+    + Drop jquery.mobile.min.css and (minified) OpenLayers.js from orig tarball
+      on next import.
+  * d/copyright:
+    + Update global Comment: field, now that I have understood how upstream
+      files get removed during gbp import-orig.
+  * debian/copyright:
+    + Update attributions. Some spotted by Thorsten Alteholz (cudos!), some by
+      myself when going over eveyrhing once more.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 05 Jun 2020 22:27:44 +0200
+
+php-horde-core (2.31.10+debian0-3) REJECTED; urgency=medium
 
   * d/copyright:
     + Correct attributions of OpenLayers.js (multi-licensed bundle file).

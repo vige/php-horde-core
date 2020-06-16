@@ -1,3 +1,9 @@
+php-horde-core (2.31.14+debian0-1) UNRELEASED; urgency=medium
+
+  * New upstream version 2.31.14+debian0
+
+ -- Juri Grabowski <debian@jugra.de>  Tue, 16 Jun 2020 03:53:45 +0000
+
 php-horde-core (2.31.10+debian0-4) unstable; urgency=medium
 
   * Re-upload to Debian. (Closes: #959289).

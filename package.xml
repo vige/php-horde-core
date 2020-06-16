@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.10.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0http://pear.php.net/dtd/package-2.0.xsd">
  <name>Horde_Core</name>
  <channel>pear.horde.org</channel>
  <summary>Core Horde Framework library</summary>
@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2019-08-18</date>
- <time>15:40:49</time>
+ <date>2020-06-08</date>
+ <time>23:09:42</time>
  <version>
-  <release>2.31.10</release>
+  <release>2.31.14</release>
   <api>2.31.0</api>
  </version>
  <stability>
@@ -40,11 +40,14 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix minimum required ActiveSync version.
+* [jan] Avoid concurrent access to DNS cache from multiple hosts (cheese@nosuchhost.net, PR#9).
+* [jan] Support Redis Sentinel configuration (Michael Menge &lt;michael.menge@zdv.uni-tuebingen.de&gt;, Request #14998).
+* [jan] Use file hashing for detecting outdated configuration files.
+* [mjr] Fix regression in Autodiscover v1 (Bug #14992).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="dc2356075f0b8535930cbedbaa378b93" name="doc/Horde/Core/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="afc8b3db4efd5977767515660b606a3c" name="doc/Horde/Core/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="448263295cf592643828bb7121113a01" name="doc/Horde/Core/COPYING" role="doc" />
    <file baseinstalldir="/" md5sum="8d8bc2873f10a78518a7e58c9e7aa5f2" name="js/date/ar-SY.js" role="horde" />
    <file baseinstalldir="/" md5sum="4963da977cab7b7308bc69944f825882" name="js/date/bg-BG.js" role="horde" />
@@ -260,8 +263,8 @@
    <file baseinstalldir="/" md5sum="f2bfbdc4c224ab77cb3ee601a945f217" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="1ba8b36b077b2dd5d806acec1ef76de2" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="db2423a8994dee86d07f4e3b025620bc" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="2e34811fe2b212230026afc3aeb60d8c" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="9e023b8cc2ded42e2f54d0c620331443" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="f835dbbe9858f618a91a36af0e1cd307" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="79bb0b92a4859aff0a201c80c9653c29" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="f4ba1443376de1d967129048a61ca800" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="10a6336a9d78644fcd369b11d45615bf" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -348,12 +351,12 @@
    <file baseinstalldir="/" md5sum="c65bf6fe1f8c760b3a662f13b35042c9" name="lib/Horde/Core/Factory/Db.php" role="php" />
    <file baseinstalldir="/" md5sum="59dec5f73b7f362488df16a7c8b61c70" name="lib/Horde/Core/Factory/DbBase.php" role="php" />
    <file baseinstalldir="/" md5sum="e9a5ad6d3fcfd0281b8fad56226a1b31" name="lib/Horde/Core/Factory/DbPear.php" role="php" />
-   <file baseinstalldir="/" md5sum="91d4fed4ed77aa76ac944b4bd457d5c4" name="lib/Horde/Core/Factory/Dns.php" role="php" />
+   <file baseinstalldir="/" md5sum="72e3ac6ece3b94de00c14def2bab6110" name="lib/Horde/Core/Factory/Dns.php" role="php" />
    <file baseinstalldir="/" md5sum="2fae6337765d8ea3f43bb06a6fbb8924" name="lib/Horde/Core/Factory/Editor.php" role="php" />
    <file baseinstalldir="/" md5sum="e95c322511232b35969a1ef8eda5a784" name="lib/Horde/Core/Factory/ElasticSearch.php" role="php" />
    <file baseinstalldir="/" md5sum="c8eff30039b8c46e8e1c3dec082e2fe7" name="lib/Horde/Core/Factory/Facebook.php" role="php" />
    <file baseinstalldir="/" md5sum="559bc2a2b5f4d7ed3d02a56b15359794" name="lib/Horde/Core/Factory/Group.php" role="php" />
-   <file baseinstalldir="/" md5sum="d171d93532fcc3cd4d39895340a6591d" name="lib/Horde/Core/Factory/HashTable.php" role="php" />
+   <file baseinstalldir="/" md5sum="4732e28b4aa02f72456d683fe335e61f" name="lib/Horde/Core/Factory/HashTable.php" role="php" />
    <file baseinstalldir="/" md5sum="444f813a6976f4d89ab407aa892295f6" name="lib/Horde/Core/Factory/History.php" role="php" />
    <file baseinstalldir="/" md5sum="3e2be13a3afce063d118fd6aafa22273" name="lib/Horde/Core/Factory/HttpClient.php" role="php" />
    <file baseinstalldir="/" md5sum="b592772c02f9872c9bf3dcbef7b98b05" name="lib/Horde/Core/Factory/Identity.php" role="php" />
@@ -524,7 +527,7 @@
    <file baseinstalldir="/" md5sum="f112480eb63e6c370947605f1fa06a2c" name="lib/Horde/Themes/Element.php" role="php" />
    <file baseinstalldir="/" md5sum="0d62e623708da612d1962985c1db7673" name="lib/Horde/Themes/Image.php" role="php" />
    <file baseinstalldir="/" md5sum="a158131d06922ad0dc241e090c9c02a5" name="lib/Horde/Themes/Sound.php" role="php" />
-   <file baseinstalldir="/" md5sum="6353067138a0374de2b356dcb1f2d61d" name="lib/Horde/Config.php" role="php" />
+   <file baseinstalldir="/" md5sum="a0f77757280efa5ee69c1dd8112511f6" name="lib/Horde/Config.php" role="php" />
    <file baseinstalldir="/" md5sum="6e2e5860d49040faa236d331a7431608" name="lib/Horde/Deprecated.php" role="php" />
    <file baseinstalldir="/" md5sum="1221cc18138e8a561889c5aac3394e5b" name="lib/Horde/ErrorHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="217332a464653ae497d8d4fa7c2e53da" name="lib/Horde/Help.php" role="php" />
@@ -4578,6 +4581,69 @@
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Fix minimum required ActiveSync version.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.11</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-11-03</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix UTF-8 encoding of ActiveSync SmartReply requests (Bug #14957).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.12</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-12-05</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Support for EAS Autodiscover v2.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.13</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-12-23</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Improve PHP 7.3 compatibility.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.14</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-12-23</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Avoid concurrent access to DNS cache from multiple hosts (cheese@nosuchhost.net, PR#9).
+* [jan] Support Redis Sentinel configuration (Michael Menge &lt;michael.menge@zdv.uni-tuebingen.de&gt;, Request #14998).
+* [jan] Use file hashing for detecting outdated configuration files.
+* [mjr] Fix regression in Autodiscover v1 (Bug #14992).
    </notes>
   </release>
  </changelog>

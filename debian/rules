@@ -9,8 +9,9 @@ override_dh_auto_configure:
 	dh_auto_configure -O--buildsystem=phppear
 	# Remove references to embedded libs removed by git-import-orig
 	sed -i '/js\/excanvas\//d' */package.xml
-	sed -i '/js\/jquery.mobile\/jquery\.mobile\.min\.js/d' */package.xml
 	sed -i '/js\/jquery.mobile\/jquery\.min\.js/d' */package.xml
-	sed -i '/js\/jquery.mobile\/jquery\.min\.css/d' */package.xml
+	sed -i '/js\/jquery.mobile\/jquery\.mobile\.min\.js/d' */package.xml
+	sed -i '/js\/jquery.mobile\/jquery\.mobile\.min\.css/d' */package.xml
+	sed -i '/js\/map\/OpenLayers\.js/d' */package.xml
 	sed -i '/js\/prototype\.js/d' */package.xml
 	sed -i '/js\/scriptaculous/d' */package.xml

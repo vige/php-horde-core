@@ -103,11 +103,6 @@ Copyright: 2010, "Cowboy" Ben Alman
            2012, Nicholas Zakas
 License: Expat and, Expat or GPL-2
 
-Files: Horde_Core-*/js/jquery.mobile/jquery.mobile.min.css
-       debian/_sources/jquery.mobile.css
-Copyright: 2010, 2013, jQuery Foundation, Inc. and other contributors
-License: Expat
-
 Files: Horde_Core-*/js/jquery.mobile/plugins/autocomplete.js
 Copyright: 2012-2017, Horde LLC (http://www.horde.org/)
            2012, Andy Matthews
@@ -150,6 +145,10 @@ Files: debian/*
 Copyright: 2011-2019, Mathieu Parent <math.parent@gmail.com>
            2020, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 License: LGPL-2.1+ or GPL-2 or Expat
+
+Files: debian/_sources/jquery.mobile.css
+Copyright: 2010, 2013, jQuery Foundation, Inc. and other contributors
+License: Expat
 
 License: BSD-2-clause-like
  Redistribution and use in source and binary forms, with or without modification,

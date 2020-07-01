@@ -27,7 +27,6 @@ php-horde-core source: source-contains-prebuilt-javascript-object Horde_Core-*/j
 php-horde-core source: source-contains-prebuilt-javascript-object Horde_Core-*/js/map/lang/sk-SK.js line length is 592 characters (>512)
 php-horde-core source: source-contains-prebuilt-javascript-object Horde_Core-*/js/map/lang/sv-SE.js line length is 515 characters (>512)
 php-horde-core source: source-contains-prebuilt-javascript-object Horde_Core-*/js/map/lang/vi-VI.js line length is 606 characters (>512)
-php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/OpenLayers.js line length is 648 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/cs-CZ.js line length is 550 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/de-DE.js line length is 709 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/fr-FR.js line length is 569 characters (>512)
@@ -42,6 +41,3 @@ php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/sk-SK.js line length is 596 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/sv-SE.js line length is 519 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/vi-VI.js line length is 610 characters (>512)
-
-# the bundled OpenLayer.js file is minified and does not get used in installed php-horde-core (we use OpenLayer-debug.js)
-php-horde-core source: source-contains-prebuilt-javascript-object Horde_Core-*/js/map/OpenLayers.js line length is 648 characters (>512)

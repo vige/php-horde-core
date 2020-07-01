@@ -1,8 +1,13 @@
 php-horde-core (2.31.14+debian0-1) UNRELEASED; urgency=medium
 
+  [ Juri Grabowski ]
   * New upstream version 2.31.14+debian0
+  * d/rules: Fix Pipeline "ERROR: file
+    ./Horde_Core-2.31.14/js/jquery.mobile/jquery.mobile.min.css does not exist"
+  * d/copyright: add other copyrights
+  * d/salsa-ci.yml: enable aptly
 
- -- Juri Grabowski <debian@jugra.de>  Tue, 16 Jun 2020 03:53:45 +0000
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 10:08:29 +0200
 
 php-horde-core (2.31.10+debian0-4) unstable; urgency=medium
 

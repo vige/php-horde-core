@@ -1,4 +1,4 @@
-php-horde-core (2.31.14+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.31.14+debian0-1) unstable; urgency=medium
 
   [ Juri Grabowski ]
   * New upstream version 2.31.14+debian0
@@ -7,7 +7,13 @@ php-horde-core (2.31.14+debian0-1) UNRELEASED; urgency=medium
   * d/copyright: add other copyrights
   * d/salsa-ci.yml: enable aptly
 
- -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 10:08:29 +0200
+  [ Mike Gabriel ]
+  * debian/source/lintian-overrides:
+    + Drop references to removed OpenLayers.js.
+    + Use globbing and drop upstream version from file paths.
+  * d/copyright: Update copyright attributions.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 10:42:31 +0200
 
 php-horde-core (2.31.10+debian0-4) unstable; urgency=medium
 

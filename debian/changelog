@@ -1,3 +1,11 @@
+php-horde-core (2.27.6+debian1-2+deb9u1) stretch-security; urgency=medium
+
+  * debian/patches:
+    + Add 0001-CVE-2017-16907-Escape-user-supplied-color-value-and-prevent-XSS-
+      vuln.patch. Fix XSS via Color field. (Closes: #909800, CVE-2017-16907).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 29 Aug 2020 17:24:55 +0200
+
 php-horde-core (2.27.6+debian1-2) unstable; urgency=medium
 
   * Replace minified CSS by non-minified one

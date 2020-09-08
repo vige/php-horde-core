@@ -1,8 +1,8 @@
-php-horde-core (2.31.16+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.31.16+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.31.16+debian0
 
- -- Mike Gabriel <sunweaver@debian.org>  Tue, 08 Sep 2020 16:00:27 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 08 Sep 2020 16:03:05 +0200
 
 php-horde-core (2.31.14+debian0-1) unstable; urgency=medium
 

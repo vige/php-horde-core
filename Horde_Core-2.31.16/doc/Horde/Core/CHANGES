@@ -1,4 +1,19 @@
 --------
+v2.31.16
+--------
+
+[mjr] Fix regression in sending mail via ActiveSync.
+|+
+
+
+--------
+v2.31.15
+--------
+
+[mjr] Fix ActiveSync SmartForward handling.
+
+
+--------
 v2.31.14
 --------
 

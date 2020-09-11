@@ -8,6 +8,9 @@ for locale in 'en_US.UTF-8 UTF-8'; do
 done
 locale-gen
 
-# ... but not here
 cd Horde_Core*/test/./Horde/Core
+
+# but we drop privileges to run the tests...
+touch .phpunit.result.cache
+chown www-data:www-data .phpunit.result.cache
 su www-data --preserve-environment --shell /bin/sh --command 'phpunit -v .'

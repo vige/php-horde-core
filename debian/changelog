@@ -1,3 +1,12 @@
+php-horde-core (2.31.16+debian0-2) unstable; urgency=medium
+
+  * d/patches: Add 1010_phpunit-8.x+9.x.patch. Fix tests with PHPUnit 8.x/9.x.
+  * d/t/control: Require php-horde-test (>= 2.6.4+debian0-5~).
+  * d/t/control: Add to D: locales.
+  * d/t/phpunit: Make sure, test results can be written to disk by phpunit.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 11 Sep 2020 11:16:57 +0000
+
 php-horde-core (2.31.16+debian0-1) unstable; urgency=medium
 
   * New upstream version 2.31.16+debian0

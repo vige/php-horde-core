@@ -1,0 +1,81 @@
+--- a/Horde_Core-2.31.16/lib/Horde/Core/Smartmobile/Url.php
++++ b/Horde_Core-2.31.16/lib/Horde/Core/Smartmobile/Url.php
+@@ -81,7 +81,7 @@
+             $baseUrl = $this->_baseUrl->copy();
+             $baseUrl->parameters = array_merge($baseUrl->parameters,
+                                                $this->parameters);
+-            if (strlen($this->pathInfo)) {
++            if (strlen(is_null($this->pathInfo) ? "" : $this->pathInfo)) {
+                 $baseUrl->pathInfo = $this->pathInfo;
+             }
+             return $baseUrl->toString($raw, $full);
+@@ -89,7 +89,7 @@
+ 
+         $url = $this->_baseUrl->toString($raw, $full);
+ 
+-        if (strlen($this->pathInfo)) {
++        if (strlen(is_null($this->pathInfo) ? "" : $this->pathInfo)) {
+             $url = rtrim($url, '/');
+             $url .= '/' . $this->pathInfo;
+         }
+--- a/Horde_Core-2.31.16/lib/Horde/Registry/Hordeconfig.php
++++ b/Horde_Core-2.31.16/lib/Horde/Registry/Hordeconfig.php
+@@ -87,6 +87,7 @@
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function offsetExists($offset)
+     {
+         $this->_load($offset);
+@@ -95,6 +96,7 @@
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function offsetGet($offset)
+     {
+         $this->_load($offset);
+@@ -103,6 +105,7 @@
+             : null;
+     }
+ 
++    #[\ReturnTypeWillChange]
+     public function offsetSet($offset, $value)
+     {
+         $this->_load($offset);
+@@ -111,6 +114,7 @@
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function offsetUnset($offset)
+     {
+         $this->_load($offset);
+@@ -121,6 +125,7 @@
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         /* Return non-zero to ensure a count() calls returns true. */
+@@ -131,6 +136,7 @@
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function getIterator()
+     {
+         $this->toArray();
+--- a/Horde_Core-2.31.16/test/Horde/Core/RegistryTest.php
++++ b/Horde_Core-2.31.16/test/Horde/Core/RegistryTest.php
+@@ -24,7 +24,7 @@
+ 
+     public function tearDown(): void
+     {
+-        if (is_dir($this->_tmpdir)) {
++        if (is_dir(is_null($this->_tmpdir) ? "" : $this->_tmpdir)) {
+             rmdir($this->_tmpdir);
+             rmdir(dirname($this->_tmpdir));
+         }

@@ -1,6 +1,6 @@
 php-horde-core (2.31.16+debian0-3) UNRELEASED; urgency=medium
 
-  * 
+  * d/patches: Add 1011_php8.1.patch
 
  -- Mike Gabriel <sunweaver@debian.org>  Wed, 13 Jul 2022 16:18:20 +0200
 

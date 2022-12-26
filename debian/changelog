@@ -1,3 +1,12 @@
+php-horde-core (2.31.16+debian0-4) unstable; urgency=medium
+
+  * Team upload.
+  * d/salsa-ci.yml: simplify rules.
+  * d/source/lintian-overrides: override some errors.
+  * d/control: Update standards version to 4.6.1, no changes needed.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 26 Dec 2022 22:27:00 +0100
+
 php-horde-core (2.31.16+debian0-3) unstable; urgency=medium
 
   * d/patches: Add 1011_php8.1.patch

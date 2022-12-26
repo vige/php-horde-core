@@ -41,3 +41,17 @@ php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/sk-SK.js line length is 596 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/sv-SE.js line length is 519 characters (>512)
 php-horde-core source: very-long-line-length-in-source-file Horde_Core-*/js/map/lang/vi-VI.js line length is 610 characters (>512)
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/cs-CZ.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/de-DE.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/fr-FR.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/gl-ES.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/hu-HU.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/id-ID.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/ja-JP.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/nl-NL.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/pt-BR.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/pt-PT.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/ru-RU.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/sk-SK.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/sv-SE.js]
+php-horde-core source: source-is-missing [Horde_Core-2.31.16/js/map/lang/vi-VI.js]

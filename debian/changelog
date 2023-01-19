@@ -1,3 +1,9 @@
+php-horde-core (2.31.16+debian0-4) UNRELEASED; urgency=medium
+
+  * d/control: Bump Standards-Version: to 4.6.2. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 19 Jan 2023 09:06:09 +0100
+
 php-horde-core (2.31.16+debian0-3) unstable; urgency=medium
 
   * d/patches: Add 1011_php8.1.patch

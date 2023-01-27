@@ -1,9 +1,22 @@
 --------
+v2.31.18
+--------
+
+[mjr] Remove local changes that made it to release breaking tag functionality.
+
+
+--------
+v2.31.17
+--------
+
+[mjr] Fix detection of autodiscover json endpoint.
+
+
+--------
 v2.31.16
 --------
 
 [mjr] Fix regression in sending mail via ActiveSync.
-|+
 
 
 --------

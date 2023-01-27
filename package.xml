@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.10.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.13" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0http://pear.php.net/dtd/package-2.0.xsd">
  <name>Horde_Core</name>
  <channel>pear.horde.org</channel>
  <summary>Core Horde Framework library</summary>
@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2020-09-05</date>
- <time>23:24:26</time>
+ <date>2022-09-22</date>
+ <time>15:39:46</time>
  <version>
-  <release>2.31.16</release>
+  <release>2.31.18</release>
   <api>2.31.0</api>
  </version>
  <stability>
@@ -40,12 +40,11 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mjr] Fix regression in sending mail via ActiveSync.
-* |+
+* [mjr] Remove local changes that made it to release breaking tag functionality.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="a22a7855aa8817667831984916af3ec2" name="doc/Horde/Core/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="32d678b87c095e70d5d2d056242fc6ad" name="doc/Horde/Core/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="448263295cf592643828bb7121113a01" name="doc/Horde/Core/COPYING" role="doc" />
    <file baseinstalldir="/" md5sum="8d8bc2873f10a78518a7e58c9e7aa5f2" name="js/date/ar-SY.js" role="horde" />
    <file baseinstalldir="/" md5sum="4963da977cab7b7308bc69944f825882" name="js/date/bg-BG.js" role="horde" />
@@ -261,8 +260,8 @@
    <file baseinstalldir="/" md5sum="f2bfbdc4c224ab77cb3ee601a945f217" name="lib/Horde/Core/ActiveSync/Mail/Draft.php" role="php" />
    <file baseinstalldir="/" md5sum="1ba8b36b077b2dd5d806acec1ef76de2" name="lib/Horde/Core/ActiveSync/Auth.php" role="php" />
    <file baseinstalldir="/" md5sum="db2423a8994dee86d07f4e3b025620bc" name="lib/Horde/Core/ActiveSync/Connector.php" role="php" />
-   <file baseinstalldir="/" md5sum="f835dbbe9858f618a91a36af0e1cd307" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
-   <file baseinstalldir="/" md5sum="6223233674cbbba9b8f60d058c526a77" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
+   <file baseinstalldir="/" md5sum="82a3d220117b61c45c8e76bd1c5f09f0" name="lib/Horde/Core/ActiveSync/Driver.php" role="php" />
+   <file baseinstalldir="/" md5sum="e302e12f2fb852c1ab25c3bb838db4f8" name="lib/Horde/Core/ActiveSync/Mail.php" role="php" />
    <file baseinstalldir="/" md5sum="765d6d4a324df27de06e04f9e3bbb1f4" name="lib/Horde/Core/ActiveSync/Mdn.php" role="php" />
    <file baseinstalldir="/" md5sum="f4ba1443376de1d967129048a61ca800" name="lib/Horde/Core/Ajax/Application/Handler/Chunk.php" role="php" />
    <file baseinstalldir="/" md5sum="10a6336a9d78644fcd369b11d45615bf" name="lib/Horde/Core/Ajax/Application/Handler/Email.php" role="php" />
@@ -331,7 +330,7 @@
    <file baseinstalldir="/" md5sum="b30fdf0d67a0c4f8f2fcf72b5535d706" name="lib/Horde/Core/Factory/Identity/UsernameHook.php" role="php" />
    <file baseinstalldir="/" md5sum="1540a5beb2a5ee045233fac21800fcfc" name="lib/Horde/Core/Factory/Secret/Cbc.php" role="php" />
    <file baseinstalldir="/" md5sum="88bba3652ee4ea7fa1b9fb9733b4daab" name="lib/Horde/Core/Factory/ActiveSyncBackend.php" role="php" />
-   <file baseinstalldir="/" md5sum="2b0b85995e2183ca8a2e11fb6dbe6e4b" name="lib/Horde/Core/Factory/ActiveSyncServer.php" role="php" />
+   <file baseinstalldir="/" md5sum="2c50af3781246fceb369efc272781dc5" name="lib/Horde/Core/Factory/ActiveSyncServer.php" role="php" />
    <file baseinstalldir="/" md5sum="b65dd5690259797c8f0d956c47c96b59" name="lib/Horde/Core/Factory/ActiveSyncState.php" role="php" />
    <file baseinstalldir="/" md5sum="18ae538eff952129bbff719973c9d85c" name="lib/Horde/Core/Factory/Ajax.php" role="php" />
    <file baseinstalldir="/" md5sum="e777e8fbc5f0a068b6d10a4eaf3931d1" name="lib/Horde/Core/Factory/Alarm.php" role="php" />
@@ -527,7 +526,7 @@
    <file baseinstalldir="/" md5sum="a158131d06922ad0dc241e090c9c02a5" name="lib/Horde/Themes/Sound.php" role="php" />
    <file baseinstalldir="/" md5sum="a0f77757280efa5ee69c1dd8112511f6" name="lib/Horde/Config.php" role="php" />
    <file baseinstalldir="/" md5sum="6e2e5860d49040faa236d331a7431608" name="lib/Horde/Deprecated.php" role="php" />
-   <file baseinstalldir="/" md5sum="1221cc18138e8a561889c5aac3394e5b" name="lib/Horde/ErrorHandler.php" role="php" />
+   <file baseinstalldir="/" md5sum="b517b1d8dcc0e86f250eb164c9564c99" name="lib/Horde/ErrorHandler.php" role="php" />
    <file baseinstalldir="/" md5sum="217332a464653ae497d8d4fa7c2e53da" name="lib/Horde/Help.php" role="php" />
    <file baseinstalldir="/" md5sum="2933d817287c1d55a9cb4a4439f3b788" name="lib/Horde/Menu.php" role="php" />
    <file baseinstalldir="/" md5sum="7dea8f4547941aaaa2632421506eb31b" name="lib/Horde/PageOutput.php" role="php" />
@@ -4668,11 +4667,40 @@
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2020-08-27</date>
+   <date>2020-09-06</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mjr] Fix regression in sending mail via ActiveSync.
-* |+
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.17</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-09-18</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Fix detection of autodiscover json endpoint.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.31.18</release>
+    <api>2.31.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-09-18</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mjr] Remove local changes that made it to release breaking tag functionality.
    </notes>
   </release>
  </changelog>

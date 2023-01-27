@@ -1,2 +1,5 @@
 # Horde unfortunately requires this specific version of jquery / jquery.mobile
-php-horde-core: embedded-javascript-library usr/share/horde/js/jquery.mobile/jquery.js please use libjs-jquery
+php-horde-core: embedded-javascript-library please use libjs-jquery [usr/share/horde/js/jquery.mobile/jquery.js]
+
+# ignore for now
+php-horde-core: national-encoding [usr/share/horde/js/date/extras.js]

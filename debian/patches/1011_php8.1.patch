@@ -1,5 +1,5 @@
---- a/Horde_Core-2.31.16/lib/Horde/Core/Smartmobile/Url.php
-+++ b/Horde_Core-2.31.16/lib/Horde/Core/Smartmobile/Url.php
+--- a/Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php
++++ b/Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php
 @@ -81,7 +81,7 @@
              $baseUrl = $this->_baseUrl->copy();
              $baseUrl->parameters = array_merge($baseUrl->parameters,
@@ -18,8 +18,8 @@
              $url = rtrim($url, '/');
              $url .= '/' . $this->pathInfo;
          }
---- a/Horde_Core-2.31.16/lib/Horde/Registry/Hordeconfig.php
-+++ b/Horde_Core-2.31.16/lib/Horde/Registry/Hordeconfig.php
+--- a/Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php
++++ b/Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php
 @@ -87,6 +87,7 @@
  
      /**
@@ -68,8 +68,8 @@
      public function getIterator()
      {
          $this->toArray();
---- a/Horde_Core-2.31.16/test/Horde/Core/RegistryTest.php
-+++ b/Horde_Core-2.31.16/test/Horde/Core/RegistryTest.php
+--- a/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
 @@ -24,7 +24,7 @@
  
      public function tearDown(): void

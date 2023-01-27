@@ -1,3 +1,13 @@
+php-horde-core (2.31.18+debian0-2) unstable; urgency=medium
+
+  * Re-upload now with Anton's changes included. The upload of
+    flawed 2.31.18+debian0-1 did not contain changes that were
+    added in pkg version 2.31.16+debian0-4.
+  * lintian: Update various mismatched overrides and add other overrides, as
+    well.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 27 Jan 2023 12:22:29 +0100
+
 php-horde-core (2.31.18+debian0-1) unstable; urgency=medium
 
   * New upstream release.

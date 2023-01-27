@@ -1,8 +1,10 @@
-php-horde-core (2.31.16+debian0-4) UNRELEASED; urgency=medium
+php-horde-core (2.31.18+debian0-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
+  * d/patches: Amend/update upstream version in file paths.
   * d/control: Bump Standards-Version: to 4.6.2. No changes needed.
 
- -- Mike Gabriel <sunweaver@debian.org>  Thu, 19 Jan 2023 09:06:09 +0100
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 27 Jan 2023 11:22:50 +0100
 
 php-horde-core (2.31.16+debian0-3) unstable; urgency=medium
 

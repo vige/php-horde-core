@@ -1,10 +1,15 @@
-php-horde-core (2.31.18+debian0-1) UNRELEASED; urgency=medium
+php-horde-core (2.31.18+debian0-1) unstable; urgency=medium
 
   * New upstream release.
   * d/patches: Amend/update upstream version in file paths.
   * d/control: Bump Standards-Version: to 4.6.2. No changes needed.
+  * d/tests/control: Explicitly require php-horde-test (>= 2.6.4+debian0-9~)
+    during autopkgtest. This silence various PHP 8.2 deprecation warnings.
+    (Closes: #1028929).
+  * d/patches: Add 1012_php8.2.patch. Fix PHP 8.2 deprecation warnings.
+    (Closes: #1028929).
 
- -- Mike Gabriel <sunweaver@debian.org>  Fri, 27 Jan 2023 11:22:50 +0100
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 27 Jan 2023 11:59:27 +0100
 
 php-horde-core (2.31.16+debian0-4) unstable; urgency=medium
 

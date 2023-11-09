@@ -1,10 +1,11 @@
-php-horde-core (2.31.18+debian0-3~1.gbp9da06a) UNRELEASED; urgency=medium
+php-horde-core (2.31.18+debian0-3~2.gbp890106) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @9da06a8067e189c37ae0a37accca3ae330ebf704 **
+  ** SNAPSHOT build @890106147728c151ad1aa680e33215c9a8a32947 **
 
   * UNRELEASED
+  * Add patch for null ReflectionMethod
 
- -- Ville Nummela <ville@nummela.org>  Thu, 09 Nov 2023 12:56:52 +0200
+ -- Ville Nummela <ville@nummela.org>  Thu, 09 Nov 2023 14:12:57 +0200
 
 php-horde-core (2.31.18+debian0-2) unstable; urgency=medium
 

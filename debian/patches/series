@@ -2,3 +2,4 @@
 1011_php8.1.patch
 1012_php8.2.patch
 0004-Allow-null-as-ReflectionMethod-method.-From-upstream.patch
+0005-Don-t-try-to-set-horde-specific-variables-on-non-hor.patch

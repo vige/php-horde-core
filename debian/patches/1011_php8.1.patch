@@ -1,6 +1,18 @@
+From: Horde Maintainers <team+debian-horde-team@tracker.debian.org>
+Date: Thu, 9 Nov 2023 12:49:57 +0200
+Subject: _php8.1
+
+---
+ Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php | 4 ++--
+ Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php | 6 ++++++
+ Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php   | 2 +-
+ 3 files changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php b/Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php
+index f3a76e3..8d88465 100644
 --- a/Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php
 +++ b/Horde_Core-2.31.18/lib/Horde/Core/Smartmobile/Url.php
-@@ -81,7 +81,7 @@
+@@ -81,7 +81,7 @@ class Horde_Core_Smartmobile_Url extends Horde_Url
              $baseUrl = $this->_baseUrl->copy();
              $baseUrl->parameters = array_merge($baseUrl->parameters,
                                                 $this->parameters);
@@ -9,7 +21,7 @@
                  $baseUrl->pathInfo = $this->pathInfo;
              }
              return $baseUrl->toString($raw, $full);
-@@ -89,7 +89,7 @@
+@@ -89,7 +89,7 @@ class Horde_Core_Smartmobile_Url extends Horde_Url
  
          $url = $this->_baseUrl->toString($raw, $full);
  
@@ -18,9 +30,11 @@
              $url = rtrim($url, '/');
              $url .= '/' . $this->pathInfo;
          }
+diff --git a/Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php b/Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php
+index a037060..c70aa53 100644
 --- a/Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php
 +++ b/Horde_Core-2.31.18/lib/Horde/Registry/Hordeconfig.php
-@@ -87,6 +87,7 @@
+@@ -87,6 +87,7 @@ implements ArrayAccess, Countable, IteratorAggregate
  
      /**
       */
@@ -28,7 +42,7 @@
      public function offsetExists($offset)
      {
          $this->_load($offset);
-@@ -95,6 +96,7 @@
+@@ -95,6 +96,7 @@ implements ArrayAccess, Countable, IteratorAggregate
  
      /**
       */
@@ -36,7 +50,7 @@
      public function offsetGet($offset)
      {
          $this->_load($offset);
-@@ -103,6 +105,7 @@
+@@ -103,6 +105,7 @@ implements ArrayAccess, Countable, IteratorAggregate
              : null;
      }
  
@@ -44,7 +58,7 @@
      public function offsetSet($offset, $value)
      {
          $this->_load($offset);
-@@ -111,6 +114,7 @@
+@@ -111,6 +114,7 @@ implements ArrayAccess, Countable, IteratorAggregate
  
      /**
       */
@@ -52,7 +66,7 @@
      public function offsetUnset($offset)
      {
          $this->_load($offset);
-@@ -121,6 +125,7 @@
+@@ -121,6 +125,7 @@ implements ArrayAccess, Countable, IteratorAggregate
  
      /**
       */
@@ -60,7 +74,7 @@
      public function count()
      {
          /* Return non-zero to ensure a count() calls returns true. */
-@@ -131,6 +136,7 @@
+@@ -131,6 +136,7 @@ implements ArrayAccess, Countable, IteratorAggregate
  
      /**
       */
@@ -68,9 +82,11 @@
      public function getIterator()
      {
          $this->toArray();
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php b/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
+index 84837eb..8bfdf18 100644
 --- a/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
 +++ b/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
-@@ -24,7 +24,7 @@
+@@ -24,7 +24,7 @@ class Horde_Core_RegistryTest extends Horde_Test_Case
  
      public function tearDown(): void
      {

@@ -1,0 +1,23 @@
+From: Ville Nummela <ville@nummela.org>
+Date: Thu, 9 Nov 2023 12:53:41 +0200
+Subject: Allow null as ReflectionMethod method. From upstream commit
+ 53f0ab007e0fbf80a2350fc995815253d95b7fd5
+
+---
+ Horde_Core-2.31.18/lib/Horde/Core/Ajax/Application/Handler.php | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Horde_Core-2.31.18/lib/Horde/Core/Ajax/Application/Handler.php b/Horde_Core-2.31.18/lib/Horde/Core/Ajax/Application/Handler.php
+index d8007e7..4559aea 100644
+--- a/Horde_Core-2.31.18/lib/Horde/Core/Ajax/Application/Handler.php
++++ b/Horde_Core-2.31.18/lib/Horde/Core/Ajax/Application/Handler.php
+@@ -87,6 +87,9 @@ class Horde_Core_Ajax_Application_Handler
+      */
+     final public function has($action)
+     {
++        if (empty($action)) {
++            return false;
++        }
+         try {
+             $method = new ReflectionMethod($this, $action);
+         } catch (ReflectionException $e) {

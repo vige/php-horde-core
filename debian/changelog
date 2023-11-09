@@ -1,3 +1,11 @@
+php-horde-core (2.31.18+debian0-3~1.gbp9da06a) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @9da06a8067e189c37ae0a37accca3ae330ebf704 **
+
+  * UNRELEASED
+
+ -- Ville Nummela <ville@nummela.org>  Thu, 09 Nov 2023 12:56:52 +0200
+
 php-horde-core (2.31.18+debian0-2) unstable; urgency=medium
 
   * Re-upload now with Anton's changes included. The upload of

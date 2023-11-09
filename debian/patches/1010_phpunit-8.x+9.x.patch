@@ -1,11 +1,25 @@
-Description: Adapt to PHPUnit 8.x and 9.x API.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Thu, 9 Nov 2023 12:49:57 +0200
+Subject: Adapt to PHPUnit 8.x and 9.x API.
 
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
-@@ -22,7 +22,7 @@ class Horde_Core_ActiveSyncTests extends
+---
+ Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php          | 2 +-
+ Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php        | 2 +-
+ Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php  | 4 ++--
+ Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php | 4 ++--
+ Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php            | 4 +++-
+ Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php             | 4 ++--
+ Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php       | 4 +---
+ Horde_Core-2.31.18/test/Horde/Core/UrlTest.php                  | 2 +-
+ Horde_Core-2.31.18/test/Horde/Core/phpunit.xml                  | 1 +
+ 9 files changed, 14 insertions(+), 13 deletions(-)
+ create mode 100644 Horde_Core-2.31.18/test/Horde/Core/phpunit.xml
+
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php b/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
+index 1273158..df6292d 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
+@@ -22,7 +22,7 @@ class Horde_Core_ActiveSyncTests extends Horde_Test_Case
      protected $_mailboxes;
      protected $_special;
  
@@ -14,10 +28,10 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/ActiveSyncTests.php
      {
          $this->_auth = $this->getMockSkipConstructor('Horde_Auth_Auto');
          $this->_state = $this->getMockSkipConstructor('Horde_ActiveSync_State_Sql');
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php b/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
+index 1b566be..87ca1aa 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
 @@ -23,7 +23,7 @@
   * @author   Gunnar Wrobel <wrobel@pardus.de>
   * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
@@ -27,10 +41,10 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/GroupTest.php
  {
      public function testMock()
      {
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php b/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php
+index 46c0243..478f0dc 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest.php
 @@ -23,9 +23,9 @@
   * @author   Gunnar Wrobel <wrobel@pardus.de>
   * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
@@ -43,10 +57,10 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabServerTest
      {
          $this->markTestIncomplete('Needs some love');
          $GLOBALS['conf']['kolab']['server']['basedn'] = 'test';
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php b/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php
+index 8cf9d61..798c1de 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTest.php
 @@ -23,9 +23,9 @@
   * @author   Gunnar Wrobel <wrobel@pardus.de>
   * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
@@ -59,10 +73,10 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/Factory/KolabSessionTes
      {
          $this->markTestIncomplete('Needs some love');
      }
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php b/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
+index ab06be1..dbd9d46 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
 @@ -20,7 +20,7 @@
   */
  class Horde_Core_NlsconfigTest extends Horde_Test_Case
@@ -72,7 +86,7 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
      {
          $GLOBALS['session'] = new Horde_Session();
          $GLOBALS['session']->sessionHandler = new Horde_Support_Stub();
-@@ -58,6 +58,8 @@ class Horde_Core_NlsconfigTest extends H
+@@ -58,6 +58,8 @@ class Horde_Core_NlsconfigTest extends Horde_Test_Case
       */
      public function testGet($key, $expected)
      {
@@ -81,10 +95,10 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
          $nls = new Horde_Registry_Nlsconfig();
      }
  
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php b/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
+index 8606fb4..84837eb 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
 @@ -18,11 +18,11 @@
   * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
   * @package  Core
@@ -99,29 +113,10 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/RegistryTest.php
      {
          if (is_dir($this->_tmpdir)) {
              rmdir($this->_tmpdir);
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php
-@@ -6,7 +6,7 @@
-  * @package    Core
-  * @subpackage UnitTests
-  */
--class Horde_Core_UrlTest extends PHPUnit_Framework_TestCase
-+class Horde_Core_UrlTest extends Horde_Test_Case
- {
-     public function testUrl()
-     {
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/phpunit.xml
-===================================================================
---- /dev/null
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/phpunit.xml
-@@ -0,0 +1 @@
-+<phpunit bootstrap="bootstrap.php"></phpunit>
-Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
-===================================================================
---- php-horde-core.orig/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
-+++ php-horde-core/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php b/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
+index 7dce5c9..0dcd5c4 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
 @@ -8,11 +8,9 @@
   */
  class Horde_Core_SmartmobileUrlTest extends Horde_Test_Case
@@ -135,3 +130,23 @@ Index: php-horde-core/Horde_Core-2.31.18/test/Horde/Core/SmartmobileUrlTest.php
          new Horde_Core_Smartmobile_Url('test');
      }
  
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php b/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php
+index 8073733..4c23234 100644
+--- a/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php
++++ b/Horde_Core-2.31.18/test/Horde/Core/UrlTest.php
+@@ -6,7 +6,7 @@
+  * @package    Core
+  * @subpackage UnitTests
+  */
+-class Horde_Core_UrlTest extends PHPUnit_Framework_TestCase
++class Horde_Core_UrlTest extends Horde_Test_Case
+ {
+     public function testUrl()
+     {
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/phpunit.xml b/Horde_Core-2.31.18/test/Horde/Core/phpunit.xml
+new file mode 100644
+index 0000000..5dcbab2
+--- /dev/null
++++ b/Horde_Core-2.31.18/test/Horde/Core/phpunit.xml
+@@ -0,0 +1 @@
++<phpunit bootstrap="bootstrap.php"></phpunit>

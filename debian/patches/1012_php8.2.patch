@@ -1,6 +1,13 @@
-Description: Fix PHP 8.2 deprecation warnings.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Thu, 9 Nov 2023 12:49:57 +0200
+Subject: Fix PHP 8.2 deprecation warnings.
 
+---
+ Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php b/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
+index dbd9d46..98f9cc9 100644
 --- a/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
 +++ b/Horde_Core-2.31.18/test/Horde/Core/NlsconfigTest.php
 @@ -18,6 +18,7 @@
